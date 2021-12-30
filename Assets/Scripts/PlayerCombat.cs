@@ -22,25 +22,27 @@ public class PlayerCombat : NetworkBehaviour
         // Check canFire and toggle canFire client-side to avoid latency. Possible cheating?
         if (canFire && hasAuthority && Input.GetButton("Fire1"))
         {
-            CmdFire(GetDirection());
+            CmdFire(mainCam.ScreenToWorldPoint(Input.mousePosition));
             StartCoroutine(ToggleFire());
         }
     }
     #region Shooting
-    private Quaternion GetDirection()
+    private Quaternion GetDirection(Vector3 target)
     {
-        // Get displacement vector components from player object to mouse
-        var mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
-        var y = mousePos.y - transform.position.y;
-        var x = mousePos.x - transform.position.x;
+        // Get displacement vector components from player object to target
+        var y = target.y - transform.position.y;
+        var x = target.x - transform.position.x;
         
         // Get rotation from the arctangent of displacement components
         float angle = Mathf.Atan2(y, x) * Mathf.Rad2Deg;
         return Quaternion.Euler(new Vector3(0, 0, angle));
     }
     [Command]
-    void CmdFire(Quaternion dir)
+    void CmdFire(Vector3 target)
     {
+        // Getting the direction client-side will result in the shot missing if client is moving and shooting. 
+        var dir = GetDirection(target);
+
         // Spawn the bullet and set its velocity server-side
         GameObject bulletGO = Instantiate(bulletPrefab, transform.position, dir);
         bulletGO.GetComponent<Rigidbody2D>().velocity = bulletGO.gameObject.transform.right * bulletSpeed;
