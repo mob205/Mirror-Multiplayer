@@ -52,14 +52,16 @@ public class PlayerCombat : NetworkBehaviour
         bullet.Damage = damage;
         NetworkServer.Spawn(bulletGO);
 
-        SimulateBullet(bulletGO);
+        SimulateBullet(bulletGO, target);
 
         StartCoroutine(DelayedDestroy(bulletGO, bulletLifetime));
     }
     // Simulate the bullet client-side to avoid getting position from server-side bullet. 
     [ClientRpc]
-    private void SimulateBullet(GameObject bullet)
+    private void SimulateBullet(GameObject bullet, Vector3 target)
     {
+        bullet.transform.position = transform.position;
+        bullet.transform.rotation = GetDirection(target);
         bullet.GetComponent<Rigidbody2D>().velocity = bullet.gameObject.transform.right * bulletSpeed;
     }
     private IEnumerator ToggleFire()
