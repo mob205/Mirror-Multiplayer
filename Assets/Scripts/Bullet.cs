@@ -10,6 +10,7 @@ public class Bullet : NetworkBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // Bullets should only interact on the server. Ignore collision if target is not of type Health or is the Shooter object.
         var target = collision.gameObject.GetComponent<Health>();
         if (isServer && target && collision.gameObject != Shooter)
         {

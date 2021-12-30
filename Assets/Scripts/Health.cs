@@ -9,9 +9,18 @@ public class Health : NetworkBehaviour
 
     [SyncVar] private float currentHealth;
     public float CurrentHealth { get { return currentHealth;  } }
+    public float MaxHealth { get { return maxHealth; } }
     public void Start()
     {
         currentHealth = maxHealth;
+    }
+    public override void OnStartClient()
+    {
+        HealthUI.Instance.AddPlayerUI(gameObject);
+    }
+    public override void OnStopClient()
+    {
+        HealthUI.Instance.RemovePlayerUI(gameObject);
     }
     [Server]
     public void Damage(float amount)
