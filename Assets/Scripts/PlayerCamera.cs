@@ -21,5 +21,7 @@ public class PlayerCamera : Singleton<PlayerCamera>
     public void SetFollowTarget(PlayerMovement player)
     {
         linkedPlayer = player;
+        // Center the camera when the target is set
+        transform.position = new Vector3(linkedPlayer.transform.position.x, linkedPlayer.transform.position.y, transform.position.z);
     }
 }

@@ -16,7 +16,7 @@ public class Health : NetworkBehaviour
     }
     public override void OnStartClient()
     {
-        HealthUI.Instance.AddPlayerUI(gameObject);
+        HealthUI.Instance.AddPlayerUI(gameObject, PlayerPrefs.GetString("PlayerName"));
     }
     public override void OnStopClient()
     {

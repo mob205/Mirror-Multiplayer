@@ -11,12 +11,12 @@ public class HealthUI : Singleton<HealthUI>
 
     private Dictionary<GameObject, GameObject> playerTemplates = new Dictionary<GameObject, GameObject>();
 
-    public void AddPlayerUI(GameObject player)
+    public void AddPlayerUI(GameObject player, string playerName)
     {
         var playerTemplate = Instantiate(template, transform);
         playerTemplates.Add(player, playerTemplate);
 
-        playerTemplate.GetComponentInChildren<TextMeshProUGUI>().text = player.name;
+        playerTemplate.GetComponentInChildren<TextMeshProUGUI>().text = playerName;
         playerTemplate.GetComponentInChildren<HealthTracker>().target = player.GetComponent<Health>();
 
         RepositionUI();
