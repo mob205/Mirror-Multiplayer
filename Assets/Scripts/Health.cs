@@ -14,14 +14,6 @@ public class Health : NetworkBehaviour
     {
         currentHealth = maxHealth;
     }
-    public override void OnStartClient()
-    {
-        HealthUI.Instance.AddPlayerUI(gameObject, PlayerPrefs.GetString("PlayerName"));
-    }
-    public override void OnStopClient()
-    {
-        HealthUI.Instance.RemovePlayerUI(gameObject);
-    }
     [Server]
     public void Damage(float amount)
     {

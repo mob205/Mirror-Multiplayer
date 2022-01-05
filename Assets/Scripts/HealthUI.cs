@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class HealthUI : Singleton<HealthUI>
+public class HealthUI : MonoBehaviour
 {
     [SerializeField] private GameObject template;
     [SerializeField] private Vector2 offset;

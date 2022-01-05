@@ -32,7 +32,6 @@ public class MainMenu : MonoBehaviour
     }
     public void StartHost()
     {
-        Debug.Log("Starting host.");
         manager.StartHost();
         PlayerPrefs.SetString("PlayerName", nameField.text);
         hostButton.interactable = false;
