@@ -29,8 +29,10 @@ public class PlayerDisplayer : NetworkBehaviour
     }
     public void DisplayName(string oldName, string newName)
     {
-        Debug.Log("Displaying name.");
-        ui.AddPlayerUI(gameObject, playerName);
+        if(ui != null)
+        {
+            ui.AddPlayerUI(gameObject, newName);
+        }
     }
     public override void OnStopClient()
     {

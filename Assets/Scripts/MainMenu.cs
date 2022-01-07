@@ -23,17 +23,16 @@ public class MainMenu : MonoBehaviour
     {
         if (!string.IsNullOrEmpty(ipField.text))
         {
-            Debug.Log("Attempting connection.");
+            PlayerPrefs.SetString("PlayerName", nameField.text);
             manager.networkAddress = ipField.text;
             manager.StartClient();
-            PlayerPrefs.SetString("PlayerName", nameField.text);
             joinButton.interactable = false;
         }
     }
     public void StartHost()
     {
-        manager.StartHost();
         PlayerPrefs.SetString("PlayerName", nameField.text);
+        manager.StartHost();
         hostButton.interactable = false;
     }
 }

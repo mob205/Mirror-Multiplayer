@@ -9,14 +9,9 @@ public class ProjectileWeapon : WeaponController
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private float bulletLifetime = 2;
 
-    public override void ClientFire()
-    {
-        //ServerFire(mainCam.ScreenToWorldPoint(Input.mousePosition));
-    }
     public override GameObject ServerFire(Vector3 target)
     {
         if (!canFire) { return null; }
-        Debug.Log("firing from wep controller");
         // Getting the direction client-side will result in the shot missing if client is moving and shooting. 
         var dir = GetDirection(target);
 
@@ -38,7 +33,6 @@ public class ProjectileWeapon : WeaponController
     }
     public override void SimulateFire(GameObject bullet, Vector3 target)
     {
-        Debug.Log("Simulating fire on clients");
         bullet.transform.position = transform.position;
         bullet.transform.rotation = GetDirection(target);
         bullet.GetComponent<Rigidbody2D>().velocity = bullet.gameObject.transform.right * bulletSpeed;

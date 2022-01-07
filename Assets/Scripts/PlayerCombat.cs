@@ -17,7 +17,6 @@ public class PlayerCombat : NetworkBehaviour
         {
             if (weapon)
             {
-                Debug.Log("input accepted");
                 CmdFire(mainCam.ScreenToWorldPoint(Input.mousePosition));
             }
         }
@@ -25,7 +24,6 @@ public class PlayerCombat : NetworkBehaviour
     [Command]
     private void CmdFire(Vector3 target)
     {
-        Debug.Log("firing weapon from player combat");
         var go = weapon.ServerFire(target);
         if (go)
         {
