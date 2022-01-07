@@ -37,16 +37,7 @@ public class ProjectileWeapon : WeaponController
         bullet.transform.rotation = GetDirection(target);
         bullet.GetComponent<Rigidbody2D>().velocity = bullet.gameObject.transform.right * bulletSpeed;
     }
-    private Quaternion GetDirection(Vector3 target)
-    {
-        // Get displacement vector components from player object to target
-        var y = target.y - transform.position.y;
-        var x = target.x - transform.position.x;
-
-        // Get rotation from the arctangent of displacement components
-        float angle = Mathf.Atan2(y, x) * Mathf.Rad2Deg;
-        return Quaternion.Euler(new Vector3(0, 0, angle));
-    }
+    
     private IEnumerator DelayedDestroy(GameObject go, float delay)
     {
         yield return new WaitForSeconds(delay);

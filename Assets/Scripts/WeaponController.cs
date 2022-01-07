@@ -19,7 +19,10 @@ public abstract class WeaponController : MonoBehaviour
     {
 
     }
-
+    public virtual void RotateWeapon(Vector3 target)
+    {
+        transform.rotation = GetDirection(target);
+    }
     public virtual GameObject ServerFire(Vector3 target)
     {
         return null;
@@ -35,5 +38,15 @@ public abstract class WeaponController : MonoBehaviour
         canFire = false;
         yield return new WaitForSeconds(1 / fireRate);
         canFire = true;
+    }
+    protected Quaternion GetDirection(Vector3 target)
+    {
+        // Get displacement vector components from player object to target
+        var y = target.y - transform.position.y;
+        var x = target.x - transform.position.x;
+
+        // Get rotation from the arctangent of displacement components
+        float angle = Mathf.Atan2(y, x) * Mathf.Rad2Deg;
+        return Quaternion.Euler(new Vector3(0, 0, angle));
     }
 }

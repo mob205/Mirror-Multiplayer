@@ -6,18 +6,20 @@ public class PlayerCombat : NetworkBehaviour
 { 
     private Camera mainCam;
     private WeaponController weapon;
-    void Start()
+    void Awake()
     {
         mainCam = Camera.main;
         weapon = GetComponentInChildren<WeaponController>();
     }
     private void Update()
     {
-        if (hasAuthority && Input.GetButton("Fire1"))
+        if (hasAuthority && weapon)
         {
-            if (weapon)
+            var target = mainCam.ScreenToWorldPoint(Input.mousePosition);
+            CmdRotateWeapon(target);
+            if (Input.GetButtonDown("Fire1")) 
             {
-                CmdFire(mainCam.ScreenToWorldPoint(Input.mousePosition));
+                CmdFire(target);
             }
         }
     }
@@ -34,5 +36,15 @@ public class PlayerCombat : NetworkBehaviour
     private void RpcSimulateFire(GameObject go, Vector3 target)
     {
         weapon.SimulateFire(go, target);
+    }
+    [Command]
+    private void CmdRotateWeapon(Vector3 target)
+    {
+        RpcRotateWeapon(target);
+    }
+    [ClientRpc]
+    private void RpcRotateWeapon(Vector3 target)
+    {
+        weapon.RotateWeapon(target);
     }
 }
