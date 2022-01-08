@@ -9,13 +9,11 @@ public class MeleeWeapon : WeaponController
     [SerializeField] private float swingTime = 1;
     [SerializeField] private BoxCollider2D hitbox;
 
-    private bool isAttacking = false;
-    
+    private Quaternion swingRot = Quaternion.identity;
     public override GameObject ServerFire(Vector3 target)
     {
-        if (!canFire || isAttacking) { return null; }
+        if (!canFire) { return null; }
         hitbox.enabled = true;
-        //SimulateFire(gameObject, target); 
         StartCoroutine(ToggleFire());
         return transform.parent.gameObject;
     }
@@ -26,32 +24,23 @@ public class MeleeWeapon : WeaponController
     }
     public override void RotateWeapon(Vector3 target)
     {
-        if (!isAttacking)
-        {
-            base.RotateWeapon(target);
-        }
+        base.RotateWeapon(target);
+        transform.rotation *= swingRot;
     }
     private IEnumerator SwingWeapon()
     {
-        isAttacking = true;
         var swingSpeed = attackArcDegrees / swingTime;
-        var swingDistance = 0f;
-        while(swingDistance < attackArcDegrees)
+        for (float angle = 0; angle < attackArcDegrees; angle += swingSpeed * Time.deltaTime)
         {
-            var angle = swingSpeed * Time.deltaTime;
-            swingDistance += angle;
-            transform.Rotate(new Vector3(0, 0, angle));
+            swingRot = Quaternion.Euler(new Vector3(0, 0, angle));
             yield return null;
         }
-        // Disable hitbox after initial swing. The recovery should not damage
-        while (swingDistance > 0)
+        for(float angle = attackArcDegrees; angle > 0; angle -= swingSpeed * Time.deltaTime)
         {
-            var angle = -swingSpeed * Time.deltaTime;
-            swingDistance += angle;
-            transform.Rotate(new Vector3(0, 0, angle));
+            swingRot = Quaternion.Euler(new Vector3(0, 0, angle));
             yield return null;
         }
+
         hitbox.enabled = false;
-        isAttacking = false;
     }
 }
