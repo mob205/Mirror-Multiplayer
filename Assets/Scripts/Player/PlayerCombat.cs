@@ -3,9 +3,11 @@ using System.Collections;
 using UnityEngine;
 
 public class PlayerCombat : NetworkBehaviour
-{ 
+{
     private Camera mainCam;
     private WeaponController weapon;
+
+    [SyncVar(hook = nameof(SetWeapon))] public int currentWeaponIndex;
     void Awake()
     {
         mainCam = Camera.main;
@@ -17,10 +19,18 @@ public class PlayerCombat : NetworkBehaviour
         {
             var target = mainCam.ScreenToWorldPoint(Input.mousePosition);
             CmdRotateWeapon(target);
-            if (Input.GetButtonDown("Fire1")) 
+            if (Input.GetButtonDown("Fire1"))
             {
                 CmdFire(target);
             }
+        }
+    }
+    public override void OnStartClient()
+    {
+        // New clients set the weapon for the player objects in their scene when joining
+        if (!weapon)
+        {
+            SetWeapon(0, currentWeaponIndex);
         }
     }
     [Command]
@@ -47,5 +57,15 @@ public class PlayerCombat : NetworkBehaviour
     private void RpcRotateWeapon(Vector3 target)
     {
         weapon.RotateWeapon(target);
+    }
+    [Command(requiresAuthority = false)]
+    public void CmdSetWeapon(int weaponIndex)
+    {
+        currentWeaponIndex = weaponIndex;
+    }
+    private void SetWeapon(int oldIndex, int weaponIndex)
+    {
+        var weaponObj = Instantiate(CustomNetworkManager.singleton.weapons[weaponIndex], transform.position, Quaternion.identity, transform);
+        weapon = weaponObj.GetComponent<WeaponController>();
     }
 }
