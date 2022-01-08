@@ -9,9 +9,9 @@ public class ProjectileWeapon : WeaponController
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private float bulletLifetime = 2;
 
-    public override GameObject ServerFire(Vector3 target)
+    public override bool ServerFire(Vector3 target, ref GameObject go)
     {
-        if (!canFire) { return null; }
+        if (!canFire) { return false; }
         // Getting the direction client-side will result in the shot missing if client is moving and shooting. 
         var dir = GetDirection(target);
 
@@ -29,7 +29,8 @@ public class ProjectileWeapon : WeaponController
         StartCoroutine(DelayedDestroy(bulletGO, bulletLifetime));
         StartCoroutine(ToggleFire());
 
-        return bullet.gameObject;
+        go = bullet.gameObject;
+        return true;
     }
     public override void SimulateFire(GameObject bullet, Vector3 target)
     {

@@ -10,12 +10,12 @@ public class MeleeWeapon : WeaponController
     [SerializeField] private BoxCollider2D hitbox;
 
     private Quaternion swingRot = Quaternion.identity;
-    public override GameObject ServerFire(Vector3 target)
+    public override bool ServerFire(Vector3 target, ref GameObject go)
     {
-        if (!canFire) { return null; }
+        if (!canFire) { return false; }
         hitbox.enabled = true;
         StartCoroutine(ToggleFire());
-        return transform.parent.gameObject;
+        return true;
     }
     public override void SimulateFire(GameObject go, Vector3 target)
     {

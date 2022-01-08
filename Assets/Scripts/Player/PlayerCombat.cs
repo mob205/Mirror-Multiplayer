@@ -26,8 +26,8 @@ public class PlayerCombat : NetworkBehaviour
     [Command]
     private void CmdFire(Vector3 target)
     {
-        var go = weapon.ServerFire(target);
-        if (go)
+        GameObject go = null;
+        if (weapon.ServerFire(target, ref go))
         {
             RpcSimulateFire(go, target);
         }
