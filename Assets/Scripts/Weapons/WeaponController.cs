@@ -23,15 +23,9 @@ public abstract class WeaponController : MonoBehaviour
     {
         transform.rotation = GetDirection(target);
     }
-    public virtual bool ServerFire(Vector3 target, ref GameObject go)
-    {
-        return false;
-    }
+    public abstract bool ServerFire(Vector3 target, ref GameObject go);
 
-    public virtual void SimulateFire(GameObject go, Vector3 target)
-    {
-
-    }
+    public abstract void SimulateFire(GameObject go, Vector3 target);
 
     protected IEnumerator ToggleFire()
     {

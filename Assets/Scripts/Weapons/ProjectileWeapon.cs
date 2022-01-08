@@ -23,7 +23,6 @@ public class ProjectileWeapon : WeaponController
         bullet.Shooter = transform.parent.gameObject;
         bullet.Damage = damage;
 
-        // potentially unnecessary? SimulateFire could just create a new gameobject rather than requiring a reference
         NetworkServer.Spawn(bulletGO); 
 
         StartCoroutine(DelayedDestroy(bulletGO, bulletLifetime));
@@ -37,6 +36,7 @@ public class ProjectileWeapon : WeaponController
         bullet.transform.position = transform.position;
         bullet.transform.rotation = GetDirection(target);
         bullet.GetComponent<Rigidbody2D>().velocity = bullet.gameObject.transform.right * bulletSpeed;
+        bullet.GetComponent<Bullet>().Shooter = transform.parent.gameObject;
     }
     
     private IEnumerator DelayedDestroy(GameObject go, float delay)

@@ -7,13 +7,19 @@ public class MeleeWeapon : WeaponController
 {
     [SerializeField] private float attackArcDegrees = 90;
     [SerializeField] private float swingTime = 1;
-    [SerializeField] private BoxCollider2D hitbox;
+    [SerializeField] private GameObject hitbox;
 
     private Quaternion swingRot = Quaternion.identity;
     public override bool ServerFire(Vector3 target, ref GameObject go)
     {
         if (!canFire) { return false; }
-        hitbox.enabled = true;
+
+        // Hit detection should be server-side only.
+        hitbox.SetActive(true);
+        var hitScript = hitbox.GetComponent<MeleeHitbox>();
+        hitScript.Damage = damage;
+        hitScript.Shooter = transform.parent.gameObject;
+
         StartCoroutine(ToggleFire());
         return true;
     }
@@ -25,6 +31,7 @@ public class MeleeWeapon : WeaponController
     public override void RotateWeapon(Vector3 target)
     {
         base.RotateWeapon(target);
+        // Combine Quaternions through multiplication.
         transform.rotation *= swingRot;
     }
     private IEnumerator SwingWeapon()
@@ -41,6 +48,6 @@ public class MeleeWeapon : WeaponController
             yield return null;
         }
 
-        hitbox.enabled = false;
+        hitbox.SetActive(false);
     }
 }

@@ -37,6 +37,7 @@ public class PlayerCombat : NetworkBehaviour
     {
         weapon.SimulateFire(go, target);
     }
+    // In the future, rotation may happen in the parent player object, not the weapon.
     [Command]
     private void CmdRotateWeapon(Vector3 target)
     {

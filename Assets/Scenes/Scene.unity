@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 208777668}
   - component: {fileID: 208777667}
   m_Layer: 0
-  m_Name: Player Spawn Bottom
+  m_Name: Player Spawn Bottom (-2, -17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -160,7 +160,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 208777666}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: -17, z: 0}
+  m_LocalPosition: {x: 18.98, y: -4.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -275,7 +275,7 @@ GameObject:
   - component: {fileID: 597556215}
   - component: {fileID: 597556218}
   - component: {fileID: 597556217}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -882,7 +882,7 @@ GameObject:
   - component: {fileID: 674516594}
   - component: {fileID: 674516593}
   - component: {fileID: 674516591}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: World
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3700,7 +3700,7 @@ GameObject:
   - component: {fileID: 1627637624}
   - component: {fileID: 1627637623}
   m_Layer: 0
-  m_Name: Player Spawn Top
+  m_Name: Player Spawn Top (-2, 17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3726,7 +3726,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1627637622}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 17, z: 0}
+  m_LocalPosition: {x: 17.9, y: 3.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
