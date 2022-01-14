@@ -56,11 +56,10 @@ public class PlayerCombat : NetworkBehaviour
     [ClientRpc]
     private void RpcRotateWeapon(Vector3 target)
     {
-        if (!weapon)
+        if (weapon)
         {
-            return;
+            weapon.RotateWeapon(target);
         }
-        weapon.RotateWeapon(target);
     }
     [Command(requiresAuthority = false)]
     public void CmdSetWeapon(int weaponIndex)
@@ -78,7 +77,7 @@ public class PlayerCombat : NetworkBehaviour
     {
         if (weapon)
         {
-            // Problem where Start() will run before the RPC can run SetWeapon, causing an inactive weapon to spawn visually on other clients.
+            // Fixes problem where Start() will run before the RPC can run SetWeapon, causing an inactive weapon to spawn visually on other clients.
             return;
         }
         var weaponObj = Instantiate(CustomNetworkManager.singleton.weapons[weaponIndex], transform.position, Quaternion.identity, transform);

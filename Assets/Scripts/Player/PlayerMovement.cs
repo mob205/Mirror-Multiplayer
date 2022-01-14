@@ -16,7 +16,8 @@ public class PlayerMovement : NetworkBehaviour
     }
     public override void OnStartLocalPlayer()
     {
-        PlayerCamera.Instance.SetFollowTarget(this);
+        var cam = FindObjectOfType<PlayerCamera>();
+        if (cam) { cam.SetFollowTarget(gameObject); }
     }
     private void Update()
     {

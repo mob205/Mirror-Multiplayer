@@ -1,10 +1,11 @@
+using Mirror;
 using UnityEngine;
 
-public class PlayerCamera : Singleton<PlayerCamera>
+public class PlayerCamera : MonoBehaviour
 {
     [SerializeField] private float smoothing = 0.1f;
     
-    private PlayerMovement linkedPlayer;
+    private GameObject linkedPlayer;
 
     private void FixedUpdate()
     {
@@ -18,7 +19,7 @@ public class PlayerCamera : Singleton<PlayerCamera>
         transform.position = Vector3.Lerp(transform.position, 
             new Vector3(linkedPlayer.transform.position.x, linkedPlayer.transform.position.y, transform.position.z), smoothing);
     }
-    public void SetFollowTarget(PlayerMovement player)
+    public void SetFollowTarget(GameObject player)
     {
         linkedPlayer = player;
         // Center the camera when the target is set
