@@ -7,11 +7,19 @@ public class PlayerCombat : NetworkBehaviour
     private Camera mainCam;
     private WeaponController weapon;
 
-    [SyncVar(hook = nameof(SetWeapon))] public int currentWeaponIndex;
+    [SyncVar] public int currentWeaponIndex;
     void Awake()
     {
         mainCam = Camera.main;
         weapon = GetComponentInChildren<WeaponController>();
+    }
+    public void Start()
+    {
+        // Newly joining clients set and display the weapons of already joined players
+        if (!weapon)
+        {
+            SetWeapon(currentWeaponIndex);
+        }
     }
     private void Update()
     {
@@ -23,14 +31,6 @@ public class PlayerCombat : NetworkBehaviour
             {
                 CmdFire(target);
             }
-        }
-    }
-    public override void OnStartClient()
-    {
-        // New clients set the weapon for the player objects in their scene when joining
-        if (!weapon)
-        {
-            SetWeapon(0, currentWeaponIndex);
         }
     }
     [Command]
@@ -56,15 +56,31 @@ public class PlayerCombat : NetworkBehaviour
     [ClientRpc]
     private void RpcRotateWeapon(Vector3 target)
     {
+        if (!weapon)
+        {
+            return;
+        }
         weapon.RotateWeapon(target);
     }
     [Command(requiresAuthority = false)]
     public void CmdSetWeapon(int weaponIndex)
     {
         currentWeaponIndex = weaponIndex;
+        RpcSetWeapon(currentWeaponIndex);
     }
-    private void SetWeapon(int oldIndex, int weaponIndex)
+    [ClientRpc]
+    private void RpcSetWeapon(int weaponIndex)
     {
+        SetWeapon(weaponIndex);
+    }
+    [Client]
+    private void SetWeapon(int weaponIndex)
+    {
+        if (weapon)
+        {
+            // Problem where Start() will run before the RPC can run SetWeapon, causing an inactive weapon to spawn visually on other clients.
+            return;
+        }
         var weaponObj = Instantiate(CustomNetworkManager.singleton.weapons[weaponIndex], transform.position, Quaternion.identity, transform);
         weapon = weaponObj.GetComponent<WeaponController>();
     }

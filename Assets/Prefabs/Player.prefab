@@ -119,6 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
+  currentWeaponIndex: 0
 --- !u!114 &-5624748986249588382
 MonoBehaviour:
   m_ObjectHideFlags: 0
