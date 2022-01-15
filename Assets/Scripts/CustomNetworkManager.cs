@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 using UnityEngine.SceneManagement;
+using System;
+using Random = UnityEngine.Random;
 
 public class CustomNetworkManager : NetworkManager
 {
     [Scene] [SerializeField] string upgradeScene;
+    [SerializeField] GameObject upgradePlayerPrefab;
+
     public GameObject[] weapons;
     new public static CustomNetworkManager singleton;
+
+    //public static event Action OnPlayerAdded;
 
     public override void Awake()
     {
@@ -35,6 +41,15 @@ public class CustomNetworkManager : NetworkManager
             base.OnServerAddPlayer(conn);
             conn.identity.GetComponent<PlayerCombat>().CmdSetWeapon(Random.Range(0, weapons.Length));
         }
+        else
+        {
+            GameObject player = Instantiate(upgradePlayerPrefab);
+            NetworkServer.AddPlayerForConnection(conn, player);
+        }
+    }
+    public override void OnClientSceneChanged(NetworkConnection conn)
+    {
+        base.OnClientSceneChanged(conn);
     }
 }
 

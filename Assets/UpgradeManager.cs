@@ -8,25 +8,26 @@ public class UpgradeManager : NetworkBehaviour
 {
     [SerializeField] List<int> upgradePaths = new List<int>() { 3, 2 };
 
-    private static readonly Dictionary<string, UpgradeSlot> upgradeIDs = new Dictionary<string, UpgradeSlot>();
+    private static readonly Dictionary<string, GameObject> upgradesByID = new Dictionary<string, GameObject>();
+    private readonly Dictionary<string, UpgradeSlot> slotsByID = new Dictionary<string, UpgradeSlot>();
 
-    Dictionary<NetworkConnection, string[]> serverPlayerUpgrades = new Dictionary<NetworkConnection, string[]>();
+    Dictionary<NetworkConnection, List<string>> serverPlayerUpgrades = new Dictionary<NetworkConnection, List<string>>();
     //string[][] currentUpgrades;
-    // Start is called before the first frame update
-    public override void OnStartClient()
+    public void Initialize()
     {
-        Debug.Log("t");
-        InitializeUpgradeDictionary();
-        //InitializeArray();
+        Debug.Log("Initializing");
+        InitializeDictionaries();
         GetAvailableUpgrades();
     }
-    private void InitializeUpgradeDictionary()
+
+    private void InitializeDictionaries()
     {
-        if (upgradeIDs.Count == 0)
+        if (upgradesByID.Count == 0)
         {
             foreach (var child in transform.GetComponentsInChildren<UpgradeSlot>())
             {
-                upgradeIDs.Add(child.upgradeID, child);
+                upgradesByID.Add(child.upgradeID, child.upgradePrefab);
+                slotsByID.Add(child.upgradeID, child);
             }
         }
     }
@@ -39,30 +40,30 @@ public class UpgradeManager : NetworkBehaviour
     //    }
     //}
     [Command(requiresAuthority = false)]
-    private void GetAvailableUpgrades()
+    private void GetAvailableUpgrades(NetworkConnectionToClient conn = null)
     {
         var availableUpgrades = new List<string>();
-        if (serverPlayerUpgrades.ContainsKey(connectionToClient))
+        if (serverPlayerUpgrades.ContainsKey(conn))
         {
             Debug.Log("unimplemented");
         }
         else
         {
-            serverPlayerUpgrades.Add(connectionToClient, null);
+            serverPlayerUpgrades.Add(conn, new List<string>());
             foreach (Transform child in transform)
             {
                 availableUpgrades.Add(child.GetComponent<UpgradeSlot>().upgradeID);
             }
         }
-        DisplayAvailableUpgrades(connectionToClient, availableUpgrades.ToArray());
+        TargetDisplayUpgrades(conn, availableUpgrades.ToArray());
     }
     [TargetRpc]
-    private void DisplayAvailableUpgrades(NetworkConnection target, string[] availableUpgrades)
+    private void TargetDisplayUpgrades(NetworkConnection target, string[] availableUpgrades)
     {
-        Debug.Log(availableUpgrades);
+        Debug.Log("Last client received upgrade: " + availableUpgrades[availableUpgrades.Length - 1]);
     }
     public static GameObject GetUpgradeFromId(string id)
     {
-        return upgradeIDs[id].upgradePrefab;
+        return upgradesByID[id];
     }
 }

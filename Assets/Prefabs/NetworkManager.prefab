@@ -51,7 +51,7 @@ MonoBehaviour:
   autoStartServerBuild: 1
   serverTickRate: 30
   offlineScene: Assets/Scenes/Main Menu.unity
-  onlineScene: Assets/Scenes/Scene.unity
+  onlineScene: 
   transport: {fileID: 6174048691559581987}
   networkAddress: localhost
   maxConnections: 4
@@ -61,7 +61,9 @@ MonoBehaviour:
   playerSpawnMethod: 1
   spawnPrefabs:
   - {fileID: 4227163515276197113, guid: cd9da55cc72e1c747864395d27ec3e16, type: 3}
+  - {fileID: 6704529205651473868, guid: 70c14a234431b584bb824699da7c06eb, type: 3}
   upgradeScene: Assets/Scenes/Upgrade Menu.unity
+  upgradePlayerPrefab: {fileID: 6704529205651473868, guid: 70c14a234431b584bb824699da7c06eb, type: 3}
   weapons:
   - {fileID: 3722219681256278223, guid: a13a97aaff3343a4da6bfa1783e8f607, type: 3}
   - {fileID: 4630824529542189006, guid: 744a388a44078544cab8735292315cb7, type: 3}
