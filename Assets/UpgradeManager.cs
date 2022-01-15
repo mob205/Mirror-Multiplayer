@@ -7,7 +7,7 @@ using System.Linq;
 public class UpgradeManager : NetworkBehaviour
 {
     [SerializeField] List<int> upgradePaths = new List<int>() { 3, 2 };
-    [SerializeField] List<UpgradeSlot> testUpgrades;
+    //[SerializeField] List<UpgradeSlot> testUpgrades;
 
     private static readonly Dictionary<string, GameObject> upgradesByID = new Dictionary<string, GameObject>();
     private readonly Dictionary<string, UpgradeSlot> slotsByID = new Dictionary<string, UpgradeSlot>();
@@ -18,23 +18,17 @@ public class UpgradeManager : NetworkBehaviour
     {
         InitializeDictionaries();
         CmdGetAvailableUpgrades();
-        DebugRequestUpgrades();
+        //DebugRequestUpgrades();
     }
-    private void DebugRequestUpgrades()
-    {
-        var testUpgradeIDs = new List<string>();
-        foreach(var upgrade in testUpgrades)
-        {
-            testUpgradeIDs.Add(upgrade.upgradeID);
-        }
-        CmdDebugAddUpgrades(testUpgradeIDs.ToArray());
-        CmdGetAvailableUpgrades();
-    }
-    [Command]
-    private void CmdDebugAddUpgrades(string[] upgrades, NetworkConnectionToClient conn = null)
-    {
-        serverPlayerUpgrades[conn] = upgrades.ToList();
-    }
+    //private void DebugRequestUpgrades()
+    //{
+    //    var testUpgradeIDs = new List<string>();
+    //    foreach(var upgrade in testUpgrades)
+    //    {
+    //        testUpgradeIDs.Add(upgrade.upgradeID);
+    //    }
+    //    CmdGetAvailableUpgrades(testUpgradeIDs.ToArray());
+    //}
     private void InitializeDictionaries()
     {
         // Walk through the UpgradeManager's children hierarchy to get the dictionaries
@@ -48,8 +42,9 @@ public class UpgradeManager : NetworkBehaviour
         }
     }
     [Command(requiresAuthority = false)]
-    private void CmdGetAvailableUpgrades(NetworkConnectionToClient conn = null)
+    private void CmdGetAvailableUpgrades(/*string[] testUpgrades,*/ NetworkConnectionToClient conn = null)
     {
+        //serverPlayerUpgrades[conn] = testUpgrades.ToList();
         var availableUpgrades = new List<string>();
         if (!serverPlayerUpgrades.ContainsKey(conn))
         {
@@ -57,7 +52,7 @@ public class UpgradeManager : NetworkBehaviour
             serverPlayerUpgrades.Add(conn, new List<string>());
             serverPlayerAvailableUpgrades.Add(conn, new List<string>());
         }
-        if (serverPlayerUpgrades.Count > 0)
+        if (serverPlayerUpgrades[conn].Count > 0)
         {
             var playerPaths = SortIntoPaths(serverPlayerUpgrades[conn]);
             var effectivePath = 0;
@@ -142,18 +137,6 @@ public class UpgradeManager : NetworkBehaviour
         {
             Debug.LogError("Player has more paths than allowed!");
         }
-        // Debug logging
-        //var counter = 0;
-        //for (int i = 0; i < output.Count; i++)
-        //{
-        //    Debug.Log($"Path {i}:");
-        //    counter += output[i].Count;
-        //    foreach (var upgrade in output[i])
-        //    {
-        //        Debug.Log(upgrade);
-        //    }
-        //}
-        //Debug.Log(counter);
         return output;
     }
     [Command]
@@ -162,7 +145,7 @@ public class UpgradeManager : NetworkBehaviour
         if (serverPlayerAvailableUpgrades[conn].Contains(upgradeID))
         {
             serverPlayerUpgrades[conn].Add(upgradeID);
-            CmdGetAvailableUpgrades(conn);
+            //CmdGetAvailableUpgrades(conn);
             Debug.Log("successfully added upgrade.");
         }
         else
@@ -173,7 +156,7 @@ public class UpgradeManager : NetworkBehaviour
     [TargetRpc]
     private void TargetDisplayUpgrades(NetworkConnection target, string[] availableUpgrades)
     {
-        foreach(var upgrade in availableUpgrades)
+        foreach (var upgrade in availableUpgrades)
         {
             Debug.Log(upgrade);
         }
