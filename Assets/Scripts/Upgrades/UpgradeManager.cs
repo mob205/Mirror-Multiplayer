@@ -10,12 +10,15 @@ public class UpgradeManager : NetworkBehaviour
     //[SerializeField] List<UpgradeSlot> testUpgrades;
 
     private static readonly Dictionary<string, GameObject> upgradesByID = new Dictionary<string, GameObject>();
-    private readonly Dictionary<string, UpgradeSlot> slotsByID = new Dictionary<string, UpgradeSlot>();
+    private static readonly Dictionary<string, UpgradeSlot> slotsByID = new Dictionary<string, UpgradeSlot>();
 
     Dictionary<NetworkConnection, List<string>> serverPlayerUpgrades = new Dictionary<NetworkConnection, List<string>>();
     Dictionary<NetworkConnection, List<string>> serverPlayerAvailableUpgrades = new Dictionary<NetworkConnection, List<string>>();
+
+    private UpgradeUI ui;
     public void Initialize()
     {
+        ui = FindObjectOfType<UpgradeUI>();
         InitializeDictionaries();
         CmdGetAvailableUpgrades();
         //DebugRequestUpgrades();
@@ -48,19 +51,19 @@ public class UpgradeManager : NetworkBehaviour
         var availableUpgrades = new List<string>();
         if (!serverPlayerUpgrades.ContainsKey(conn))
         {
-            // First time player request upgrades
+            // First time player requests upgrades
             serverPlayerUpgrades.Add(conn, new List<string>());
             serverPlayerAvailableUpgrades.Add(conn, new List<string>());
         }
         if (serverPlayerUpgrades[conn].Count > 0)
         {
             var playerPaths = SortIntoPaths(serverPlayerUpgrades[conn]);
-            var effectivePath = 0;
+            var currentMaxPath = 0;
             for(int i = 0; i < playerPaths.Count; i++)
             {
                 // Get the next upgrade in each path, if the path is not at max as defined by upgradePaths.
                 var path = playerPaths[i];
-                if (path.Count < upgradePaths[effectivePath])
+                if (path.Count < upgradePaths[currentMaxPath])
                 {
                     var lastPathUpgrade = slotsByID[path[path.Count - 1]];
                     availableUpgrades.Add(lastPathUpgrade.nextUpgradeID);
@@ -69,7 +72,7 @@ public class UpgradeManager : NetworkBehaviour
                 {
                     // If playerPath's biggest path is not bigger than the greatest allowed path by
                     // upgradePaths, then it should not use the next path in the next iteration. 
-                    effectivePath++;
+                    currentMaxPath++;
                 }
             }
             // Make other level 1 upgrades available if all paths are not yet selected
@@ -156,13 +159,14 @@ public class UpgradeManager : NetworkBehaviour
     [TargetRpc]
     private void TargetDisplayUpgrades(NetworkConnection target, string[] availableUpgrades)
     {
-        foreach (var upgrade in availableUpgrades)
-        {
-            Debug.Log(upgrade);
-        }
+        ui.DisplayUpgrades(availableUpgrades);
     }
-    public static GameObject GetUpgradeFromId(string id)
+    public static GameObject GetUpgradeFromID(string id)
     {
         return upgradesByID[id];
+    }
+    public UpgradeSlot GetSlotFromID(string id)
+    {
+        return slotsByID[id];
     }
 }
