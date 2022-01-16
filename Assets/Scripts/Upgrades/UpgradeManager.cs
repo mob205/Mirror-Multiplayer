@@ -59,7 +59,7 @@ public class UpgradeManager : NetworkBehaviour
         {
             var playerPaths = SortIntoPaths(serverPlayerUpgrades[conn]);
             var currentMaxPath = 0;
-            for(int i = 0; i < playerPaths.Count; i++)
+            for (int i = 0; i < playerPaths.Count; i++)
             {
                 // Get the next upgrade in each path, if the path is not at max as defined by upgradePaths.
                 var path = playerPaths[i];
@@ -76,7 +76,7 @@ public class UpgradeManager : NetworkBehaviour
                 }
             }
             // Make other level 1 upgrades available if all paths are not yet selected
-            if(playerPaths.Count < upgradePaths.Count)
+            if (playerPaths.Count < upgradePaths.Count)
             {
                 // Class upgrade should always be the player's first upgrade.
                 var classUpgrade = serverPlayerUpgrades[conn][0];
@@ -85,7 +85,7 @@ public class UpgradeManager : NetworkBehaviour
                     // Only make the upgrade available if it's not already one of the player's upgrades.
                     var isSelected = false;
                     var basicUpgrade = basicUpgradeSlot.GetComponent<UpgradeSlot>().upgradeID;
-                    foreach(var path in playerPaths)
+                    foreach (var path in playerPaths)
                     {
                         if (path.Contains(basicUpgrade))
                         {
@@ -113,19 +113,19 @@ public class UpgradeManager : NetworkBehaviour
     private List<List<string>> SortIntoPaths(List<string> upgrades)
     {
         var output = new List<List<string>>();
-        foreach(var upgrade in upgrades)
+        foreach (var upgrade in upgrades)
         {
             var slot = slotsByID[upgrade];
             // Upgrade list is in order of purchase, so level 1's should always come first.
             // Level 1 upgrades are a new path. Level 0 class upgrades should be ignored.
-            if(slot.level == 1)
+            if (slot.level == 1)
             {
                 output.Add(new List<string>() { upgrade });
             }
             // Level 2 and 3 upgrades should be added to the path with its parent upgrade.
             else if (slot.level >= 1)
             {
-                foreach(var path in output)
+                foreach (var path in output)
                 {
                     if (path.Contains(slot.prereqUpgradeID))
                     {
@@ -136,25 +136,30 @@ public class UpgradeManager : NetworkBehaviour
         }
         // Sort by length of path. Level 3 path before Level 2, etc.
         output = output.OrderByDescending(l => l.Count()).ToList();
-        if(output.Count > upgradePaths.Count)
+        if (output.Count > upgradePaths.Count)
         {
             Debug.LogError("Player has more paths than allowed!");
         }
         return output;
     }
-    [Command]
-    public void RequestUpgrade(string upgradeID, NetworkConnectionToClient conn = null)
+    [Command(requiresAuthority = false)]
+    public void CmdRequestAddUpgrade(string upgradeID, NetworkConnectionToClient conn = null)
     {
         if (serverPlayerAvailableUpgrades[conn].Contains(upgradeID))
         {
             serverPlayerUpgrades[conn].Add(upgradeID);
-            //CmdGetAvailableUpgrades(conn);
-            Debug.Log("successfully added upgrade.");
+            TargetUpdateAvailableUpgrades(conn);
         }
         else
         {
-            Debug.Log("requested an unavailable upgrade.");
+            Debug.Log(conn + " requested an unavailable upgrade.");
         }
+    }
+    [TargetRpc]
+    private void TargetUpdateAvailableUpgrades(NetworkConnection target)
+    {
+        // Can't go straight from CmdRequestAddUpgrade to CmdGetAvailableUpgrades because the connection to client is lost.
+        CmdGetAvailableUpgrades();
     }
     [TargetRpc]
     private void TargetDisplayUpgrades(NetworkConnection target, string[] availableUpgrades)

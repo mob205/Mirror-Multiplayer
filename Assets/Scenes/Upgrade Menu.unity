@@ -239,6 +239,7 @@ MonoBehaviour:
   nextUpgradeID: 
   description: 
   icon: {fileID: 0}
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &484946583
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,6 +291,7 @@ MonoBehaviour:
   nextUpgradeID: 
   description: 
   icon: {fileID: 0}
+  color: {r: 0.6981132, g: 0.48336005, b: 0.25355998, a: 1}
 --- !u!1 &499024789
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,6 +343,7 @@ MonoBehaviour:
   nextUpgradeID: 
   description: 
   icon: {fileID: 0}
+  color: {r: 0.32175478, g: 0.2507565, b: 0.3301887, a: 1}
 --- !u!224 &526231829 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5273890818055083683, guid: 7535709e44217d248b893323894713b6, type: 3}
@@ -399,6 +402,7 @@ MonoBehaviour:
   nextUpgradeID: 
   description: shining armor. sword. you know the deal
   icon: {fileID: 0}
+  color: {r: 0.6981132, g: 0.6289605, b: 0.6289605, a: 1}
 --- !u!1001 &580617896
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -509,6 +513,7 @@ MonoBehaviour:
   nextUpgradeID: 
   description: stab stab stab
   icon: {fileID: 0}
+  color: {r: 0.4811321, g: 0.2746084, b: 0.28451037, a: 1}
 --- !u!1 &851306182
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,6 +565,7 @@ MonoBehaviour:
   nextUpgradeID: 
   description: 
   icon: {fileID: 0}
+  color: {r: 0.6981132, g: 0.20118797, b: 0.19428623, a: 1}
 --- !u!1 &880408607
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,6 +700,7 @@ MonoBehaviour:
   nextUpgradeID: 
   description: 
   icon: {fileID: 0}
+  color: {r: 0.6981132, g: 0.48336005, b: 0.25355998, a: 1}
 --- !u!1 &1069566274
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,6 +753,7 @@ MonoBehaviour:
 
 '
   icon: {fileID: 0}
+  color: {r: 0.754717, g: 0.588863, b: 0.14117648, a: 1}
 --- !u!1 &1081395771
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,6 +805,7 @@ MonoBehaviour:
   nextUpgradeID: 
   description: 
   icon: {fileID: 0}
+  color: {r: 0.6981132, g: 0.20118797, b: 0.19428623, a: 1}
 --- !u!1 &1137206001
 GameObject:
   m_ObjectHideFlags: 0
@@ -847,6 +856,7 @@ MonoBehaviour:
   nextUpgradeID: 
   description: MAGIC AND MAYHEM PFOOOOFHSHDPFSOJ
   icon: {fileID: 0}
+  color: {r: 0.45913768, g: 0.14702742, b: 0.5283019, a: 1}
 --- !u!1001 &1253153653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -959,6 +969,7 @@ MonoBehaviour:
   nextUpgradeID: 
   description: 
   icon: {fileID: 0}
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1383503333
 GameObject:
   m_ObjectHideFlags: 0
@@ -1077,6 +1088,7 @@ MonoBehaviour:
   nextUpgradeID: 
   description: 
   icon: {fileID: 0}
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1410341063
 GameObject:
   m_ObjectHideFlags: 0
@@ -1127,6 +1139,7 @@ MonoBehaviour:
   nextUpgradeID: 
   description: 
   icon: {fileID: 0}
+  color: {r: 0.6981132, g: 0.48336005, b: 0.25355998, a: 1}
 --- !u!1 &1541078052
 GameObject:
   m_ObjectHideFlags: 0
@@ -1260,6 +1273,7 @@ MonoBehaviour:
   nextUpgradeID: 
   description: 
   icon: {fileID: 0}
+  color: {r: 0.6981132, g: 0.20118797, b: 0.19428623, a: 1}
 --- !u!1 &1916848692
 GameObject:
   m_ObjectHideFlags: 0
@@ -1311,6 +1325,7 @@ MonoBehaviour:
   nextUpgradeID: 
   description: 
   icon: {fileID: 0}
+  color: {r: 0.32175478, g: 0.2507565, b: 0.3301887, a: 1}
 --- !u!1 &1917530445
 GameObject:
   m_ObjectHideFlags: 0
@@ -1361,6 +1376,7 @@ MonoBehaviour:
   nextUpgradeID: 
   description: 
   icon: {fileID: 0}
+  color: {r: 0.32175478, g: 0.2507565, b: 0.3301887, a: 1}
 --- !u!1001 &7560750405187656218
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1368,13 +1384,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5273890818055083683, guid: 7535709e44217d248b893323894713b6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 65
+      objectReference: {fileID: 0}
     - target: {fileID: 7560750404394873081, guid: 7535709e44217d248b893323894713b6, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 880408609}
     - target: {fileID: 7560750404394873081, guid: 7535709e44217d248b893323894713b6, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
-      value: 1
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 7560750404394873082, guid: 7535709e44217d248b893323894713b6, type: 3}
       propertyPath: m_Name
@@ -1475,6 +1495,74 @@ PrefabInstance:
     - target: {fileID: 7560750404394873087, guid: 7535709e44217d248b893323894713b6, type: 3}
       propertyPath: displayOffset
       value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 7560750404394873087, guid: 7535709e44217d248b893323894713b6, type: 3}
+      propertyPath: colors.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7560750404394873087, guid: 7535709e44217d248b893323894713b6, type: 3}
+      propertyPath: colors.Array.data[0].a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7560750404394873087, guid: 7535709e44217d248b893323894713b6, type: 3}
+      propertyPath: colors.Array.data[0].b
+      value: 0.4060658
+      objectReference: {fileID: 0}
+    - target: {fileID: 7560750404394873087, guid: 7535709e44217d248b893323894713b6, type: 3}
+      propertyPath: colors.Array.data[0].g
+      value: 0.7264151
+      objectReference: {fileID: 0}
+    - target: {fileID: 7560750404394873087, guid: 7535709e44217d248b893323894713b6, type: 3}
+      propertyPath: colors.Array.data[0].r
+      value: 0.4008989
+      objectReference: {fileID: 0}
+    - target: {fileID: 7560750404394873087, guid: 7535709e44217d248b893323894713b6, type: 3}
+      propertyPath: colors.Array.data[1].a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7560750404394873087, guid: 7535709e44217d248b893323894713b6, type: 3}
+      propertyPath: colors.Array.data[1].b
+      value: 0.33090067
+      objectReference: {fileID: 0}
+    - target: {fileID: 7560750404394873087, guid: 7535709e44217d248b893323894713b6, type: 3}
+      propertyPath: colors.Array.data[1].g
+      value: 0.33090067
+      objectReference: {fileID: 0}
+    - target: {fileID: 7560750404394873087, guid: 7535709e44217d248b893323894713b6, type: 3}
+      propertyPath: colors.Array.data[1].r
+      value: 0.41509432
+      objectReference: {fileID: 0}
+    - target: {fileID: 7560750404394873087, guid: 7535709e44217d248b893323894713b6, type: 3}
+      propertyPath: colors.Array.data[2].a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7560750404394873087, guid: 7535709e44217d248b893323894713b6, type: 3}
+      propertyPath: colors.Array.data[2].b
+      value: 0.15895337
+      objectReference: {fileID: 0}
+    - target: {fileID: 7560750404394873087, guid: 7535709e44217d248b893323894713b6, type: 3}
+      propertyPath: colors.Array.data[2].g
+      value: 0.20902447
+      objectReference: {fileID: 0}
+    - target: {fileID: 7560750404394873087, guid: 7535709e44217d248b893323894713b6, type: 3}
+      propertyPath: colors.Array.data[2].r
+      value: 0.7169812
+      objectReference: {fileID: 0}
+    - target: {fileID: 7560750404394873087, guid: 7535709e44217d248b893323894713b6, type: 3}
+      propertyPath: colors.Array.data[3].a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7560750404394873087, guid: 7535709e44217d248b893323894713b6, type: 3}
+      propertyPath: colors.Array.data[3].b
+      value: 0.20803669
+      objectReference: {fileID: 0}
+    - target: {fileID: 7560750404394873087, guid: 7535709e44217d248b893323894713b6, type: 3}
+      propertyPath: colors.Array.data[3].g
+      value: 0.6154084
+      objectReference: {fileID: 0}
+    - target: {fileID: 7560750404394873087, guid: 7535709e44217d248b893323894713b6, type: 3}
+      propertyPath: colors.Array.data[3].r
+      value: 0.8018868
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7535709e44217d248b893323894713b6, type: 3}
