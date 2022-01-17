@@ -15,7 +15,7 @@ public class UpgradeSlot : MonoBehaviour
     [TextArea] public string description;
     public Sprite icon;
     public Color color;
-    void Start()
+    void Awake()
     {
         var parentSlot = transform.parent.GetComponent<UpgradeSlot>();
         if (parentSlot)

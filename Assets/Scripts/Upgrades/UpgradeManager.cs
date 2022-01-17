@@ -10,10 +10,12 @@ public class UpgradeManager : NetworkBehaviour
     //[SerializeField] List<UpgradeSlot> testUpgrades;
 
     private static readonly Dictionary<string, GameObject> upgradesByID = new Dictionary<string, GameObject>();
-    private static readonly Dictionary<string, UpgradeSlot> slotsByID = new Dictionary<string, UpgradeSlot>();
+    private readonly Dictionary<string, UpgradeSlot> slotsByID = new Dictionary<string, UpgradeSlot>();
 
-    Dictionary<NetworkConnection, List<string>> serverPlayerUpgrades = new Dictionary<NetworkConnection, List<string>>();
-    Dictionary<NetworkConnection, List<string>> serverPlayerAvailableUpgrades = new Dictionary<NetworkConnection, List<string>>();
+    private static Dictionary<NetworkConnection, List<string>> serverPlayerUpgrades = new Dictionary<NetworkConnection, List<string>>();
+    private static Dictionary<NetworkConnection, List<string>> serverPlayerAvailableUpgrades = new Dictionary<NetworkConnection, List<string>>();
+
+    public static string[] ClientUpgrades { get; private set; } = new string[0];
 
     private UpgradeUI ui;
     public void Initialize()
@@ -34,14 +36,15 @@ public class UpgradeManager : NetworkBehaviour
     //}
     private void InitializeDictionaries()
     {
+        var hasInitialized = upgradesByID.Count > 0;
         // Walk through the UpgradeManager's children hierarchy to get the dictionaries
-        if (upgradesByID.Count == 0)
+        foreach (var child in transform.GetComponentsInChildren<UpgradeSlot>())
         {
-            foreach (var child in transform.GetComponentsInChildren<UpgradeSlot>())
+            if (!hasInitialized)
             {
                 upgradesByID.Add(child.upgradeID, child.upgradePrefab);
-                slotsByID.Add(child.upgradeID, child);
             }
+            slotsByID.Add(child.upgradeID, child);
         }
     }
     [Command(requiresAuthority = false)]
@@ -81,7 +84,6 @@ public class UpgradeManager : NetworkBehaviour
         serverPlayerAvailableUpgrades[conn] = availableUpgrades;
         TargetDisplayUpgrades(conn, availableUpgrades.ToArray());
     }
-
     private List<string> GetNextUpgrades(List<List<string>> playerPaths)
     {
         var output = new List<string>();
@@ -178,11 +180,12 @@ public class UpgradeManager : NetworkBehaviour
         if (serverPlayerAvailableUpgrades[conn].Contains(upgradeID))
         {
             serverPlayerUpgrades[conn].Add(upgradeID);
+            TargetUpdateClientArray(conn, serverPlayerUpgrades[conn].ToArray());
             TargetUpdateAvailableUpgrades(conn);
         }
         else
         {
-            Debug.Log(conn + " requested an unavailable upgrade.");
+            Debug.LogError(conn + " requested an unavailable upgrade.");
         }
     }
     [TargetRpc]
@@ -195,6 +198,11 @@ public class UpgradeManager : NetworkBehaviour
     private void TargetDisplayUpgrades(NetworkConnection target, string[] availableUpgrades)
     {
         ui.DisplayUpgrades(availableUpgrades);
+    }
+    [TargetRpc]
+    private void TargetUpdateClientArray(NetworkConnection target, string[] upgrades)
+    {
+        ClientUpgrades = upgrades;
     }
     public static GameObject GetUpgradeFromID(string id)
     {
