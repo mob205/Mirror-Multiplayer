@@ -58,48 +58,17 @@ public class UpgradeManager : NetworkBehaviour
         if (serverPlayerUpgrades[conn].Count > 0)
         {
             var playerPaths = SortIntoPaths(serverPlayerUpgrades[conn]);
-            var currentMaxPath = 0;
-            for (int i = 0; i < playerPaths.Count; i++)
-            {
-                // Get the next upgrade in each path, if the path is not at max as defined by upgradePaths.
-                var path = playerPaths[i];
-                if (path.Count < upgradePaths[currentMaxPath])
-                {
-                    var lastPathUpgrade = slotsByID[path[path.Count - 1]];
-                    availableUpgrades.Add(lastPathUpgrade.nextUpgradeID);
-                }
-                else
-                {
-                    // If playerPath's biggest path is not equal to the greatest allowed path by
-                    // upgradePaths, then it should not use the next path size in the next iteration. 
-                    currentMaxPath++;
-                }
-            }
+            availableUpgrades.AddRange(GetNextUpgrades(playerPaths));
+
+            // Class upgrade should always be the player's first upgrade.
             var classUpgrade = serverPlayerUpgrades[conn][0];
-            // Make other level 1 upgrades available if all paths are not yet selected
             if (playerPaths.Count < upgradePaths.Count)
             {
-                // Class upgrade should always be the player's first upgrade.
-                foreach (Transform basicUpgradeSlot in slotsByID[classUpgrade].transform)
-                {
-                    // Only make the upgrade available if it's not already one of the player's upgrades.
-                    var isSelected = false;
-                    var basicUpgrade = basicUpgradeSlot.GetComponent<UpgradeSlot>().upgradeID;
-                    foreach (var path in playerPaths)
-                    {
-                        if (path.Contains(basicUpgrade))
-                        {
-                            isSelected = true;
-                        }
-                    }
-                    if (!isSelected)
-                    {
-                        availableUpgrades.Add(basicUpgrade);
-                    }
-                }
+                availableUpgrades.AddRange(GetBasicUpgrades(playerPaths, classUpgrade));
             }
+
             // Sort the available upgrades so each path stays in the same place when buying upgrades
-            availableUpgrades = SortByHierarchy(availableUpgrades, classUpgrade);
+            availableUpgrades = OrderByHierarchy(availableUpgrades, classUpgrade);
         }
         else
         {
@@ -113,7 +82,53 @@ public class UpgradeManager : NetworkBehaviour
         TargetDisplayUpgrades(conn, availableUpgrades.ToArray());
     }
 
-    private List<string> SortByHierarchy(List<string> availableUpgrades, string classUpgrade)
+    private List<string> GetNextUpgrades(List<List<string>> playerPaths)
+    {
+        var output = new List<string>();
+        var currentMaxPath = 0;
+        for (int i = 0; i < playerPaths.Count; i++)
+        {
+            // Get the next upgrade in each path, if the path is not at max as defined by upgradePaths.
+            var path = playerPaths[i];
+            if (path.Count < upgradePaths[currentMaxPath])
+            {
+                var lastPathUpgrade = slotsByID[path[path.Count - 1]];
+                output.Add(lastPathUpgrade.nextUpgradeID);
+            }
+            else
+            {
+                // If playerPath's biggest path is not equal to the greatest allowed path by
+                // upgradePaths, then it should not use the next path size in the next iteration. 
+                currentMaxPath++;
+            }
+        }
+        return output;
+    }
+    // Gets the level 1 upgrades still available if not all paths are selected.
+    private List<string> GetBasicUpgrades(List<List<string>> playerPaths, string classUpgrade)
+    {
+        var output = new List<string>();
+        foreach (Transform basicUpgradeSlot in slotsByID[classUpgrade].transform)
+        {
+            // Only make the upgrade available if it's not already one of the player's upgrades.
+            var isSelected = false;
+            var basicUpgrade = basicUpgradeSlot.GetComponent<UpgradeSlot>().upgradeID;
+            foreach (var path in playerPaths)
+            {
+                if (path.Contains(basicUpgrade))
+                {
+                    isSelected = true;
+                }
+            }
+            if (!isSelected)
+            {
+                output.Add(basicUpgrade);
+            }
+        }
+        return output;
+    }
+    // Sorts the upgrades by the order they appear in the hierarchy so they can be displayed in a logical order.
+    private List<string> OrderByHierarchy(List<string> availableUpgrades, string classUpgrade)
     {
         var output = new List<string>();
         foreach (var child in slotsByID[classUpgrade].GetComponentsInChildren<UpgradeSlot>())
@@ -125,7 +140,6 @@ public class UpgradeManager : NetworkBehaviour
         }
         return output;
     }
-
     private List<List<string>> SortIntoPaths(List<string> upgrades)
     {
         var output = new List<List<string>>();
