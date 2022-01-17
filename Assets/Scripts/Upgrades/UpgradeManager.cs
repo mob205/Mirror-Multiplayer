@@ -70,16 +70,16 @@ public class UpgradeManager : NetworkBehaviour
                 }
                 else
                 {
-                    // If playerPath's biggest path is not bigger than the greatest allowed path by
-                    // upgradePaths, then it should not use the next path in the next iteration. 
+                    // If playerPath's biggest path is not equal to the greatest allowed path by
+                    // upgradePaths, then it should not use the next path size in the next iteration. 
                     currentMaxPath++;
                 }
             }
+            var classUpgrade = serverPlayerUpgrades[conn][0];
             // Make other level 1 upgrades available if all paths are not yet selected
             if (playerPaths.Count < upgradePaths.Count)
             {
                 // Class upgrade should always be the player's first upgrade.
-                var classUpgrade = serverPlayerUpgrades[conn][0];
                 foreach (Transform basicUpgradeSlot in slotsByID[classUpgrade].transform)
                 {
                     // Only make the upgrade available if it's not already one of the player's upgrades.
@@ -98,6 +98,8 @@ public class UpgradeManager : NetworkBehaviour
                     }
                 }
             }
+            // Sort the available upgrades so each path stays in the same place when buying upgrades
+            availableUpgrades = SortByHierarchy(availableUpgrades, classUpgrade);
         }
         else
         {
@@ -110,6 +112,20 @@ public class UpgradeManager : NetworkBehaviour
         serverPlayerAvailableUpgrades[conn] = availableUpgrades;
         TargetDisplayUpgrades(conn, availableUpgrades.ToArray());
     }
+
+    private List<string> SortByHierarchy(List<string> availableUpgrades, string classUpgrade)
+    {
+        var output = new List<string>();
+        foreach (var child in slotsByID[classUpgrade].GetComponentsInChildren<UpgradeSlot>())
+        {
+            if (availableUpgrades.Contains(child.upgradeID))
+            {
+                output.Add(child.upgradeID);
+            }
+        }
+        return output;
+    }
+
     private List<List<string>> SortIntoPaths(List<string> upgrades)
     {
         var output = new List<List<string>>();

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class UpgradeUI : MonoBehaviour
 {
@@ -22,28 +23,35 @@ public class UpgradeUI : MonoBehaviour
         }
         displayObjects.Clear();
     }
-    private Vector3 GetDisplayPos(int i, int total)
+    private Vector3[] GetDisplayPositions(int total)
     {
-        var x = 0f;
-        var displayOffset = 0f;
-        // If i is even, direction is 1. If it's odd, direction is -1.
-        var direction = 1 + 2*(i % 2 * -1);
-        if(total % 2 == 0)
+        var output = new List<Vector3>();
+        for(int i = 0; i < total; i++)
         {
-            // Evens alternate offset from the center
-            displayOffset = displayDist * .5f;
-            x = (displayDist * ((i / 2)) + displayOffset) * direction;
+            var x = 0f;
+            var displayOffset = 0f;
+            // If i is even, direction is 1. If it's odd, direction is -1.
+            var direction = 1 + 2 * (i % 2 * -1);
+            if (total % 2 == 0)
+            {
+                // Evens alternate offset from the center
+                displayOffset = displayDist * .5f;
+                x = (displayDist * ((i / 2)) + displayOffset) * direction;
+            }
+            else
+            {
+                // Odds start in the center and then alternate from center
+                x = (int)Mathf.Ceil(i / 2f) * displayDist * direction;
+            }
+            output.Add(new Vector3(x, displayCenter.localPosition.y));
         }
-        else
-        {
-            // Odds start in the center and then alternate from center
-            x = (int)Mathf.Ceil(i/2f) * displayDist * direction;
-        }
-        return new Vector3(x, displayCenter.position.y);
+        output = output.OrderBy(v => v.x).ToList();
+        return output.ToArray();
     }
     public void DisplayUpgrades(string[] upgrades)
     {
         ClearDisplay();
+        var positions = GetDisplayPositions(upgrades.Length);
         for (int i = 0; i < upgrades.Length; i++)
         {
             var upgrade = upgrades[i];
@@ -51,7 +59,7 @@ public class UpgradeUI : MonoBehaviour
             var displayObj = Instantiate(displayPrefab, transform);
             displayObjects.Add(displayObj);
 
-            displayObj.transform.localPosition = GetDisplayPos(i, upgrades.Length);
+            displayObj.transform.localPosition = positions[i];
             displayObj.nameText.text = upgradeSlot.name;
             displayObj.descText.text = upgradeSlot.description;
             displayObj.iconImage.sprite = upgradeSlot.icon;
