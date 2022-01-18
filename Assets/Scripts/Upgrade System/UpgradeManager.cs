@@ -9,13 +9,11 @@ public class UpgradeManager : NetworkBehaviour
     [SerializeField] List<int> upgradePaths = new List<int>() { 3, 2 };
     //[SerializeField] List<UpgradeSlot> testUpgrades;
 
-    private static readonly Dictionary<string, GameObject> upgradesByID = new Dictionary<string, GameObject>();
+    private static readonly Dictionary<string, MonoBehaviour> upgradesByID = new Dictionary<string, MonoBehaviour>();
     private readonly Dictionary<string, UpgradeSlot> slotsByID = new Dictionary<string, UpgradeSlot>();
 
     private static Dictionary<NetworkConnection, List<string>> serverPlayerUpgrades = new Dictionary<NetworkConnection, List<string>>();
     private static Dictionary<NetworkConnection, List<string>> serverPlayerAvailableUpgrades = new Dictionary<NetworkConnection, List<string>>();
-
-    public static string[] ClientUpgrades { get; private set; } = new string[0];
 
     private UpgradeUI ui;
     public void Initialize()
@@ -40,9 +38,9 @@ public class UpgradeManager : NetworkBehaviour
         // Walk through the UpgradeManager's children hierarchy to get the dictionaries
         foreach (var child in transform.GetComponentsInChildren<UpgradeSlot>())
         {
-            if (!hasInitialized)
+            if (!hasInitialized && child.upgradePrefab)
             {
-                upgradesByID.Add(child.upgradeID, child.upgradePrefab);
+                upgradesByID.Add(child.upgradeID, child.upgradePrefab.GetComponent<MonoBehaviour>());
             }
             slotsByID.Add(child.upgradeID, child);
         }
@@ -180,7 +178,6 @@ public class UpgradeManager : NetworkBehaviour
         if (serverPlayerAvailableUpgrades[conn].Contains(upgradeID))
         {
             serverPlayerUpgrades[conn].Add(upgradeID);
-            TargetUpdateClientArray(conn, serverPlayerUpgrades[conn].ToArray());
             TargetUpdateAvailableUpgrades(conn);
         }
         else
@@ -199,17 +196,16 @@ public class UpgradeManager : NetworkBehaviour
     {
         ui.DisplayUpgrades(availableUpgrades);
     }
-    [TargetRpc]
-    private void TargetUpdateClientArray(NetworkConnection target, string[] upgrades)
-    {
-        ClientUpgrades = upgrades;
-    }
-    public static GameObject GetUpgradeFromID(string id)
+    public static MonoBehaviour GetUpgradeFromID(string id)
     {
         return upgradesByID[id];
     }
     public UpgradeSlot GetSlotFromID(string id)
     {
         return slotsByID[id];
+    }
+    public static string[] GetUpgradesForConn(NetworkConnection conn)
+    {
+        return serverPlayerUpgrades[conn].ToArray();
     }
 }

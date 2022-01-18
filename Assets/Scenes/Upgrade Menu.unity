@@ -508,7 +508,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 0
   upgradeID: assassin_class
-  upgradePrefab: {fileID: 2475721546277421620, guid: 0bf9ecbdb9f10e741876b245ea4607af, type: 3}
+  upgradePrefab: {fileID: 5547909280838697522, guid: 545c00d383b49e24e92ead75b6aecbc8, type: 3}
   prereqUpgradeID: 
   nextUpgradeID: 
   description: stab stab stab

@@ -39,7 +39,6 @@ public class CustomNetworkManager : NetworkManager
         if(SceneManager.GetActiveScene().path != upgradeScene)
         {
             base.OnServerAddPlayer(conn);
-            conn.identity.GetComponent<PlayerUpgrades>().CmdAddUpgrades(UpgradeManager.ClientUpgrades);
             conn.identity.GetComponent<PlayerCombat>().CmdSetWeapon(Random.Range(0, weapons.Length));
         }
         else

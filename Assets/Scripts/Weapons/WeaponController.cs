@@ -15,10 +15,6 @@ public abstract class WeaponController : MonoBehaviour
         mainCam = Camera.main;
     }
 
-    public virtual void ClientFire()
-    {
-
-    }
     public virtual void RotateWeapon(Vector3 target)
     {
         transform.rotation = GetDirection(target);
@@ -42,5 +38,9 @@ public abstract class WeaponController : MonoBehaviour
         // Get rotation from the arctangent of displacement components
         float angle = Mathf.Atan2(y, x) * Mathf.Rad2Deg;
         return Quaternion.Euler(new Vector3(0, 0, angle));
+    }
+    public void ModifyDamage(float modifier)
+    {
+        damage *= modifier;
     }
 }
