@@ -13,14 +13,6 @@ public class PlayerCombat : NetworkBehaviour
         mainCam = Camera.main;
         weapon = GetComponentInChildren<WeaponController>();
     }
-    public void Start()
-    {
-        // Newly joining clients set and display the weapons of already joined players
-        if (!weapon)
-        {
-            SetWeapon(currentWeaponIndex);
-        }
-    }
     private void Update()
     {
         if (hasAuthority && weapon)
@@ -48,6 +40,7 @@ public class PlayerCombat : NetworkBehaviour
         weapon.SimulateFire(go, target);
     }
     // In the future, rotation may happen in the parent player object, not the weapon.
+    // Only z coordinate for rotation needs to pass through the network, not the entire Vector3.
     [Command]
     private void CmdRotateWeapon(Vector3 target)
     {
@@ -61,26 +54,9 @@ public class PlayerCombat : NetworkBehaviour
             weapon.RotateWeapon(target);
         }
     }
-    [Command(requiresAuthority = false)]
-    public void CmdSetWeapon(int weaponIndex)
+    // To be called locally by a Class Upgrade
+    public void SetWeapon(GameObject weaponObj)
     {
-        currentWeaponIndex = weaponIndex;
-        RpcSetWeapon(currentWeaponIndex);
-    }
-    [ClientRpc]
-    private void RpcSetWeapon(int weaponIndex)
-    {
-        SetWeapon(weaponIndex);
-    }
-    [Client]
-    private void SetWeapon(int weaponIndex)
-    {
-        if (weapon)
-        {
-            // Fixes problem where Start() will run before the RPC can run SetWeapon, causing an inactive weapon to spawn visually on other clients.
-            return;
-        }
-        var weaponObj = Instantiate(CustomNetworkManager.singleton.weapons[weaponIndex], transform.position, Quaternion.identity, transform);
-        weapon = weaponObj.GetComponent<WeaponController>();
+        weapon = Instantiate(weaponObj, transform.position, Quaternion.identity, transform).GetComponent<WeaponController>();
     }
 }

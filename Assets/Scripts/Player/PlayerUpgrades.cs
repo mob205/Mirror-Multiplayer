@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class PlayerUpgrades : NetworkBehaviour
 {
+    [SerializeField] MonoBehaviour testAbility;
     private void Start()
     {
+        // The local copy of every player object requests and applies its upgrades on start.
         CmdGetUpgrades();
     }
     [Command(requiresAuthority = false)]
@@ -21,6 +23,10 @@ public class PlayerUpgrades : NetworkBehaviour
         {
             var upgrade = UpgradeManager.GetUpgradeFromID(upgradeID);
             CopyComponent(upgrade, gameObject);
+        }
+        if (testAbility)
+        {
+            CopyComponent(testAbility, gameObject);
         }
     }
     private Component CopyComponent(Component original, GameObject destination)

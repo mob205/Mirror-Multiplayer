@@ -206,6 +206,10 @@ public class UpgradeManager : NetworkBehaviour
     }
     public static string[] GetUpgradesForConn(NetworkConnection conn)
     {
-        return serverPlayerUpgrades[conn].ToArray();
+        if (serverPlayerUpgrades.ContainsKey(conn))
+        {
+            return serverPlayerUpgrades[conn].ToArray();
+        }
+        return new string[0];
     }
 }

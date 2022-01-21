@@ -11,7 +11,6 @@ public class CustomNetworkManager : NetworkManager
     [Scene] [SerializeField] string upgradeScene;
     [SerializeField] GameObject upgradePlayerPrefab;
 
-    public GameObject[] weapons;
     new public static CustomNetworkManager singleton;
 
     //public static event Action OnPlayerAdded;
@@ -39,7 +38,6 @@ public class CustomNetworkManager : NetworkManager
         if(SceneManager.GetActiveScene().path != upgradeScene)
         {
             base.OnServerAddPlayer(conn);
-            conn.identity.GetComponent<PlayerCombat>().CmdSetWeapon(Random.Range(0, weapons.Length));
         }
         else
         {

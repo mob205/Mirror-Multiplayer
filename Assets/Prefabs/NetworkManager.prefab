@@ -67,6 +67,7 @@ MonoBehaviour:
   weapons:
   - {fileID: 3722219681256278223, guid: a13a97aaff3343a4da6bfa1783e8f607, type: 3}
   - {fileID: 4630824529542189006, guid: 744a388a44078544cab8735292315cb7, type: 3}
+  - {fileID: 168607491658398177, guid: fdeff4e745a1b66499497521339a0dee, type: 3}
 --- !u!114 &6174048691559581987
 MonoBehaviour:
   m_ObjectHideFlags: 0
