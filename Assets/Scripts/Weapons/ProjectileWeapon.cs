@@ -13,7 +13,7 @@ public class ProjectileWeapon : WeaponController
     {
         if (!canFire) { return false; }
         // Getting the direction client-side will result in the shot missing if client is moving and shooting. 
-        var dir = GetDirection(target);
+        var dir = Utility.GetDirection(target, transform);
 
         // Spawn the bullet and set its velocity server-side
         GameObject bulletGO = Instantiate(bulletPrefab, transform.position, dir);
@@ -34,7 +34,7 @@ public class ProjectileWeapon : WeaponController
     public override void SimulateFire(GameObject bullet, Vector3 target)
     {
         bullet.transform.position = transform.position;
-        bullet.transform.rotation = GetDirection(target);
+        bullet.transform.rotation = Utility.GetDirection(target, transform);
         bullet.GetComponent<Rigidbody2D>().velocity = bullet.gameObject.transform.right * bulletSpeed;
         bullet.GetComponent<Bullet>().Shooter = transform.parent.gameObject;
     }

@@ -26,7 +26,7 @@ public class MeleeWeapon : WeaponController
     }
     public override void SimulateFire(GameObject go, Vector3 target)
     {
-        transform.rotation = GetDirection(target);
+        transform.rotation = Utility.GetDirection(target, transform);
         StartCoroutine(SwingWeapon());
     }
     public override void RotateWeapon(Vector3 target)
