@@ -18,6 +18,7 @@ public class MeleeWeapon : WeaponController
         // Hit detection should be server-side only.
         hitbox.SetActive(true);
         var hitScript = hitbox.GetComponent<MeleeHitbox>();
+        hitScript.ClearHitPlayers();
         hitScript.Damage = damage;
         hitScript.Shooter = transform.parent.gameObject;
 

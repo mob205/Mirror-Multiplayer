@@ -9,7 +9,7 @@ public class MeleeHitbox : MonoBehaviour
     public GameObject Shooter { get; set; }
 
     private List<Health> damaged = new List<Health>();
-    private void OnEnable()
+    public void ClearHitPlayers()
     {
         damaged.Clear();
     }
