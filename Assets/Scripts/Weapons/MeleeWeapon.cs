@@ -6,6 +6,7 @@ using UnityEngine;
 public class MeleeWeapon : WeaponController
 {
     [SerializeField] private float attackArcDegrees = 90;
+    [Tooltip("Time in seconds to swing one way")]
     [SerializeField] private float swingTime = 1;
     [SerializeField] private GameObject hitbox;
 

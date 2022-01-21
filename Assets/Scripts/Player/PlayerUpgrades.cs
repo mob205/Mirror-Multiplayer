@@ -5,16 +5,18 @@ using UnityEngine;
 
 public class PlayerUpgrades : NetworkBehaviour
 {
-    [SerializeField] MonoBehaviour testAbility;
+    [SerializeField] private MonoBehaviour defaultUpgrade;
+    [SerializeField] private MonoBehaviour testUpgrade;
     private void Start()
     {
         // The local copy of every player object requests and applies its upgrades on start.
-        CmdGetUpgrades();
+        CmdGetUpgrades(netId);
     }
     [Command(requiresAuthority = false)]
-    public void CmdGetUpgrades(NetworkConnectionToClient conn = null)
+    public void CmdGetUpgrades(uint targetID, NetworkConnectionToClient sender = null)
     {
-        TargetAddUpgrades(conn, UpgradeManager.GetUpgradesForConn(conn));
+        var target = NetworkServer.spawned[targetID].connectionToClient;
+        TargetAddUpgrades(sender, UpgradeManager.GetUpgradesForConn(target));
     }
     [TargetRpc]
     private void TargetAddUpgrades(NetworkConnection target, string[] upgradeIDs)
@@ -24,9 +26,15 @@ public class PlayerUpgrades : NetworkBehaviour
             var upgrade = UpgradeManager.GetUpgradeFromID(upgradeID);
             CopyComponent(upgrade, gameObject);
         }
-        if (testAbility)
+        if (upgradeIDs.Length == 0 && defaultUpgrade)
         {
-            CopyComponent(testAbility, gameObject);
+            CopyComponent(defaultUpgrade, gameObject);
+        }
+
+        // Testing
+        if (upgradeIDs.Length == 0 && testUpgrade)
+        {
+            CopyComponent(testUpgrade, gameObject);
         }
     }
     private Component CopyComponent(Component original, GameObject destination)

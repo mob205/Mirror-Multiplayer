@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class WeaponController : MonoBehaviour
 {
+    [Tooltip("Fire rate in attacks per second")]
     [SerializeField] protected float fireRate = 1;
     [SerializeField] protected float damage = 10;
 
