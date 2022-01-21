@@ -7,6 +7,8 @@ public class PlayerUpgrades : NetworkBehaviour
 {
     [SerializeField] private MonoBehaviour defaultUpgrade;
     [SerializeField] private MonoBehaviour testUpgrade;
+
+    private int abilityCount;
     private void Start()
     {
         // The local copy of every player object requests and applies its upgrades on start.
@@ -36,6 +38,12 @@ public class PlayerUpgrades : NetworkBehaviour
         {
             CopyComponent(testUpgrade, gameObject);
         }
+    }
+    public void AddAbilityUpgrade(AbilityUpgrade ability)
+    {
+        CopyComponent(ability, gameObject);
+        ability.OrderNumber = abilityCount;
+        abilityCount++;
     }
     private Component CopyComponent(Component original, GameObject destination)
     {

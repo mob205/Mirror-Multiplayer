@@ -7,7 +7,6 @@ using System.Linq;
 public class UpgradeManager : NetworkBehaviour
 {
     [SerializeField] List<int> upgradePaths = new List<int>() { 3, 2 };
-    //[SerializeField] List<UpgradeSlot> testUpgrades;
 
     private static readonly Dictionary<string, MonoBehaviour> upgradesByID = new Dictionary<string, MonoBehaviour>();
     private readonly Dictionary<string, UpgradeSlot> slotsByID = new Dictionary<string, UpgradeSlot>();
@@ -21,17 +20,7 @@ public class UpgradeManager : NetworkBehaviour
         ui = FindObjectOfType<UpgradeUI>();
         InitializeDictionaries();
         CmdGetAvailableUpgrades();
-        //DebugRequestUpgrades();
     }
-    //private void DebugRequestUpgrades()
-    //{
-    //    var testUpgradeIDs = new List<string>();
-    //    foreach(var upgrade in testUpgrades)
-    //    {
-    //        testUpgradeIDs.Add(upgrade.upgradeID);
-    //    }
-    //    CmdGetAvailableUpgrades(testUpgradeIDs.ToArray());
-    //}
     private void InitializeDictionaries()
     {
         var hasInitialized = upgradesByID.Count > 0;
@@ -46,9 +35,8 @@ public class UpgradeManager : NetworkBehaviour
         }
     }
     [Command(requiresAuthority = false)]
-    private void CmdGetAvailableUpgrades(/*string[] testUpgrades,*/ NetworkConnectionToClient conn = null)
+    private void CmdGetAvailableUpgrades(NetworkConnectionToClient conn = null)
     {
-        //serverPlayerUpgrades[conn] = testUpgrades.ToList();
         var availableUpgrades = new List<string>();
         if (!serverPlayerUpgrades.ContainsKey(conn))
         {

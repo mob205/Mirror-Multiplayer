@@ -7,7 +7,6 @@ public class PlayerCombat : NetworkBehaviour
     private Camera mainCam;
     private WeaponController weapon;
 
-    [SyncVar] public int currentWeaponIndex;
     void Awake()
     {
         mainCam = Camera.main;
@@ -19,7 +18,7 @@ public class PlayerCombat : NetworkBehaviour
         {
             var target = mainCam.ScreenToWorldPoint(Input.mousePosition);
             CmdRotateWeapon(target);
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetButton("Fire1"))
             {
                 CmdFire(target);
             }
