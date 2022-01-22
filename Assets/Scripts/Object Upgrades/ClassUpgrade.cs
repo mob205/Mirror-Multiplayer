@@ -11,7 +11,6 @@ public class ClassUpgrade : MonoBehaviour
     public AbilityUpgrade classAbility;
     private void Start()
     {
-        Debug.Log("Starting class upgrade.");
         GetComponent<PlayerCombat>().SetWeapon(weapon);
         GetComponent<SpriteRenderer>().sprite = sprite;
 

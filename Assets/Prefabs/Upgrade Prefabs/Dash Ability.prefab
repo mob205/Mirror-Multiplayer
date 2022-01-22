@@ -48,3 +48,4 @@ MonoBehaviour:
   abilityName: dash
   speed: 32
   distance: 8
+  damage: 10
