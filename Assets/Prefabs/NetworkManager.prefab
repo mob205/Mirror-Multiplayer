@@ -62,6 +62,7 @@ MonoBehaviour:
   spawnPrefabs:
   - {fileID: 4227163515276197113, guid: cd9da55cc72e1c747864395d27ec3e16, type: 3}
   - {fileID: 6704529205651473868, guid: 70c14a234431b584bb824699da7c06eb, type: 3}
+  - {fileID: 644859915135664312, guid: 85cdcda99b27c244cb017ec975388f14, type: 3}
   upgradeScene: Assets/Scenes/Upgrade Menu.unity
   lobbyScene: Assets/Scenes/Lobby Scene.unity
   upgradePlayerPrefab: {fileID: 6704529205651473868, guid: 70c14a234431b584bb824699da7c06eb, type: 3}

@@ -52,5 +52,19 @@ public class CustomNetworkManager : NetworkManager
             base.OnServerAddPlayer(conn);
         }
     }
+    public override void OnClientConnect(NetworkConnection conn)
+    {
+        base.OnClientConnect(conn);
+        if (SceneManager.GetActiveScene().path != lobbyScene && !Debug.isDebugBuild)
+        {
+            conn.Disconnect();
+            SceneManager.LoadScene(0);
+        }
+    }
+    [Server]
+    public void StartLevel()
+    {
+        ServerChangeScene("Scene");
+    }
 }
 
