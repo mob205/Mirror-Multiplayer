@@ -9,7 +9,9 @@ using Random = UnityEngine.Random;
 public class CustomNetworkManager : NetworkManager
 {
     [Scene] [SerializeField] string upgradeScene;
+    [Scene] [SerializeField] string lobbyScene;
     [SerializeField] GameObject upgradePlayerPrefab;
+    [SerializeField] GameObject lobbyPlayerPrefab;
 
     new public static CustomNetworkManager singleton;
 
@@ -35,19 +37,20 @@ public class CustomNetworkManager : NetworkManager
     }
     public override void OnServerAddPlayer(NetworkConnection conn)
     {
-        if(SceneManager.GetActiveScene().path != upgradeScene)
-        {
-            base.OnServerAddPlayer(conn);
-        }
-        else
+        if(SceneManager.GetActiveScene().path == upgradeScene)
         {
             GameObject player = Instantiate(upgradePlayerPrefab);
             NetworkServer.AddPlayerForConnection(conn, player);
+        } 
+        else if(SceneManager.GetActiveScene().path == lobbyScene)
+        {
+            GameObject player = Instantiate(lobbyPlayerPrefab);
+            NetworkServer.AddPlayerForConnection(conn, player);
         }
-    }
-    public override void OnClientSceneChanged(NetworkConnection conn)
-    {
-        base.OnClientSceneChanged(conn);
+        else
+        {
+            base.OnServerAddPlayer(conn);
+        }
     }
 }
 

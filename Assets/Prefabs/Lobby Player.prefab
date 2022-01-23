@@ -10,18 +10,15 @@ GameObject:
   m_Component:
   - component: {fileID: 6024260913983670447}
   - component: {fileID: 3792825705534217678}
-  - component: {fileID: 1666737284117746045}
   - component: {fileID: 8735508779632633151}
-  - component: {fileID: -7483614649098129879}
-  - component: {fileID: -5624748986249588382}
   - component: {fileID: 3836039033614125266}
-  - component: {fileID: 8041133683172992164}
   - component: {fileID: -5826350437558040860}
   - component: {fileID: 5298323263858951232}
   - component: {fileID: 7896968007452467905}
   - component: {fileID: 7261725508418219644}
+  - component: {fileID: -8843626909048271214}
   m_Layer: 3
-  m_Name: Player
+  m_Name: Lobby Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93,22 +90,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1666737284117746045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 644859915135664312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b38dc79bd296e364ca656913764a253f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  defaultUpgrade: {fileID: 1881153149620243592, guid: 8d38ee377d90a7742abb86ff5f1e9e60, type: 3}
-  testUpgrade: {fileID: 0}
 --- !u!114 &8735508779632633151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,35 +108,6 @@ MonoBehaviour:
   dashingLayer:
     serializedVersion: 2
     m_Bits: 128
---- !u!114 &-7483614649098129879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 644859915135664312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8599e488c6b0704e84d290555a778d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
---- !u!114 &-5624748986249588382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 644859915135664312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9be82fa0b41802147933c38930ee5551, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  maxHealth: 100
 --- !u!114 &3836039033614125266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,20 +123,6 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   playerName: 
---- !u!114 &8041133683172992164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 644859915135664312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b7243ab270945c4db3da36d08f48fca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
 --- !u!61 &-5826350437558040860
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -226,7 +164,7 @@ MonoBehaviour:
   sceneId: 0
   serverOnly: 0
   visible: 0
-  m_AssetId: 119af0bf14184544ea0074692a20c0d1
+  m_AssetId: 85cdcda99b27c244cb017ec975388f14
   hasSpawned: 0
 --- !u!114 &7896968007452467905
 MonoBehaviour:
@@ -278,6 +216,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &-8843626909048271214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644859915135664312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9be82fa0b41802147933c38930ee5551, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  maxHealth: 1
 --- !u!1 &8390942418587859347
 GameObject:
   m_ObjectHideFlags: 0

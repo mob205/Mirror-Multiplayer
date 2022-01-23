@@ -5,11 +5,12 @@ using System.Linq;
 
 public class UpgradeUI : MonoBehaviour
 {
-    [SerializeField] UpgradeDisplay displayPrefab;
-    [SerializeField] Transform displayCenter;
-    [SerializeField] int displayDist;
+    [SerializeField] private UpgradeDisplay displayPrefab;
+    [SerializeField] private Transform displayCenter;
+    [SerializeField] private int displayDist;
+    [SerializeField] private GameObject playerPreview;
 
-    List<UpgradeDisplay> displayObjects = new List<UpgradeDisplay>();
+    private List<UpgradeDisplay> displayObjects = new List<UpgradeDisplay>();
     private UpgradeManager upgradeManager;
     private void Awake()
     {
@@ -77,5 +78,14 @@ public class UpgradeUI : MonoBehaviour
     public void OnDisplayClick(string id)
     {
         upgradeManager.CmdRequestAddUpgrade(id);
+    }
+    public void UpdatePreview(string classUpgradeID)
+    {
+        var upgrade = UpgradeManager.GetUpgradeFromID(classUpgradeID) as ClassUpgrade;
+        playerPreview.GetComponent<SpriteRenderer>().sprite = upgrade.sprite;
+        var weaponObj = playerPreview.transform.GetChild(0);
+        var rotOffset = weaponObj.rotation;
+        Destroy(weaponObj.gameObject);
+        Instantiate(upgrade.weapon, playerPreview.transform.position, rotOffset, playerPreview.transform);
     }
 }

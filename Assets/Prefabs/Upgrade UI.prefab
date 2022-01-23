@@ -114,8 +114,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayPrefab: {fileID: 6765654716558773266, guid: 196e187b01b4c4c469d80e0da05495c6, type: 3}
-  displayCenter: {fileID: 0}
-  displayOffset: 0
+  displayCenter: {fileID: 5273890818055083683}
+  displayDist: 500
 --- !u!1 &8607059853925061528
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,6 +148,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 150}
+  m_AnchoredPosition: {x: 0, y: 264}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}

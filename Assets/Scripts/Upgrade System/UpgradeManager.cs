@@ -167,6 +167,11 @@ public class UpgradeManager : NetworkBehaviour
         {
             serverPlayerUpgrades[conn].Add(upgradeID);
             TargetUpdateAvailableUpgrades(conn);
+
+            if(upgradesByID[upgradeID] is ClassUpgrade classUpgrade)
+            {
+                TargetUpdatePreview(conn, upgradeID);
+            }
         }
         else
         {
@@ -183,6 +188,11 @@ public class UpgradeManager : NetworkBehaviour
     private void TargetDisplayUpgrades(NetworkConnection target, string[] availableUpgrades)
     {
         ui.DisplayUpgrades(availableUpgrades);
+    }
+    [TargetRpc]
+    private void TargetUpdatePreview(NetworkConnection target, string classUpgradeID)
+    {
+        ui.UpdatePreview(classUpgradeID);
     }
     public static MonoBehaviour GetUpgradeFromID(string id)
     {
