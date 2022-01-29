@@ -9,15 +9,27 @@ public class PlayerCamera : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (linkedPlayer)
+        if (linkedPlayer && linkedPlayer.activeSelf)
         {
             FollowPlayer();
+        }
+        else
+        {
+            SetRandomTarget();
         }
     }
     private void FollowPlayer()
     {
-        transform.position = Vector3.Lerp(transform.position, 
+        transform.position = Vector3.Lerp(transform.position,
             new Vector3(linkedPlayer.transform.position.x, linkedPlayer.transform.position.y, transform.position.z), smoothing);
+    }
+    private void SetRandomTarget()
+    {
+        var players = FindObjectsOfType<PlayerMovement>();
+        if(players.Length > 0)
+        {
+            SetFollowTarget(players[0].gameObject);
+        }
     }
     public void SetFollowTarget(GameObject player)
     {

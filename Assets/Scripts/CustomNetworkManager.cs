@@ -1,15 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 using UnityEngine.SceneManagement;
-using System;
-using Random = UnityEngine.Random;
 
 public class CustomNetworkManager : NetworkManager
 {
-    [Scene] [SerializeField] string upgradeScene;
-    [Scene] [SerializeField] string lobbyScene;
+    [Scene] [SerializeField] public string upgradeScene;
+    [Scene] [SerializeField] public string lobbyScene;
     [SerializeField] GameObject upgradePlayerPrefab;
     [SerializeField] GameObject lobbyPlayerPrefab;
 
@@ -67,4 +63,3 @@ public class CustomNetworkManager : NetworkManager
         ServerChangeScene("Scene");
     }
 }
-

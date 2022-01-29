@@ -1,4 +1,5 @@
 using Mirror;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,7 @@ public class Health : NetworkBehaviour
     [SyncVar] private float currentHealth;
     public float CurrentHealth { get { return currentHealth;  } }
     public float MaxHealth { get { return maxHealth; } }
+    public static event Action<Health> OnDeath;
     public void Start()
     {
         currentHealth = maxHealth;
@@ -20,7 +22,18 @@ public class Health : NetworkBehaviour
         currentHealth -= amount;
         if(currentHealth <= 0)
         {
-            NetworkServer.Destroy(gameObject);
+            //gameObject.SetActive(false);
+            RpcStartDeath();
         }
+    }
+    [ClientRpc]
+    public void RpcStartDeath()
+    {
+        gameObject.SetActive(false);
+        OnDeath?.Invoke(this);
+    }
+    public override void OnStopClient()
+    {
+        OnDeath?.Invoke(this);
     }
 }

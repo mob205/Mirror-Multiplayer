@@ -149,13 +149,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 0
   upgradeID: archer_class
-  upgradePrefab: {fileID: 2475721546277421620, guid: 0bf9ecbdb9f10e741876b245ea4607af, type: 3}
+  upgradePrefab: {fileID: 1881153149620243593, guid: 65ec729ef8539e74fb7c8001f410a644, type: 3}
   prereqUpgradeID: 
   nextUpgradeID: 
   description: 'Shoot arrows lol
 
 '
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 74b9dcef38469de41b373cbd183fdb11, type: 3}
   color: {r: 0.754717, g: 0.588863, b: 0.14117648, a: 1}
 --- !u!1 &2372735252523093133
 GameObject:
@@ -209,7 +209,7 @@ MonoBehaviour:
   prereqUpgradeID: 
   nextUpgradeID: 
   description: shining armor. sword. you know the deal
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 69a589b3bb141bd4e864073443bc71f7, type: 3}
   color: {r: 0.6981132, g: 0.6289605, b: 0.6289605, a: 1}
 --- !u!1 &2372735252592694994
 GameObject:
@@ -263,7 +263,7 @@ MonoBehaviour:
   prereqUpgradeID: 
   nextUpgradeID: 
   description: stab stab stab
-  icon: {fileID: 21300000, guid: ee91ac0cfa92d524b95e96c245190545, type: 3}
+  icon: {fileID: 21300000, guid: d83dae502569c3a41a5d31a102df3699, type: 3}
   color: {r: 0.4811321, g: 0.2746084, b: 0.28451037, a: 1}
 --- !u!1 &2372735253017890001
 GameObject:
@@ -691,7 +691,7 @@ MonoBehaviour:
   sceneId: 0
   serverOnly: 0
   visible: 0
-  m_AssetId: 
+  m_AssetId: 55053d1471080b142942645d5c431eaa
   hasSpawned: 0
 --- !u!1 &2372735253908863689
 GameObject:

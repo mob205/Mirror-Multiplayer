@@ -16,11 +16,12 @@ public class MeleeWeapon : WeaponController
         if (!canFire) { return false; }
 
         // Hit detection should be server-side only.
-        hitbox.SetActive(true);
         var hitScript = hitbox.GetComponent<MeleeHitbox>();
         hitScript.ClearHitPlayers();
         hitScript.Damage = damage;
         hitScript.Shooter = transform.parent.gameObject;
+
+        hitbox.SetActive(true);
 
         StartCoroutine(ToggleFire());
         return true;
