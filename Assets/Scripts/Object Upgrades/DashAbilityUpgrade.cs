@@ -30,7 +30,7 @@ public class DashAbilityUpgrade : AbilityUpgrade
         if (networkIdentity.isServer && player.CurrentState == PlayerMovement.State.Dashing && collider.GetComponent<Health>())
         {
             var health = collider.GetComponent<Health>();
-            health.Damage(damage);
+            health.Damage(damage, player.gameObject);
         }
     }
 }

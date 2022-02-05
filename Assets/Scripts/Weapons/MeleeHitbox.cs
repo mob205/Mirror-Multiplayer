@@ -18,7 +18,7 @@ public class MeleeHitbox : MonoBehaviour
         var target = collision.GetComponent<Health>();
         if(target && !damaged.Contains(target) && collision.gameObject != Shooter)
         {
-            target.Damage(Damage);
+            target.Damage(Damage, Shooter);
             damaged.Add(target);
         }
     }

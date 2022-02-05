@@ -23,7 +23,7 @@ public class Bullet : NetworkBehaviour
         // Bullets should only damage on the server.
         if (isServer && target && colGO != Shooter)
         {
-            target.Damage(Damage);
+            target.Damage(Damage, Shooter);
             StickArrow(colGO);
         }
         // Visually stick to terrain and player objects on clients.

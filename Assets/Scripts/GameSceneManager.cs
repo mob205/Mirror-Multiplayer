@@ -8,8 +8,11 @@ using UnityEngine;
 public class GameSceneManager : NetworkBehaviour
 {
     [SerializeField] private float sceneChangeDelay = 5;
+    [SerializeField] private int playerKillReward = 100;
+    [SerializeField] private int playerWinReward = 100;
 
     private CustomNetworkManager nm;
+    private CoinManager cm;
 
     public static event Action<uint> OnPlayerWin;
     private void Start()
@@ -17,17 +20,22 @@ public class GameSceneManager : NetworkBehaviour
         if (isServer)
         {
             nm = CustomNetworkManager.singleton;
+            cm = CoinManager.instance;
             Health.OnDeath += OnPlayerDeath;
         }
     }
     [Server]
-    private void OnPlayerDeath(Health player)
+    private void OnPlayerDeath(Health player, uint killer)
     {
+        var killerConn = NetworkServer.spawned[killer].connectionToClient;
+        cm.ModifyCoins(killerConn, playerKillReward);
+
         var alivePlayers = FindObjectsOfType<Health>();
         if(alivePlayers.Length == 1)
         {
             var winnerID = alivePlayers[0].netId;
             StartCoroutine(StartPlayerWin(winnerID));
+            cm.ModifyCoins(killerConn, playerWinReward);
         }
     }
     [Server]

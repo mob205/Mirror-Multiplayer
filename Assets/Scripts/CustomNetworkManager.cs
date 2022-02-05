@@ -25,11 +25,6 @@ public class CustomNetworkManager : NetworkManager
             Debug.Log("Switching to upgrade scene. FOR DEBUG ONLY");
             ServerChangeScene(upgradeScene);
         }
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            Debug.Log("Switching to main scene. FOR DEBUG ONLY");
-            ServerChangeScene("Scene");
-        }
     }
     public override void OnServerAddPlayer(NetworkConnection conn)
     {
