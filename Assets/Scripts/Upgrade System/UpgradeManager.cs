@@ -44,13 +44,14 @@ public class UpgradeManager : NetworkBehaviour
             serverPlayerUpgrades.Add(conn, new List<string>());
             serverPlayerAvailableUpgrades.Add(conn, new List<string>());
         }
+        string classUpgrade = "";
         if (serverPlayerUpgrades[conn].Count > 0)
         {
             var playerPaths = SortIntoPaths(serverPlayerUpgrades[conn]);
             availableUpgrades.AddRange(GetNextUpgrades(playerPaths));
 
             // Class upgrade should always be the player's first upgrade.
-            var classUpgrade = serverPlayerUpgrades[conn][0];
+            classUpgrade = serverPlayerUpgrades[conn][0];
             if (playerPaths.Count < upgradePaths.Count)
             {
                 availableUpgrades.AddRange(GetBasicUpgrades(playerPaths, classUpgrade));
@@ -69,6 +70,10 @@ public class UpgradeManager : NetworkBehaviour
         }
         serverPlayerAvailableUpgrades[conn] = availableUpgrades;
         TargetDisplayUpgrades(conn, availableUpgrades.ToArray());
+        if (!string.IsNullOrEmpty(classUpgrade))
+        {
+            TargetUpdatePreview(conn, classUpgrade);
+        }
     }
     private List<string> GetNextUpgrades(List<List<string>> playerPaths)
     {
@@ -167,11 +172,6 @@ public class UpgradeManager : NetworkBehaviour
         {
             serverPlayerUpgrades[conn].Add(upgradeID);
             TargetUpdateAvailableUpgrades(conn);
-
-            if(upgradesByID[upgradeID] is ClassUpgrade classUpgrade)
-            {
-                TargetUpdatePreview(conn, upgradeID);
-            }
         }
         else
         {
