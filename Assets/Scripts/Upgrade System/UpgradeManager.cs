@@ -15,9 +15,11 @@ public class UpgradeManager : NetworkBehaviour
     private static Dictionary<NetworkConnection, List<string>> serverPlayerAvailableUpgrades = new Dictionary<NetworkConnection, List<string>>();
 
     private UpgradeUI ui;
+    private CoinManager cm;
     public void Initialize()
     {
         ui = FindObjectOfType<UpgradeUI>();
+        cm = CoinManager.instance;
         InitializeDictionaries();
         CmdGetAvailableUpgrades();
     }
@@ -168,14 +170,12 @@ public class UpgradeManager : NetworkBehaviour
     [Command(requiresAuthority = false)]
     public void CmdRequestAddUpgrade(string upgradeID, NetworkConnectionToClient conn = null)
     {
-        if (serverPlayerAvailableUpgrades[conn].Contains(upgradeID))
+        var upgradeCost = slotsByID[upgradeID].cost;
+        if (serverPlayerAvailableUpgrades[conn].Contains(upgradeID) && cm.GetCoins(conn) >= upgradeCost)
         {
             serverPlayerUpgrades[conn].Add(upgradeID);
             TargetUpdateAvailableUpgrades(conn);
-        }
-        else
-        {
-            Debug.LogError(conn + " requested an unavailable upgrade.");
+            cm.ModifyCoins(conn, -upgradeCost);
         }
     }
     [TargetRpc]

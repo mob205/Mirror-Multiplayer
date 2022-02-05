@@ -8,6 +8,7 @@ public class UpgradeSlot : MonoBehaviour
     public int level;
     public string upgradeID;
     public GameObject upgradePrefab;
+    public int cost;
     [HideInInspector] public string prereqUpgradeID;
     [HideInInspector] public string nextUpgradeID;
 

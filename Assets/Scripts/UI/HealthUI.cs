@@ -37,9 +37,10 @@ public class HealthUI : MonoBehaviour
     void RepositionUI()
     {
         var counter = 0;
-        foreach (var value in playerTemplates.Values)
+        foreach (var template in playerTemplates.Values)
         {
-            value.transform.localPosition = offset * counter;
+            if (!template) { continue; }
+            template.transform.localPosition = offset * counter;
             counter++;
         }
     }

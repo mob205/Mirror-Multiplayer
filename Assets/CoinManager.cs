@@ -6,9 +6,9 @@ using UnityEngine;
 public class CoinManager : NetworkBehaviour
 {
     public static CoinManager instance;
-    private Dictionary<NetworkConnection, int> coins = new Dictionary<NetworkConnection, int>();
+    private static Dictionary<NetworkConnection, int> coins = new Dictionary<NetworkConnection, int>();
     public static int ClientCoins { get; private set; } = 0;
-    public override void OnStartServer()
+    public void Start()
     {
         if (instance)
         {
