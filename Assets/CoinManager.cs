@@ -50,4 +50,9 @@ public class CoinManager : NetworkBehaviour
     {
         ClientCoins = amount;
     }
+    [Server]
+    public static void ResetStatics()
+    {
+        coins.Clear();
+    }
 }

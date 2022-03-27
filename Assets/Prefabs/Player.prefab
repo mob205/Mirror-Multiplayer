@@ -107,7 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  defaultUpgrade: {fileID: 1881153149620243592, guid: 8d38ee377d90a7742abb86ff5f1e9e60, type: 3}
+  defaultUpgrade: {fileID: 1881153149620243592, guid: 15aaa8738c4297e48818fa3d776c7f26, type: 3}
   testUpgrade: {fileID: 0}
 --- !u!114 &8735508779632633151
 MonoBehaviour:
@@ -243,7 +243,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   clientAuthority: 1
-  sendInterval: 0.02
+  sendInterval: 0
   syncPosition: 1
   syncRotation: 0
   syncScale: 0

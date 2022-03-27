@@ -5,16 +5,39 @@ using UnityEngine;
 
 public class PlayerAbilities : NetworkBehaviour
 {
-    Dictionary<string, AbilityUpgrade> abilities = new Dictionary<string, AbilityUpgrade>();
+    private Dictionary<string, AbilityUpgrade> abilities = new Dictionary<string, AbilityUpgrade>();
+    private AbilityUI abilityUI;
+
+    public override void OnStartAuthority()
+    {
+        abilityUI = FindObjectOfType<AbilityUI>();
+    }
     public void AddAbility(AbilityUpgrade ability)
     {
-        abilities.Add(ability.abilityName, ability);
+        abilities.Add(ability.abilityID, ability);
+        if (abilityUI)
+        {
+            abilityUI.AddAbility(ability);
+        }
     }
     [Command]
-    public void CmdActivateAbility(string ability)
+    public void CmdCastAbility(string ability, Vector2 mousePos, NetworkConnectionToClient sender = null)
     {
-        abilities[ability].CastAbility();
-        //RpcActivateAbility(ability);
+        if(abilities[ability].RemainingCooldown <= 0)
+        {
+            Debug.Log("casting an ability.");
+            abilities[ability].CastAbility(mousePos);
+            OnSuccessfulCast(sender, ability);
+        }
+    }
+    public void RequestAbility(string ability, Vector2 mousePos)
+    {
+        CmdCastAbility(ability, mousePos);
+    }
+    [TargetRpc]
+    private void OnSuccessfulCast(NetworkConnection target, string ability)
+    {
+        abilities[ability].OnSuccessfulCast();
     }
     //[ClientRpc]
     //public void RpcActivateAbility(string ability)

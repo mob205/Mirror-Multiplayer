@@ -7,32 +7,35 @@ public abstract class AbilityUpgrade : MonoBehaviour
 {
     public Sprite icon;
     public float baseCooldown;
-    public string abilityName;
+    public string abilityID;
 
     public float RemainingCooldown { get; private set; } = 0;
     public int OrderNumber { get; set; }
 
     private AbilityUI abilityUI;
     protected NetworkIdentity networkIdentity;
+    private PlayerAbilities abilities;
+    protected Camera cam;
 
     protected virtual void Start()
     {
         networkIdentity = GetComponent<NetworkIdentity>();
-        //networkIdentity.AddAbility(this);
+        abilities = GetComponent<PlayerAbilities>();
+        abilities.AddAbility(this);
+
         if (!networkIdentity.isLocalPlayer) { return; }
 
-        abilityUI = FindObjectOfType<AbilityUI>();
-        abilityUI.AddAbility(this);
+        cam = Camera.main;
+        
     }
     protected virtual void Update()
     {
-        if (!networkIdentity.isLocalPlayer) { return; }
         UpdateCooldown();
-        if (RemainingCooldown <= 0 && Input.GetButton($"Ability{OrderNumber}"))
+        if (RemainingCooldown <= 0 && networkIdentity.isLocalPlayer && Input.GetButton($"Ability{OrderNumber}"))
         {
-            CastAbility();
-            //abilityNetworker.CmdActivateAbility(abilityName);
-            StartCooldown();
+            Debug.Log("Requesting ability.");
+            var mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+            abilities.RequestAbility(abilityID, mousePos);
         }
     }
     private void UpdateCooldown()
@@ -42,7 +45,12 @@ public abstract class AbilityUpgrade : MonoBehaviour
             RemainingCooldown -= Time.deltaTime;
         }
     }
-    public abstract void CastAbility();
+    // Called on caster client after server validation
+    public virtual void OnSuccessfulCast()
+    {
+        StartCooldown();
+    }
+    public abstract void CastAbility(Vector2 mousePos);
     protected void StartCooldown()
     {
         RemainingCooldown = baseCooldown;

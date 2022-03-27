@@ -10,20 +10,18 @@ public class DashAbilityUpgrade : AbilityUpgrade
     public float damage;
 
     private Rigidbody2D rb;
-    private Camera cam;
     private PlayerMovement player;
     protected override void Start()
     {
         base.Start();
         player = GetComponent<PlayerMovement>();
-        cam = Camera.main; 
     }
-    public override void CastAbility()
+    public override void CastAbility(Vector2 mousePos)
     {
-        var mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         var dirAngle = Utility.GetDirection(mousePos, transform).eulerAngles.z * Mathf.Deg2Rad;
         var directionVector = new Vector2(Mathf.Cos(dirAngle), Mathf.Sin(dirAngle));
         player.StartDash(directionVector, speed, distance/speed);
+        StartCooldown();
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {

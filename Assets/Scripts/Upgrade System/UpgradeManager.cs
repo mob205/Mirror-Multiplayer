@@ -210,4 +210,10 @@ public class UpgradeManager : NetworkBehaviour
         }
         return new string[0];
     }
+    [Server]
+    public static void ResetStatics()
+    {
+        serverPlayerAvailableUpgrades.Clear();
+        serverPlayerUpgrades.Clear();
+    }
 }

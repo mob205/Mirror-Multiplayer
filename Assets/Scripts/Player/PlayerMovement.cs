@@ -63,10 +63,18 @@ public class PlayerMovement : NetworkBehaviour
     {
         dashVector = dir * speed;
         CurrentState = State.Dashing;
-        CmdSetState(CurrentState);
+        var target = NetworkServer.spawned[netId].connectionToClient;
+        TargetStartDash(target, dashVector, duration);
         StartCoroutine(ResetState(duration));
     }
-    [Command]
+    [TargetRpc]
+    private void TargetStartDash(NetworkConnection target, Vector2 dashVector, float duration)
+    {
+        CurrentState = State.Dashing;
+        this.dashVector = dashVector;
+        StartCoroutine(ResetState(duration));
+    }
+    [Command(requiresAuthority = false)]
     public void CmdSetState(State state)
     {
         CurrentState = state;
