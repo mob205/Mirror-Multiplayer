@@ -39,7 +39,7 @@ public class PlayerCombat : NetworkBehaviour
         weapon.SimulateFire(go, target);
     }
     // In the future, rotation may happen in the parent player object, not the weapon.
-    // Only z coordinate for rotation needs to pass through the network, not the entire Vector3.
+    // Only angle of rotation needs to pass through the network, not the entire Vector3.
     [Command]
     private void CmdRotateWeapon(Vector3 target)
     {
