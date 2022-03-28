@@ -557,14 +557,32 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2372735252461942530, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: description
+      value: Deals high damage at a long range with a bow and arrow. Use precision
+        and skill to hit your mark.
+      objectReference: {fileID: 0}
     - target: {fileID: 2372735252592694992, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: cost
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2372735252592694992, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: description
+      value: Lethal, fast-moving assassin. Use deception, mobility, and burst damage
+        to quickly take down enemies.
+      objectReference: {fileID: 0}
     - target: {fileID: 2372735253017890015, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: cost
-      value: 1000
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2372735253017890015, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: description
+      value: Increases damage dealt by dashing. Reduces dash cooldown.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372735253017890015, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: upgradePrefab
+      value: 
+      objectReference: {fileID: 4098200631510484692, guid: fe0edb2130b0aab4e8b59271c5f1e32c, type: 3}
     - target: {fileID: 2372735253039332817, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: cost
       value: 50
@@ -621,9 +639,18 @@ PrefabInstance:
       propertyPath: sceneId
       value: 719890398
       objectReference: {fileID: 0}
+    - target: {fileID: 2372735254139133109, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: description
+      value: Master of magic and sorcery. Cast powerful spells to protect yourself
+        and destroy others.
+      objectReference: {fileID: 0}
     - target: {fileID: 2372735254168269947, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: cost
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372735254168269947, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: description
+      value: Increases damage dealt by dagger.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55053d1471080b142942645d5c431eaa, type: 3}
