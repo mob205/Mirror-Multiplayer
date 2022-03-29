@@ -16,10 +16,14 @@ public class ItemSpawner : NetworkBehaviour
             var locations = spawnLocations.ToList();
             for (int i = 0; i < totalSpawns; i++)
             {
-                var locIndex = Random.Range(0, locations.Count - 1);
-                var itemIndex = Random.Range(0, spawnableItems.Length - 1);
-                var spawnedItem = Instantiate(spawnableItems[itemIndex], locations[locIndex]);
+                // Spawn a random item at a random location. 
+                var locIndex = Random.Range(0, locations.Count);
+                var itemIndex = Random.Range(0, spawnableItems.Length);
+                var spawnedItem = Instantiate(spawnableItems[itemIndex], locations[locIndex].position, Quaternion.identity);
                 NetworkServer.Spawn(spawnedItem);
+
+                // One location should not have two items.
+                locations.Remove(locations[locIndex]);
             }
         }
     }
