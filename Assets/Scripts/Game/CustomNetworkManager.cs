@@ -1,6 +1,7 @@
 using UnityEngine;
 using Mirror;
 using UnityEngine.SceneManagement;
+using System;
 
 public class CustomNetworkManager : NetworkManager
 {
@@ -11,7 +12,7 @@ public class CustomNetworkManager : NetworkManager
 
     new public static CustomNetworkManager singleton;
 
-    //public static event Action OnPlayerAdded;
+    public static event Action<NetworkIdentity> OnPlayerDisconnect;
 
     public override void Awake()
     {
@@ -51,6 +52,11 @@ public class CustomNetworkManager : NetworkManager
             conn.Disconnect();
             SceneManager.LoadScene(0);
         }
+    }
+    public override void OnServerDisconnect(NetworkConnection conn)
+    {
+        OnPlayerDisconnect?.Invoke(conn.identity);
+        base.OnServerDisconnect(conn);
     }
     [Server]
     public void StartLevel()

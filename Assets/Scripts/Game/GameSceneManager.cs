@@ -19,6 +19,7 @@ public class GameSceneManager : NetworkBehaviour
         {
             nm = CustomNetworkManager.singleton;
             Health.OnDeath += OnPlayerDeath;
+            CustomNetworkManager.OnPlayerDisconnect += OnPlayerDisconnect;
         }
     }
     [Server]
@@ -44,6 +45,17 @@ public class GameSceneManager : NetworkBehaviour
         }
     }
     [Server]
+    private void OnPlayerDisconnect(NetworkIdentity player)
+    {
+        List<Health> alivePlayers = FindObjectsOfType<Health>().ToList();
+        alivePlayers.Remove(player.GetComponent<Health>());
+        if(alivePlayers.Count == 1)
+        {
+            var winnerID = alivePlayers[0].netId;
+            StartCoroutine(StartPlayerWin(winnerID));
+        }
+    }
+    [Server]
     private IEnumerator StartPlayerWin(uint winnerID)
     {
         RpcAlertWin(winnerID);
@@ -60,6 +72,7 @@ public class GameSceneManager : NetworkBehaviour
         if (isServer)
         {
             Health.OnDeath -= OnPlayerDeath;
+            CustomNetworkManager.OnPlayerDisconnect -= OnPlayerDisconnect;
         }
     }
 }

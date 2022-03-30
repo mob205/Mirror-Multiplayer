@@ -32,8 +32,4 @@ public class Health : NetworkBehaviour
         gameObject.SetActive(false);
         OnDeath?.Invoke(this, killerID);
     }
-    public override void OnStopClient()
-    {
-        OnDeath?.Invoke(this, 0);
-    }
 }

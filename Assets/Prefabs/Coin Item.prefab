@@ -71,7 +71,7 @@ MonoBehaviour:
     m_Bits: 136
   speed: 3
   distance: {x: 0, y: 0.6}
-  amount: 500
+  amount: 50
 --- !u!212 &2983767099283529083
 SpriteRenderer:
   m_ObjectHideFlags: 0
