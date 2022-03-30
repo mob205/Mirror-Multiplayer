@@ -58,6 +58,7 @@ public class GameSceneManager : NetworkBehaviour
     [Server]
     private IEnumerator StartPlayerWin(uint winnerID)
     {
+        if (isServerOnly) { OnPlayerWin?.Invoke(winnerID); }
         RpcAlertWin(winnerID);
         yield return new WaitForSeconds(sceneChangeDelay);
         nm.ServerChangeScene(nm.upgradeScene);

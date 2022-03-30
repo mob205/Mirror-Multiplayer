@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class CoinItem : Item
 {
-    [SerializeField] private int amount;
+    [SerializeField] private int minReward;
+    [SerializeField] private int maxAmount;
 
     [Client]
     protected override void LocalActivate(Collider2D collision)
@@ -16,6 +17,7 @@ public class CoinItem : Item
     protected override void ServerActivate(Collider2D collision)
     {
         var conn = collision.GetComponent<NetworkIdentity>().connectionToClient;
+        var amount = Random.Range(minReward, maxAmount + 1);
         CoinManager.instance.ModifyCoins(conn, amount);
     }
 }

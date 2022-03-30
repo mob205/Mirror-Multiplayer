@@ -1,25 +1,25 @@
 using Mirror;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerDisplayer : NetworkBehaviour
 {
-    [SyncVar(hook = "DisplayName")] public string playerName;
+    [SyncVar(hook = "OnReceiveName")] public string playerName;
+    public static event Action<GameObject> OnStartPlayerUI;
+    public static event Action<GameObject> OnRemovePlayerUI;
 
-    private HealthUI ui;
-    void Start()
+    private void Start()
     {
-        ui = FindObjectOfType<HealthUI>();
         if (isLocalPlayer && string.IsNullOrEmpty(playerName))
         {
-            // Send the name to the server and then display to all clients if it is the local player's first time running Start()
+            // Send the name to the server and then display to all clients if local player's name is not set
             CmdSendName(PlayerPrefs.GetString("PlayerName"));
-        } 
+        }
         else if(!isLocalPlayer && !string.IsNullOrEmpty(playerName))
         {
-            // Display the name already set to the server if client joining later
-            DisplayName(playerName, playerName);
+            OnStartPlayerUI?.Invoke(gameObject);
         }
     }
     [Command]
@@ -27,15 +27,12 @@ public class PlayerDisplayer : NetworkBehaviour
     {
         playerName = name;
     }
-    public void DisplayName(string oldName, string newName)
+    public void OnReceiveName(string oldName, string newName)
     {
-        if(ui != null)
-        {
-            ui.AddPlayerUI(gameObject, newName);
-        }
+        OnStartPlayerUI?.Invoke(gameObject);
     }
     public override void OnStopClient()
     {
-        ui.RemovePlayerUI(gameObject);
+        OnRemovePlayerUI?.Invoke(gameObject);
     }
 }

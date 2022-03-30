@@ -11,12 +11,17 @@ public class HealthUI : MonoBehaviour
 
     private Dictionary<GameObject, GameObject> playerTemplates = new Dictionary<GameObject, GameObject>();
 
-    public void AddPlayerUI(GameObject player, string playerName)
+    private void Start()
+    {
+        PlayerDisplayer.OnRemovePlayerUI += RemovePlayerUI;
+        PlayerDisplayer.OnStartPlayerUI += AddPlayerUI;
+    }
+    public void AddPlayerUI(GameObject player)
     {
         var playerTemplate = Instantiate(template, transform);
         playerTemplates.Add(player, playerTemplate);
 
-        playerTemplate.GetComponentInChildren<TextMeshProUGUI>().text = playerName;
+        playerTemplate.GetComponentInChildren<TextMeshProUGUI>().text = player.GetComponent<PlayerDisplayer>().playerName;
         playerTemplate.GetComponentInChildren<HealthTracker>().target = player.GetComponent<Health>();
 
         RepositionUI();
@@ -43,5 +48,10 @@ public class HealthUI : MonoBehaviour
             template.transform.localPosition = offset * counter;
             counter++;
         }
+    }
+    private void OnDestroy()
+    {
+        PlayerDisplayer.OnRemovePlayerUI -= RemovePlayerUI;
+        PlayerDisplayer.OnStartPlayerUI += AddPlayerUI;
     }
 }

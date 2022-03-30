@@ -73,7 +73,8 @@ MonoBehaviour:
   speed: 3
   distance: {x: 0, y: 0.6}
   shadowTransform: {fileID: 7893702825337664581}
-  amount: 50
+  minReward: 50
+  maxAmount: 150
 --- !u!212 &7155226685387390584
 SpriteRenderer:
   m_ObjectHideFlags: 0
