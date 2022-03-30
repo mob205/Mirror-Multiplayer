@@ -4018,7 +4018,7 @@ MonoBehaviour:
   - {fileID: 1944011985}
   - {fileID: 1415819204}
   spawnableItems:
-  - {fileID: 2983767099283529081, guid: a3e6f7407459b1945961e9aedee36df0, type: 3}
+  - {fileID: 3081456013748468236, guid: a3e6f7407459b1945961e9aedee36df0, type: 3}
   totalSpawns: 3
 --- !u!114 &1534599656
 MonoBehaviour:

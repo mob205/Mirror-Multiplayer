@@ -17,7 +17,10 @@ public class PlayerCombat : NetworkBehaviour
         if (hasAuthority && weapon)
         {
             var target = mainCam.ScreenToWorldPoint(Input.mousePosition);
-            CmdRotateWeapon(target);
+            if (connectionToServer.isReady)
+            {
+                CmdRotateWeapon(target);
+            }
             if (Input.GetButton("Fire1"))
             {
                 CmdFire(target);

@@ -10,19 +10,23 @@ public abstract class Item : NetworkBehaviour
     [Header("Oscillation")]
     [SerializeField] private float speed;
     [SerializeField] private Vector2 distance;
+    [SerializeField] private Transform shadowTransform;
 
     private Vector2 startPos;
     private float startTime;
+    private Vector2 shadowOffset;
 
     private void Start()
     {
         startPos = transform.position;
         startTime = Time.time;
+        shadowOffset = shadowTransform.position;
     }
     private void Update()
     {
         float oscillateFactor = 0.5f * (1 + Mathf.Sin(speed * (Time.time - startTime) - (Mathf.PI / 2)));
         transform.position = Vector2.Lerp(startPos, startPos + distance, oscillateFactor);
+        shadowTransform.position = shadowOffset;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
