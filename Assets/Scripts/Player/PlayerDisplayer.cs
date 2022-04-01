@@ -17,10 +17,6 @@ public class PlayerDisplayer : NetworkBehaviour
             // Send the name to the server and then display to all clients if local player's name is not set
             CmdSendName(PlayerPrefs.GetString("PlayerName"));
         }
-        else if(!isLocalPlayer && !string.IsNullOrEmpty(playerName))
-        {
-            OnStartPlayerUI?.Invoke(gameObject);
-        }
     }
     [Command]
     public void CmdSendName(string name)

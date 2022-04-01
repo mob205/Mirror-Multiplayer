@@ -9,5 +9,6 @@ public class GameReset : NetworkBehaviour
     {
         CoinManager.ResetStatics();
         UpgradeManager.ResetStatics();
+        PointTracker.ResetStatics();
     }
 }

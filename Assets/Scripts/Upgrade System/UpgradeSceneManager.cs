@@ -11,6 +11,7 @@ public class UpgradeSceneManager : NetworkBehaviour
     [SyncVar] private double startTime;
 
     private CustomNetworkManager nm;
+    private bool hasChanged;
     private void Start()
     {
         if (isServer)
@@ -26,9 +27,10 @@ public class UpgradeSceneManager : NetworkBehaviour
         {
             timerText.text = Mathf.FloorToInt((float)timeRemaining).ToString();
         }
-        else if(timeRemaining <= 0 && isServer)
+        else if(timeRemaining <= 0 && isServer && !hasChanged)
         {
             nm.StartLevel();
+            hasChanged = !hasChanged;
         }
     }
 }

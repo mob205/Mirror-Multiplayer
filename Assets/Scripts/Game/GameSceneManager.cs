@@ -13,6 +13,7 @@ public class GameSceneManager : NetworkBehaviour
 
     private CustomNetworkManager nm;
     public static event Action<uint> OnPlayerWin;
+    bool hasWon;
     private void Start()
     {
         if (isServer)
@@ -58,7 +59,9 @@ public class GameSceneManager : NetworkBehaviour
     [Server]
     private IEnumerator StartPlayerWin(uint winnerID)
     {
+        if (hasWon) { yield break; }
         if (isServerOnly) { OnPlayerWin?.Invoke(winnerID); }
+        hasWon = !hasWon;
         RpcAlertWin(winnerID);
         yield return new WaitForSeconds(sceneChangeDelay);
         nm.ServerChangeScene(nm.upgradeScene);

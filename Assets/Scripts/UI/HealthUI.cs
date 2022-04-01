@@ -11,7 +11,7 @@ public class HealthUI : MonoBehaviour
 
     private Dictionary<GameObject, GameObject> playerTemplates = new Dictionary<GameObject, GameObject>();
 
-    private void Start()
+    private void Awake()
     {
         PlayerDisplayer.OnRemovePlayerUI += RemovePlayerUI;
         PlayerDisplayer.OnStartPlayerUI += AddPlayerUI;
@@ -23,6 +23,7 @@ public class HealthUI : MonoBehaviour
 
         playerTemplate.GetComponentInChildren<TextMeshProUGUI>().text = player.GetComponent<PlayerDisplayer>().playerName;
         playerTemplate.GetComponentInChildren<HealthTracker>().target = player.GetComponent<Health>();
+        playerTemplate.GetComponentInChildren<PointDisplay>().target = player.GetComponent<NetworkIdentity>().netId;
 
         RepositionUI();
     }
@@ -52,6 +53,6 @@ public class HealthUI : MonoBehaviour
     private void OnDestroy()
     {
         PlayerDisplayer.OnRemovePlayerUI -= RemovePlayerUI;
-        PlayerDisplayer.OnStartPlayerUI += AddPlayerUI;
+        PlayerDisplayer.OnStartPlayerUI -= AddPlayerUI;
     }
 }
