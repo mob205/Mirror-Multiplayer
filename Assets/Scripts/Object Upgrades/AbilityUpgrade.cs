@@ -12,7 +12,6 @@ public abstract class AbilityUpgrade : MonoBehaviour
     public float RemainingCooldown { get; private set; } = 0;
     public int OrderNumber { get; set; }
 
-    private AbilityUI abilityUI;
     protected NetworkIdentity networkIdentity;
     private PlayerAbilities abilities;
     protected Camera cam;
@@ -33,7 +32,6 @@ public abstract class AbilityUpgrade : MonoBehaviour
         UpdateCooldown();
         if (RemainingCooldown <= 0 && networkIdentity.isLocalPlayer && Input.GetButton($"Ability{OrderNumber}"))
         {
-            Debug.Log("Requesting ability.");
             var mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
             abilities.RequestAbility(abilityID, mousePos);
         }

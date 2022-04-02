@@ -25,7 +25,6 @@ public class PlayerAbilities : NetworkBehaviour
     {
         if(abilities[ability].RemainingCooldown <= 0)
         {
-            Debug.Log("casting an ability.");
             abilities[ability].CastAbility(mousePos);
             OnSuccessfulCast(sender, ability);
         }

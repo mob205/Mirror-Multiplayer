@@ -41,8 +41,8 @@ public class PlayerUpgrades : NetworkBehaviour
     }
     public void AddAbilityUpgrade(AbilityUpgrade ability)
     {
-        CopyComponent(ability, gameObject);
-        ability.OrderNumber = abilityCount;
+        AbilityUpgrade component = (AbilityUpgrade) CopyComponent(ability, gameObject);
+        component.OrderNumber = abilityCount;
         abilityCount++;
     }
     private Component CopyComponent(Component original, GameObject destination)

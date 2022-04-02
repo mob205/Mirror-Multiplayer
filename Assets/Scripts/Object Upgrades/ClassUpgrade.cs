@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
 public class ClassUpgrade : MonoBehaviour
 {
@@ -15,9 +16,12 @@ public class ClassUpgrade : MonoBehaviour
         GetComponent<PlayerCombat>().SetWeapon(weapon);
         GetComponent<SpriteRenderer>().sprite = sprite;
 
-        var health = GetComponent<Health>();
-        health.MaxHealth *= healthModifier;
-        health.Damage(-(health.MaxHealth), null);
+        if (NetworkServer.active)
+        {
+            var health = GetComponent<Health>();
+            health.MaxHealth *= healthModifier;
+            health.Damage(-(health.MaxHealth), null);
+        }
 
         if (classAbility)
         {

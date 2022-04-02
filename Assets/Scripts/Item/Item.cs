@@ -16,7 +16,7 @@ public abstract class Item : NetworkBehaviour
     private float startTime;
     private Vector2 shadowOffset;
 
-    private void Start()
+    protected virtual void Start()
     {
         startPos = transform.position;
         startTime = Time.time;
@@ -39,10 +39,15 @@ public abstract class Item : NetworkBehaviour
         // Check if the colliding object is in a player layer
         if ((interactableLayers.value & (1 << (collision.gameObject.layer))) > 0)
         {
+            if (!IsTriggerable(collision)) { return; }
             LocalActivate(collision);
             if (isServer) { ServerActivate(collision); }
             NetworkServer.Destroy(gameObject);
         }
+    }
+    protected virtual bool IsTriggerable(Collider2D collision)
+    {
+        return true;
     }
     protected abstract void LocalActivate(Collider2D collision);
     protected abstract void ServerActivate(Collider2D collision);
