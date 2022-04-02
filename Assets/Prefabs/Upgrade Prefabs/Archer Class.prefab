@@ -46,3 +46,4 @@ MonoBehaviour:
   weapon: {fileID: 3722219681256278223, guid: a13a97aaff3343a4da6bfa1783e8f607, type: 3}
   sprite: {fileID: 21300000, guid: 3b6401c6452ad6446bfc4fee2c260772, type: 3}
   classAbility: {fileID: 0}
+  healthModifier: 1.25

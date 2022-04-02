@@ -20,13 +20,19 @@ public abstract class Item : NetworkBehaviour
     {
         startPos = transform.position;
         startTime = Time.time;
-        shadowOffset = shadowTransform.position;
+        if (shadowTransform)
+        {
+            shadowOffset = shadowTransform.position;
+        }
     }
     private void Update()
     {
         float oscillateFactor = 0.5f * (1 + Mathf.Sin(speed * (Time.time - startTime) - (Mathf.PI / 2)));
         transform.position = Vector2.Lerp(startPos, startPos + distance, oscillateFactor);
-        shadowTransform.position = shadowOffset;
+        if (shadowTransform)
+        {
+            shadowTransform.position = shadowOffset;
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

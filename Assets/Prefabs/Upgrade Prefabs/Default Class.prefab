@@ -45,3 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 168607491658398177, guid: fdeff4e745a1b66499497521339a0dee, type: 3}
   sprite: {fileID: 21300000, guid: ce5dad7f514348d47874b9815e3bdb45, type: 3}
+  classAbility: {fileID: 0}
+  healthModifier: 1

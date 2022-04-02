@@ -9,10 +9,15 @@ public class ClassUpgrade : MonoBehaviour
     public GameObject weapon;
     public Sprite sprite;
     public AbilityUpgrade classAbility;
+    public float healthModifier = 1;
     private void Start()
     {
         GetComponent<PlayerCombat>().SetWeapon(weapon);
         GetComponent<SpriteRenderer>().sprite = sprite;
+
+        var health = GetComponent<Health>();
+        health.MaxHealth *= healthModifier;
+        health.Damage(-(health.MaxHealth), null);
 
         if (classAbility)
         {

@@ -562,6 +562,15 @@ PrefabInstance:
       value: Deals high damage at a long range with a bow and arrow. Use precision
         and skill to hit your mark.
       objectReference: {fileID: 0}
+    - target: {fileID: 2372735252523093131, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: description
+      value: Bulky knight wielding a mighty greatsword. Sustain enemy attacks while
+        dishing out your own.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372735252523093131, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: upgradePrefab
+      value: 
+      objectReference: {fileID: 1382948592411737235, guid: cce79220774e3344c8e11c28a6cdccff, type: 3}
     - target: {fileID: 2372735252592694992, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: cost
       value: 0

@@ -10,7 +10,7 @@ public class Health : NetworkBehaviour
 
     [SyncVar] private float currentHealth;
     public float CurrentHealth { get { return currentHealth;  } }
-    public float MaxHealth { get { return maxHealth; } }
+    public float MaxHealth { get { return maxHealth; } set { maxHealth = value; } }
     public static event Action<Health, uint> OnDeath;
     public void Start()
     {
@@ -20,6 +20,10 @@ public class Health : NetworkBehaviour
     public void Damage(float amount, GameObject attacker)
     {
         currentHealth -= amount;
+        if(currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
         if(currentHealth <= 0)
         {
             var killerID = attacker.GetComponent<NetworkIdentity>().netId;

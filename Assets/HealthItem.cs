@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoinItem : Item
+public class HealthItem : Item
 {
     [SerializeField] private int minAmount;
     [SerializeField] private int maxAmount;
@@ -11,13 +11,13 @@ public class CoinItem : Item
     [Client]
     protected override void LocalActivate(Collider2D collision)
     {
-        Debug.Log("Coin collected.");
+        Debug.Log("Health collected.");
     }
     [Server]
     protected override void ServerActivate(Collider2D collision)
     {
-        var conn = collision.GetComponent<NetworkIdentity>().connectionToClient;
+        var health = collision.GetComponent<Health>();
         var amount = Random.Range(minAmount, maxAmount + 1);
-        CoinManager.instance.ModifyCoins(conn, amount);
+        health.Damage(-amount, gameObject);
     }
 }
