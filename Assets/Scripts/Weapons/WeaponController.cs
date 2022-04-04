@@ -8,6 +8,8 @@ public abstract class WeaponController : MonoBehaviour
     [SerializeField] protected float fireRate = 1;
     [SerializeField] protected float damage = 10;
 
+    //public float AbilityModifier { get; private set; }
+
     protected bool canFire = true;
     protected Camera mainCam;
 
@@ -34,4 +36,8 @@ public abstract class WeaponController : MonoBehaviour
     {
         damage *= modifier;
     }
+    //public void ModifyAbilityDamage(float modifier)
+    //{
+    //    AbilityModifier *= modifier;
+    //}
 }
