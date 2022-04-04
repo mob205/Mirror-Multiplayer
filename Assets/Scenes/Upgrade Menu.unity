@@ -601,9 +601,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: f90af957f1fe4124fb7a4febff1858ff, type: 3}
     - target: {fileID: 2372735253039332817, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: description
+      value: trap
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372735253039332817, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: upgradePrefab
       value: 
       objectReference: {fileID: 9016363181249257023, guid: 48c4e2e082741db4687b269761f950f5, type: 3}
+    - target: {fileID: 2372735253326001264, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: description
+      value: steal
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372735253326001264, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: upgradePrefab
+      value: 
+      objectReference: {fileID: 32633189186318954, guid: 0db1db2f159ab7c48b3f05412ee213ed, type: 3}
     - target: {fileID: 2372735253866130337, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: m_RootOrder
       value: 1

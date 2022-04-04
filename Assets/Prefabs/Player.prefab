@@ -108,7 +108,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   defaultUpgrade: {fileID: 1881153149620243592, guid: 8d38ee377d90a7742abb86ff5f1e9e60, type: 3}
-  testUpgrade: {fileID: 0}
+  testUpgrade: {fileID: 1665013738058179655, guid: 0db1db2f159ab7c48b3f05412ee213ed, type: 3}
 --- !u!114 &8735508779632633151
 MonoBehaviour:
   m_ObjectHideFlags: 0

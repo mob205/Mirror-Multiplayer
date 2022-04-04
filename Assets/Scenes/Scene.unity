@@ -4194,7 +4194,7 @@ MonoBehaviour:
     weight: 1
   - item: {fileID: 3432496134694722514, guid: ca7c4e141f121e94686cbbdbbb9cedd3, type: 3}
     weight: 3
-  totalSpawns: 0
+  totalSpawns: 3
 --- !u!114 &1534599656
 MonoBehaviour:
   m_ObjectHideFlags: 0
