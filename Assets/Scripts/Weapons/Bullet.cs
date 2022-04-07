@@ -21,7 +21,6 @@ public class Bullet : NetworkBehaviour
         {
             targetHealth.Damage(Damage, Shooter);
         }
-        Debug.Log($"{colGO.layer}");
         if((collisionMask.value & (1 << (colGO.layer))) > 0)
         {
             Destroy(gameObject);

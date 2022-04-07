@@ -8,19 +8,26 @@ public class MeleeHitbox : MonoBehaviour
     public float Damage { get; set; }
     public GameObject Shooter { get; set; }
 
-    private List<Health> damaged = new List<Health>();
+    public bool CanDamage { get; set; }
+
+    protected List<Health> damaged = new List<Health>();
     public void ClearHitPlayers()
     {
         damaged.Clear();
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
+        if (!CanDamage) { return; }
         var target = collision.GetComponent<Health>();
         if(target && !damaged.Contains(target) && collision.gameObject != Shooter)
         {
-            target.Damage(Damage, Shooter);
-            damaged.Add(target);
+            DamageTarget(target, Damage);
         }
+    }
+    protected virtual void DamageTarget(Health target, float damage)
+    {
+        target.Damage(damage, Shooter);
+        damaged.Add(target);
     }
 }
 

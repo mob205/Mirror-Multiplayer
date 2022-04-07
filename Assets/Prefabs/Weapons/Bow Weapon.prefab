@@ -128,6 +128,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 1
   damage: 15
-  bulletSpeed: 17.5
+  bulletSpeed: 18
   bulletPrefab: {fileID: 4227163515276197113, guid: cd9da55cc72e1c747864395d27ec3e16, type: 3}
   bulletLifetime: 15

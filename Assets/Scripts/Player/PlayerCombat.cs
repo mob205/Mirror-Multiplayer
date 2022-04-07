@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerCombat : NetworkBehaviour
 {
+    public float FacingAngle { get; private set; }
     private Camera mainCam;
     private WeaponController weapon;
-
     void Awake()
     {
         mainCam = Camera.main;
@@ -55,6 +55,7 @@ public class PlayerCombat : NetworkBehaviour
         {
             weapon.RotateWeapon(target);
         }
+        FacingAngle = Utility.GetDirection(target, transform).eulerAngles.z;
     }
     // To be called locally by a Class Upgrade
     public void SetWeapon(GameObject weaponObj)

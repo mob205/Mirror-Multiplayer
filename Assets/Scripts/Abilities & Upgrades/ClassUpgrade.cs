@@ -16,13 +16,12 @@ public class ClassUpgrade : MonoBehaviour
         GetComponent<PlayerCombat>().SetWeapon(weapon);
         GetComponent<SpriteRenderer>().sprite = sprite;
 
+        var health = GetComponent<Health>();
+        health.MaxHealth *= healthModifier;
         if (NetworkServer.active)
         {
-            var health = GetComponent<Health>();
-            health.MaxHealth *= healthModifier;
-            health.Damage(-(health.MaxHealth), null);
+            health.Damage(-health.MaxHealth, null);
         }
-
         if (classAbility)
         {
             GetComponent<PlayerUpgrades>().AddAbilityUpgrade(classAbility);

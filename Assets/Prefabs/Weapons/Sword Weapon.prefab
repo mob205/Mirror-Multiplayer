@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4630824529450990744
 Transform:
   m_ObjectHideFlags: 0
@@ -115,10 +115,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 1.2
-  damage: 20
+  damage: 14
   attackArcDegrees: 250
   swingTime: 0.3
-  hitbox: {fileID: 4630824529450990747}
+  hitbox: {fileID: 427509265405075350}
 --- !u!1 &4630824529764924092
 GameObject:
   m_ObjectHideFlags: 0

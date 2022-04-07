@@ -8,20 +8,20 @@ public class MeleeWeapon : WeaponController
     [SerializeField] private float attackArcDegrees = 90;
     [Tooltip("Time in seconds to swing one way")]
     [SerializeField] private float swingTime = 1;
-    [SerializeField] private GameObject hitbox;
+    [SerializeField] private MeleeHitbox hitbox;
 
     private Quaternion swingRot = Quaternion.identity;
     public override bool ServerFire(Vector3 target, ref GameObject go)
     {
         if (!canFire) { return false; }
+        if (!hitbox) { hitbox = GetComponentInChildren<MeleeHitbox>(); }
 
         // Hit detection should be server-side only.
-        var hitScript = hitbox.GetComponent<MeleeHitbox>();
-        hitScript.ClearHitPlayers();
-        hitScript.Damage = damage;
-        hitScript.Shooter = transform.parent.gameObject;
+        hitbox.ClearHitPlayers();
+        hitbox.Damage = damage;
+        hitbox.Shooter = transform.parent.gameObject;
 
-        hitbox.SetActive(true);
+        hitbox.CanDamage = true;
 
         StartCoroutine(ToggleFire());
         return true;
@@ -51,6 +51,6 @@ public class MeleeWeapon : WeaponController
             yield return null;
         }
 
-        hitbox.SetActive(false);
+        hitbox.CanDamage = false;
     }
 }

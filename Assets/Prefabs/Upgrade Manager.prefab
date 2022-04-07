@@ -1,5 +1,426 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &70682198207905718
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6853313504451644331}
+  - component: {fileID: 4571683502803235899}
+  m_Layer: 0
+  m_Name: Rapid Fire
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6853313504451644331
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70682198207905718}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1044145759647324305}
+  m_Father: {fileID: 2207247169042568545}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4571683502803235899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70682198207905718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0517fb8e1351b0d41b5d064971e985ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 2
+  upgradeID: archer_urf
+  upgradePrefab: {fileID: 0}
+  cost: 0
+  prereqUpgradeID: 
+  nextUpgradeID: 
+  description: 
+  icon: {fileID: 0}
+  color: {r: 0, g: 0, b: 0, a: 0}
+--- !u!1 &77229324904360368
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4412062741305600442}
+  - component: {fileID: 8484022815092137378}
+  m_Layer: 0
+  m_Name: The Undying
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4412062741305600442
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 77229324904360368}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7271240328571927113}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8484022815092137378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 77229324904360368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0517fb8e1351b0d41b5d064971e985ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 3
+  upgradeID: knight_undying
+  upgradePrefab: {fileID: 0}
+  cost: 0
+  prereqUpgradeID: 
+  nextUpgradeID: 
+  description: 
+  icon: {fileID: 0}
+  color: {r: 0, g: 0, b: 0, a: 0}
+--- !u!1 &599183696836056438
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3882144182183492352}
+  - component: {fileID: 4353710678316497877}
+  m_Layer: 0
+  m_Name: Rite of Swiftness
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3882144182183492352
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599183696836056438}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5356115162432609104}
+  m_Father: {fileID: 2372735254139133108}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4353710678316497877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599183696836056438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0517fb8e1351b0d41b5d064971e985ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  upgradeID: wizard_swiftness
+  upgradePrefab: {fileID: 0}
+  cost: 0
+  prereqUpgradeID: 
+  nextUpgradeID: 
+  description: 
+  icon: {fileID: 0}
+  color: {r: 0.12677999, g: 0.5947134, b: 0.7264151, a: 1}
+--- !u!1 &819954640630277554
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1044145759647324305}
+  - component: {fileID: 5360290603724239340}
+  m_Layer: 0
+  m_Name: Rain of Arrows
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1044145759647324305
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819954640630277554}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6853313504451644331}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5360290603724239340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819954640630277554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0517fb8e1351b0d41b5d064971e985ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 3
+  upgradeID: archer_rain
+  upgradePrefab: {fileID: 0}
+  cost: 0
+  prereqUpgradeID: 
+  nextUpgradeID: 
+  description: 
+  icon: {fileID: 0}
+  color: {r: 0, g: 0, b: 0, a: 0}
+--- !u!1 &950027369101568831
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 43037862201340123}
+  - component: {fileID: 6690810797829040911}
+  m_Layer: 0
+  m_Name: Precision Aiming
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &43037862201340123
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950027369101568831}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4719075008999973956}
+  m_Father: {fileID: 2372735252461942533}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6690810797829040911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950027369101568831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0517fb8e1351b0d41b5d064971e985ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  upgradeID: archer_precision
+  upgradePrefab: {fileID: 0}
+  cost: 0
+  prereqUpgradeID: 
+  nextUpgradeID: 
+  description: 
+  icon: {fileID: 0}
+  color: {r: 0, g: 0, b: 0, a: 0}
+--- !u!1 &1129087838925152854
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8295248379751068785}
+  - component: {fileID: 6005347641890526642}
+  m_Layer: 0
+  m_Name: Spell of Tracking
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8295248379751068785
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129087838925152854}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5356115162432609104}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6005347641890526642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129087838925152854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0517fb8e1351b0d41b5d064971e985ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  upgradeID: wizard_tracking
+  upgradePrefab: {fileID: 0}
+  cost: 0
+  prereqUpgradeID: 
+  nextUpgradeID: 
+  description: 
+  icon: {fileID: 0}
+  color: {r: 0.12677999, g: 0.5947134, b: 0.7264151, a: 1}
+--- !u!1 &1390658307186496145
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4682341782252862424}
+  - component: {fileID: 1152770855072474376}
+  m_Layer: 0
+  m_Name: Mercenary
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4682341782252862424
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390658307186496145}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 956560513349954301}
+  m_Father: {fileID: 2372735253203677273}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1152770855072474376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390658307186496145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0517fb8e1351b0d41b5d064971e985ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 2
+  upgradeID: knight_merc
+  upgradePrefab: {fileID: 0}
+  cost: 0
+  prereqUpgradeID: 
+  nextUpgradeID: 
+  description: 
+  icon: {fileID: 0}
+  color: {r: 0, g: 0, b: 0, a: 0}
+--- !u!1 &1784259192905393436
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5821739419906278659}
+  - component: {fileID: 6708333410352543243}
+  m_Layer: 0
+  m_Name: Piercing Magic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5821739419906278659
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784259192905393436}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3467032765613798664}
+  m_Father: {fileID: 2964054478538121099}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6708333410352543243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784259192905393436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0517fb8e1351b0d41b5d064971e985ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  upgradeID: wizard_destruction
+  upgradePrefab: {fileID: 0}
+  cost: 0
+  prereqUpgradeID: 
+  nextUpgradeID: 
+  description: 
+  icon: {fileID: 0}
+  color: {r: 0.5754717, g: 0.12215203, b: 0.2419996, a: 1}
 --- !u!1 &2372735252251007104
 GameObject:
   m_ObjectHideFlags: 0
@@ -47,6 +468,7 @@ MonoBehaviour:
   level: 2
   upgradeID: assassin_backstab
   upgradePrefab: {fileID: 0}
+  cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
   description: 
@@ -99,6 +521,7 @@ MonoBehaviour:
   level: 2
   upgradeID: assassin_confuse
   upgradePrefab: {fileID: 0}
+  cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
   description: 
@@ -131,7 +554,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 7430846905129954785}
+  - {fileID: 2207247169042568545}
+  - {fileID: 43037862201340123}
   m_Father: {fileID: 2372735253866130337}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -150,11 +576,11 @@ MonoBehaviour:
   level: 0
   upgradeID: archer_class
   upgradePrefab: {fileID: 1881153149620243593, guid: 65ec729ef8539e74fb7c8001f410a644, type: 3}
+  cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
-  description: 'Shoot arrows lol
-
-'
+  description: Deals high damage at a long range with a bow and arrow. Use precision
+    and skill to hit your mark.
   icon: {fileID: 21300000, guid: 74b9dcef38469de41b373cbd183fdb11, type: 3}
   color: {r: 0.754717, g: 0.588863, b: 0.14117648, a: 1}
 --- !u!1 &2372735252523093133
@@ -205,10 +631,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 0
   upgradeID: knight_class
-  upgradePrefab: {fileID: 2475721546277421620, guid: 0bf9ecbdb9f10e741876b245ea4607af, type: 3}
+  upgradePrefab: {fileID: 1382948592411737235, guid: cce79220774e3344c8e11c28a6cdccff, type: 3}
+  cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
-  description: shining armor. sword. you know the deal
+  description: Bulky knight wielding a mighty greatsword. Sustain enemy attacks while
+    dishing out your own.
   icon: {fileID: 21300000, guid: 69a589b3bb141bd4e864073443bc71f7, type: 3}
   color: {r: 0.6981132, g: 0.6289605, b: 0.6289605, a: 1}
 --- !u!1 &2372735252592694994
@@ -260,9 +688,11 @@ MonoBehaviour:
   level: 0
   upgradeID: assassin_class
   upgradePrefab: {fileID: 1881153149620243593, guid: 15aaa8738c4297e48818fa3d776c7f26, type: 3}
+  cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
-  description: stab stab stab
+  description: Lethal, fast-moving assassin. Use deception, mobility, and burst damage
+    to quickly take down enemies.
   icon: {fileID: 21300000, guid: d83dae502569c3a41a5d31a102df3699, type: 3}
   color: {r: 0.4811321, g: 0.2746084, b: 0.28451037, a: 1}
 --- !u!1 &2372735253017890001
@@ -311,10 +741,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   upgradeID: assassin_agile
-  upgradePrefab: {fileID: 0}
+  upgradePrefab: {fileID: 4098200631510484692, guid: fe0edb2130b0aab4e8b59271c5f1e32c, type: 3}
+  cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
-  description: 
+  description: Increases damage dealt by dashing. Reduces dash cooldown.
   icon: {fileID: 0}
   color: {r: 0.6981132, g: 0.48336005, b: 0.25355998, a: 1}
 --- !u!1 &2372735253039332819
@@ -363,11 +794,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   upgradeID: assassin_trapper
-  upgradePrefab: {fileID: 0}
+  upgradePrefab: {fileID: 9016363181249257023, guid: 48c4e2e082741db4687b269761f950f5, type: 3}
+  cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
-  description: 
-  icon: {fileID: 0}
+  description: trap
+  icon: {fileID: 21300000, guid: f90af957f1fe4124fb7a4febff1858ff, type: 3}
   color: {r: 0.32175478, g: 0.2507565, b: 0.3301887, a: 1}
 --- !u!1 &2372735253203677272
 GameObject:
@@ -396,7 +828,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4682341782252862424}
   m_Father: {fileID: 2372735252523093130}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -415,6 +848,7 @@ MonoBehaviour:
   level: 1
   upgradeID: knight_endurance
   upgradePrefab: {fileID: 0}
+  cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
   description: 
@@ -466,6 +900,7 @@ MonoBehaviour:
   level: 3
   upgradeID: assassin_shadowmaster
   upgradePrefab: {fileID: 0}
+  cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
   description: 
@@ -517,10 +952,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 2
   upgradeID: assassin_thief
-  upgradePrefab: {fileID: 0}
+  upgradePrefab: {fileID: 32633189186318954, guid: 0db1db2f159ab7c48b3f05412ee213ed, type: 3}
+  cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
-  description: 
+  description: steal
   icon: {fileID: 0}
   color: {r: 0.32175478, g: 0.2507565, b: 0.3301887, a: 1}
 --- !u!1 &2372735253380435473
@@ -569,6 +1005,7 @@ MonoBehaviour:
   level: 3
   upgradeID: assassin_bleed
   upgradePrefab: {fileID: 0}
+  cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
   description: 
@@ -601,7 +1038,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 3536259341626267246}
   m_Father: {fileID: 2372735252523093130}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -620,6 +1058,7 @@ MonoBehaviour:
   level: 1
   upgradeID: knight_strength
   upgradePrefab: {fileID: 0}
+  cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
   description: 
@@ -720,7 +1159,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 7271240328571927113}
   m_Father: {fileID: 2372735252523093130}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -739,6 +1179,7 @@ MonoBehaviour:
   level: 1
   upgradeID: knight_speed
   upgradePrefab: {fileID: 0}
+  cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
   description: 
@@ -790,6 +1231,7 @@ MonoBehaviour:
   level: 3
   upgradeID: assassin_blind
   upgradePrefab: {fileID: 0}
+  cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
   description: 
@@ -822,7 +1264,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 8463901084509508017}
+  - {fileID: 3882144182183492352}
+  - {fileID: 2964054478538121099}
   m_Father: {fileID: 2372735253866130337}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -840,10 +1285,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 0
   upgradeID: wizard_class
-  upgradePrefab: {fileID: 2475721546277421620, guid: 0bf9ecbdb9f10e741876b245ea4607af, type: 3}
+  upgradePrefab: {fileID: 1830382900499936918, guid: 4530a87874867114a912c0539e3bcc94, type: 3}
+  cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
-  description: MAGIC AND MAYHEM PFOOOOFHSHDPFSOJ
+  description: Master of magic and sorcery. Cast powerful spells to protect yourself
+    and destroy others.
   icon: {fileID: 0}
   color: {r: 0.45913768, g: 0.14702742, b: 0.5283019, a: 1}
 --- !u!1 &2372735254168269949
@@ -893,8 +1340,851 @@ MonoBehaviour:
   level: 1
   upgradeID: assassin_damage
   upgradePrefab: {fileID: 5547909280838697522, guid: 545c00d383b49e24e92ead75b6aecbc8, type: 3}
+  cost: 100
+  prereqUpgradeID: 
+  nextUpgradeID: 
+  description: Increases damage dealt by dagger.
+  icon: {fileID: 0}
+  color: {r: 0.6981132, g: 0.20118797, b: 0.19428623, a: 1}
+--- !u!1 &3769274120030303229
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 956560513349954301}
+  - component: {fileID: 5320806389379951268}
+  m_Layer: 0
+  m_Name: The Champion
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &956560513349954301
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3769274120030303229}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4682341782252862424}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5320806389379951268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3769274120030303229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0517fb8e1351b0d41b5d064971e985ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 3
+  upgradeID: knight_champion
+  upgradePrefab: {fileID: 0}
+  cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
   description: 
   icon: {fileID: 0}
-  color: {r: 0.6981132, g: 0.20118797, b: 0.19428623, a: 1}
+  color: {r: 0, g: 0, b: 0, a: 0}
+--- !u!1 &3847852060450690800
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8463901084509508017}
+  - component: {fileID: 6003962478642138140}
+  m_Layer: 0
+  m_Name: Rite of Healing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8463901084509508017
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3847852060450690800}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8275211556090989242}
+  m_Father: {fileID: 2372735254139133108}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6003962478642138140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3847852060450690800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0517fb8e1351b0d41b5d064971e985ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  upgradeID: wizard_healing
+  upgradePrefab: {fileID: 0}
+  cost: 0
+  prereqUpgradeID: 
+  nextUpgradeID: 
+  description: 
+  icon: {fileID: 0}
+  color: {r: 0.8113208, g: 0.7904128, b: 0.14159843, a: 1}
+--- !u!1 &4006306584211620372
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5356115162432609104}
+  - component: {fileID: 4436375977700009846}
+  m_Layer: 0
+  m_Name: Agile Magic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5356115162432609104
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4006306584211620372}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8295248379751068785}
+  m_Father: {fileID: 3882144182183492352}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4436375977700009846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4006306584211620372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0517fb8e1351b0d41b5d064971e985ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  upgradeID: wizard_agile
+  upgradePrefab: {fileID: 0}
+  cost: 0
+  prereqUpgradeID: 
+  nextUpgradeID: 
+  description: 
+  icon: {fileID: 0}
+  color: {r: 0.12677999, g: 0.5947134, b: 0.7264151, a: 1}
+--- !u!1 &4258898311830052280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8275211556090989242}
+  - component: {fileID: 1467568422983819098}
+  m_Layer: 0
+  m_Name: Empowering Magic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8275211556090989242
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4258898311830052280}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6368367729059337708}
+  m_Father: {fileID: 8463901084509508017}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1467568422983819098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4258898311830052280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0517fb8e1351b0d41b5d064971e985ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  upgradeID: wizard_empower
+  upgradePrefab: {fileID: 0}
+  cost: 0
+  prereqUpgradeID: 
+  nextUpgradeID: 
+  description: 
+  icon: {fileID: 0}
+  color: {r: 0.8113208, g: 0.7904128, b: 0.14159843, a: 1}
+--- !u!1 &4272946250468113744
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7271240328571927113}
+  - component: {fileID: 214562363193388519}
+  m_Layer: 0
+  m_Name: Knight's Resolve
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7271240328571927113
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4272946250468113744}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4412062741305600442}
+  m_Father: {fileID: 2372735253908863702}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &214562363193388519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4272946250468113744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0517fb8e1351b0d41b5d064971e985ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 2
+  upgradeID: knight_resolve
+  upgradePrefab: {fileID: 0}
+  cost: 0
+  prereqUpgradeID: 
+  nextUpgradeID: 
+  description: 
+  icon: {fileID: 0}
+  color: {r: 0, g: 0, b: 0, a: 0}
+--- !u!1 &4753008741909225060
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3467032765613798664}
+  - component: {fileID: 1308745499971994950}
+  m_Layer: 0
+  m_Name: Rune of Power
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3467032765613798664
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4753008741909225060}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5821739419906278659}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1308745499971994950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4753008741909225060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0517fb8e1351b0d41b5d064971e985ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  upgradeID: wizard_power
+  upgradePrefab: {fileID: 0}
+  cost: 0
+  prereqUpgradeID: 
+  nextUpgradeID: 
+  description: 
+  icon: {fileID: 0}
+  color: {r: 0.5754717, g: 0.12215203, b: 0.2419996, a: 1}
+--- !u!1 &4754780888239914755
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3382713640488309903}
+  - component: {fileID: 1509337116867082406}
+  m_Layer: 0
+  m_Name: The Champion
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3382713640488309903
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4754780888239914755}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2146734460181118399}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1509337116867082406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4754780888239914755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0517fb8e1351b0d41b5d064971e985ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 3
+  upgradeID: archer_general
+  upgradePrefab: {fileID: 0}
+  cost: 0
+  prereqUpgradeID: 
+  nextUpgradeID: 
+  description: 
+  icon: {fileID: 0}
+  color: {r: 0, g: 0, b: 0, a: 0}
+--- !u!1 &5331141975672780861
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2207247169042568545}
+  - component: {fileID: 4303766986392173983}
+  m_Layer: 0
+  m_Name: Lighter Arrows
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2207247169042568545
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5331141975672780861}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6853313504451644331}
+  m_Father: {fileID: 2372735252461942533}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4303766986392173983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5331141975672780861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0517fb8e1351b0d41b5d064971e985ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  upgradeID: archer_light
+  upgradePrefab: {fileID: 0}
+  cost: 0
+  prereqUpgradeID: 
+  nextUpgradeID: 
+  description: 
+  icon: {fileID: 0}
+  color: {r: 0, g: 0, b: 0, a: 0}
+--- !u!1 &5634360817148887337
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6368367729059337708}
+  - component: {fileID: 2700963139864387941}
+  m_Layer: 0
+  m_Name: Blessing of Protection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6368367729059337708
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5634360817148887337}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8275211556090989242}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2700963139864387941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5634360817148887337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0517fb8e1351b0d41b5d064971e985ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  upgradeID: wizard_protection
+  upgradePrefab: {fileID: 0}
+  cost: 0
+  prereqUpgradeID: 
+  nextUpgradeID: 
+  description: 
+  icon: {fileID: 0}
+  color: {r: 0.8113208, g: 0.7904128, b: 0.14159843, a: 1}
+--- !u!1 &6171706714382055863
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2964054478538121099}
+  - component: {fileID: 8583422451497828715}
+  m_Layer: 0
+  m_Name: Rite of Destruction
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2964054478538121099
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6171706714382055863}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5821739419906278659}
+  m_Father: {fileID: 2372735254139133108}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8583422451497828715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6171706714382055863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0517fb8e1351b0d41b5d064971e985ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  upgradeID: wizard_piercing
+  upgradePrefab: {fileID: 0}
+  cost: 0
+  prereqUpgradeID: 
+  nextUpgradeID: 
+  description: 
+  icon: {fileID: 0}
+  color: {r: 0.5754717, g: 0.12215203, b: 0.2419996, a: 1}
+--- !u!1 &6347923776673958202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4719075008999973956}
+  - component: {fileID: 5838695083337913533}
+  m_Layer: 0
+  m_Name: Crippling Shot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4719075008999973956
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6347923776673958202}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4311419913562447530}
+  m_Father: {fileID: 43037862201340123}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5838695083337913533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6347923776673958202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0517fb8e1351b0d41b5d064971e985ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 2
+  upgradeID: archer_cripple
+  upgradePrefab: {fileID: 0}
+  cost: 0
+  prereqUpgradeID: 
+  nextUpgradeID: 
+  description: 
+  icon: {fileID: 0}
+  color: {r: 0, g: 0, b: 0, a: 0}
+--- !u!1 &6625664822516017868
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3536259341626267246}
+  - component: {fileID: 6972265421529151659}
+  m_Layer: 0
+  m_Name: Heavier Sword
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3536259341626267246
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6625664822516017868}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8701050369367660070}
+  m_Father: {fileID: 2372735253856175124}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6972265421529151659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6625664822516017868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0517fb8e1351b0d41b5d064971e985ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 2
+  upgradeID: knight_damage
+  upgradePrefab: {fileID: 0}
+  cost: 0
+  prereqUpgradeID: 
+  nextUpgradeID: 
+  description: 
+  icon: {fileID: 0}
+  color: {r: 0, g: 0, b: 0, a: 0}
+--- !u!1 &7211440381346975670
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7430846905129954785}
+  - component: {fileID: 1527621342721993515}
+  m_Layer: 0
+  m_Name: Armored Soldier
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7430846905129954785
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7211440381346975670}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2146734460181118399}
+  m_Father: {fileID: 2372735252461942533}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1527621342721993515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7211440381346975670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0517fb8e1351b0d41b5d064971e985ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  upgradeID: archer_armor
+  upgradePrefab: {fileID: 0}
+  cost: 0
+  prereqUpgradeID: 
+  nextUpgradeID: 
+  description: 
+  icon: {fileID: 0}
+  color: {r: 0, g: 0, b: 0, a: 0}
+--- !u!1 &7378329935916107060
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2146734460181118399}
+  - component: {fileID: 5817335088628776183}
+  m_Layer: 0
+  m_Name: Commander
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2146734460181118399
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7378329935916107060}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3382713640488309903}
+  m_Father: {fileID: 7430846905129954785}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5817335088628776183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7378329935916107060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0517fb8e1351b0d41b5d064971e985ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 2
+  upgradeID: archer_commander
+  upgradePrefab: {fileID: 0}
+  cost: 0
+  prereqUpgradeID: 
+  nextUpgradeID: 
+  description: 
+  icon: {fileID: 0}
+  color: {r: 0, g: 0, b: 0, a: 0}
+--- !u!1 &8597497524003751704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4311419913562447530}
+  - component: {fileID: 9032090099715822883}
+  m_Layer: 0
+  m_Name: The BFA
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4311419913562447530
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8597497524003751704}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4719075008999973956}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9032090099715822883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8597497524003751704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0517fb8e1351b0d41b5d064971e985ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 3
+  upgradeID: archer_bfa
+  upgradePrefab: {fileID: 0}
+  cost: 0
+  prereqUpgradeID: 
+  nextUpgradeID: 
+  description: 
+  icon: {fileID: 0}
+  color: {r: 0, g: 0, b: 0, a: 0}
+--- !u!1 &8847948153287272934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8701050369367660070}
+  - component: {fileID: 6763927864230216458}
+  m_Layer: 0
+  m_Name: The Dragonslayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8701050369367660070
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8847948153287272934}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3536259341626267246}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6763927864230216458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8847948153287272934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0517fb8e1351b0d41b5d064971e985ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 3
+  upgradeID: knight_dragonslayer
+  upgradePrefab: {fileID: 0}
+  cost: 0
+  prereqUpgradeID: 
+  nextUpgradeID: 
+  description: 
+  icon: {fileID: 0}
+  color: {r: 0, g: 0, b: 0, a: 0}
