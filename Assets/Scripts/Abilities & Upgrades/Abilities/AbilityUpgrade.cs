@@ -22,10 +22,10 @@ public abstract class AbilityUpgrade : MonoBehaviour
         abilities = GetComponent<PlayerAbilities>();
         abilities.AddAbility(this);
 
-        if (!networkIdentity.isLocalPlayer) { return; }
-
-        cam = Camera.main;
-        
+        if (networkIdentity.isLocalPlayer) 
+        {
+            cam = Camera.main; 
+        }
     }
     protected virtual void Update()
     {
@@ -42,6 +42,11 @@ public abstract class AbilityUpgrade : MonoBehaviour
         {
             RemainingCooldown -= Time.deltaTime;
         }
+    }
+    // Called on all clients after server validation
+    public virtual void ClientCastAbility()
+    {
+        Debug.Log("An ability was cast.");
     }
     // Called on caster client after server validation
     public virtual void OnSuccessfulCast()

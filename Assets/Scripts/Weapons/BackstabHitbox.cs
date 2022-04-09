@@ -6,7 +6,7 @@ public class BackstabHitbox : MeleeHitbox
 {
     public float DamageModifier { get; set; }
     public float AngleThreshold { get; set; }
-    protected override void DamageTarget(Health target)
+    protected override void DamageTarget(Health target, float damage)
     {
         var shooterAngle = GetComponentInParent<PlayerCombat>().FacingAngle;
         var targetAngle = target.GetComponent<PlayerCombat>().FacingAngle;

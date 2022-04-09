@@ -561,6 +561,10 @@ PrefabInstance:
       propertyPath: upgradePrefab
       value: 
       objectReference: {fileID: 3112013156417550095, guid: 34a5425772ef59242970aeb21928c764, type: 3}
+    - target: {fileID: 2372735253325352713, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: upgradePrefab
+      value: 
+      objectReference: {fileID: 4160020872944380514, guid: 4862a6784a443f64397354f77d19eab7, type: 3}
     - target: {fileID: 2372735253866130337, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: m_RootOrder
       value: 1

@@ -1,4 +1,5 @@
 using Mirror;
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -7,6 +8,9 @@ public class PlayerCombat : NetworkBehaviour
     public float FacingAngle { get; private set; }
     private Camera mainCam;
     private WeaponController weapon;
+    public WeaponController Weapon { get { return weapon; } }
+
+    public Action OnFire;
     void Awake()
     {
         mainCam = Camera.main;
@@ -40,6 +44,7 @@ public class PlayerCombat : NetworkBehaviour
     private void RpcSimulateFire(GameObject go, Vector3 target)
     {
         weapon.SimulateFire(go, target);
+        OnFire?.Invoke();
     }
     // In the future, rotation may happen in the parent player object, not the weapon.
     // Only angle of rotation needs to pass through the network, not the entire Vector3.

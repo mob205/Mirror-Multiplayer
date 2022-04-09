@@ -1,4 +1,5 @@
 using Mirror;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,8 @@ public class PlayerAbilities : NetworkBehaviour
 {
     private Dictionary<string, AbilityUpgrade> abilities = new Dictionary<string, AbilityUpgrade>();
     private AbilityUI abilityUI;
+
+    public Action OnCast;
 
     public override void OnStartAuthority()
     {
@@ -27,6 +30,7 @@ public class PlayerAbilities : NetworkBehaviour
         {
             abilities[ability].CastAbility(mousePos);
             OnSuccessfulCast(sender, ability);
+            RpcActivateAbility(ability);
         }
     }
     public void RequestAbility(string ability, Vector2 mousePos)
@@ -38,9 +42,10 @@ public class PlayerAbilities : NetworkBehaviour
     {
         abilities[ability].OnSuccessfulCast();
     }
-    //[ClientRpc]
-    //public void RpcActivateAbility(string ability)
-    //{
-    //    abilities[ability].CastAbility();
-    //}
+    [ClientRpc]
+    public void RpcActivateAbility(string ability)
+    {
+        OnCast?.Invoke();
+        abilities[ability].ClientCastAbility();
+    }
 }
