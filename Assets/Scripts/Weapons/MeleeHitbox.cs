@@ -1,4 +1,5 @@
 using Mirror;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,8 @@ public class MeleeHitbox : MonoBehaviour
     public GameObject Shooter { get; set; }
 
     public bool CanDamage { get; set; }
+
+    public Action<Health> OnHit;
 
     protected List<Health> damaged = new List<Health>();
     public void ClearHitPlayers()
@@ -28,6 +31,7 @@ public class MeleeHitbox : MonoBehaviour
     {
         target.Damage(damage, Shooter);
         damaged.Add(target);
+        OnHit?.Invoke(target);
     }
 }
 

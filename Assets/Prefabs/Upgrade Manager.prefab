@@ -467,11 +467,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 2
   upgradeID: assassin_backstab
-  upgradePrefab: {fileID: 0}
+  upgradePrefab: {fileID: 3112013156417550095, guid: 34a5425772ef59242970aeb21928c764, type: 3}
   cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
-  description: 
+  description: Deal increased damage when attacking an enemy from behind.
   icon: {fileID: 0}
   color: {r: 0.6981132, g: 0.20118797, b: 0.19428623, a: 1}
 --- !u!1 &2372735252404502473
@@ -899,7 +899,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 3
   upgradeID: assassin_shadowmaster
-  upgradePrefab: {fileID: 0}
+  upgradePrefab: {fileID: 4160020872944380514, guid: 4862a6784a443f64397354f77d19eab7, type: 3}
   cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
@@ -1004,11 +1004,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 3
   upgradeID: assassin_bleed
-  upgradePrefab: {fileID: 0}
+  upgradePrefab: {fileID: 2660244111576937295, guid: cca278c32d5ee6449b25d93448351256, type: 3}
   cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
-  description: 
+  description: Attacking an enemy 3 times in rapid succession causes a heavy bleeding
+    effect, dealing massive damage over time.
   icon: {fileID: 0}
   color: {r: 0.6981132, g: 0.20118797, b: 0.19428623, a: 1}
 --- !u!1 &2372735253856175127
@@ -1340,7 +1341,7 @@ MonoBehaviour:
   level: 1
   upgradeID: assassin_damage
   upgradePrefab: {fileID: 5547909280838697522, guid: 545c00d383b49e24e92ead75b6aecbc8, type: 3}
-  cost: 100
+  cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
   description: Increases damage dealt by dagger.

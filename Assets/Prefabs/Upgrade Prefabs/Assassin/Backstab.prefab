@@ -43,5 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0466ba649b9f5f648b20c9028f56212a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backstabDamageModifier: 3
+  backstabDamageModifier: 1.5
   angleThreshold: 75

@@ -15,14 +15,13 @@ public class PlayerMovement : NetworkBehaviour
     [SerializeField] private float speed = 5f;
     [SerializeField] private LayerMask dashingLayer;
 
-    private Rigidbody2D rb;
+    [HideInInspector] [SyncVar] public float speedModifier = 1;
     public State CurrentState { get; private set; } = State.Walking;
     private Vector3 dashVector;
-    private BoxCollider2D col;
+    private Rigidbody2D rb;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        col = GetComponent<BoxCollider2D>();
     }
     public override void OnStartLocalPlayer()
     {
@@ -53,7 +52,7 @@ public class PlayerMovement : NetworkBehaviour
     private void ProcessInput()
     {
         Vector2 movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
-        rb.MovePosition(transform.position + speed * Time.fixedDeltaTime * (Vector3)movement);
+        rb.MovePosition(transform.position + speed * speedModifier * Time.fixedDeltaTime * (Vector3)movement);
     }
     private void ApplyDash()
     {

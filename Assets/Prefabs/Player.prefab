@@ -127,6 +127,7 @@ MonoBehaviour:
   dashingLayer:
     serializedVersion: 2
     m_Bits: 128
+  speedModifier: 1
 --- !u!114 &-7483614649098129879
 MonoBehaviour:
   m_ObjectHideFlags: 0
