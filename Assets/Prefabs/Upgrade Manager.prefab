@@ -413,8 +413,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
-  upgradeID: wizard_destruction
-  upgradePrefab: {fileID: 0}
+  upgradeID: wizard_piercing
+  upgradePrefab: {fileID: 6001687902030573641, guid: 7bcd71b147b25484fa4062bc468b13c7, type: 3}
   cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
@@ -798,7 +798,7 @@ MonoBehaviour:
   cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
-  description: trap
+  description: Gain the ability to place invisible traps that damage enemies on contact.
   icon: {fileID: 21300000, guid: f90af957f1fe4124fb7a4febff1858ff, type: 3}
   color: {r: 0.32175478, g: 0.2507565, b: 0.3301887, a: 1}
 --- !u!1 &2372735253203677272
@@ -903,7 +903,8 @@ MonoBehaviour:
   cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
-  description: 
+  description: Gain an ability that turns you completely invisible for a time. Attacking
+    or using abilities will break your invisibility.
   icon: {fileID: 0}
   color: {r: 0.32175478, g: 0.2507565, b: 0.3301887, a: 1}
 --- !u!1 &2372735253326001266
@@ -956,7 +957,8 @@ MonoBehaviour:
   cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
-  description: steal
+  description: Defeating enemy players steals a portion of their money. Deal extra
+    damage for every coin you have at the start of each round.
   icon: {fileID: 0}
   color: {r: 0.32175478, g: 0.2507565, b: 0.3301887, a: 1}
 --- !u!1 &2372735253380435473
@@ -1179,7 +1181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   upgradeID: knight_speed
-  upgradePrefab: {fileID: 0}
+  upgradePrefab: {fileID: 4078306216398914786, guid: 99a30a7f5a7f4594db324b6eb9a9b9b6, type: 3}
   cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
@@ -1865,8 +1867,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
-  upgradeID: wizard_piercing
-  upgradePrefab: {fileID: 0}
+  upgradeID: wizard_destruction
+  upgradePrefab: {fileID: 9090434671666122283, guid: a8db60724dcf2f449b3ac216291ff065, type: 3}
   cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 

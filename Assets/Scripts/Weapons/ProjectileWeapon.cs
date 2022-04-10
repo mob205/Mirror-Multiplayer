@@ -47,4 +47,12 @@ public class ProjectileWeapon : WeaponController
             NetworkServer.Destroy(go);
         }
     }
+    public void ChangeBullet(Bullet newPrefab)
+    {
+        bulletPrefab = newPrefab.gameObject;
+    }
+    public void ModifyBulletSpeed(float modifier)
+    {
+        bulletSpeed *= modifier;
+    }
 }

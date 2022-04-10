@@ -557,20 +557,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2372735253039332817, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: description
-      value: Gain the ability to place invisible traps that damage enemies on contact.
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372735253325352713, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: description
-      value: Gain an ability that turns you completely invisible for a time. Attacking
-        or using abilities will break your invisibility.
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372735253326001264, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: description
-      value: Defeating enemy players steals a portion of their money. Deal extra
-        damage for every coin you have at the start of each round.
-      objectReference: {fileID: 0}
     - target: {fileID: 2372735253866130337, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -623,10 +609,30 @@ PrefabInstance:
       propertyPath: sceneId
       value: 719890398
       objectReference: {fileID: 0}
-    - target: {fileID: 2372735253908863703, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+    - target: {fileID: 4353710678316497877, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: level
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353710678316497877, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: upgradePrefab
       value: 
-      objectReference: {fileID: 4078306216398914786, guid: 99a30a7f5a7f4594db324b6eb9a9b9b6, type: 3}
+      objectReference: {fileID: 8500324301465881719, guid: 6e85a1bd5c938d849be416b3883319e5, type: 3}
+    - target: {fileID: 6003962478642138140, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: level
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6003962478642138140, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: upgradePrefab
+      value: 
+      objectReference: {fileID: 8568834477373158690, guid: 46db5d665275cf042a8bee21ed42a028, type: 3}
+    - target: {fileID: 6708333410352543243, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: level
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8583422451497828715, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: level
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55053d1471080b142942645d5c431eaa, type: 3}
 --- !u!1001 &7560750405187656218
