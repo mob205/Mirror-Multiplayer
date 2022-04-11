@@ -60,6 +60,7 @@ public class InvisibilityAbility : AbilityUpgrade
         {
             Instantiate(particles, transform.position, Quaternion.identity);
         }
+        base.ClientCastAbility();
     }
     private void StopEffect()
     {

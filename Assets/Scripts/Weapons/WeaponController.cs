@@ -36,6 +36,10 @@ public abstract class WeaponController : MonoBehaviour
     {
         damage *= modifier;
     }
+    public void ModifyFirerate(float modifier)
+    {
+        fireRate *= modifier;
+    }
     //public void ModifyAbilityDamage(float modifier)
     //{
     //    AbilityModifier *= modifier;

@@ -1,4 +1,5 @@
 using Mirror;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,8 @@ public abstract class AbilityUpgrade : MonoBehaviour
     protected NetworkIdentity networkIdentity;
     private PlayerAbilities abilities;
     protected Camera cam;
+
+    public Action<AbilityUpgrade> OnAbilityCast;
 
     protected virtual void Start()
     {
@@ -46,7 +49,7 @@ public abstract class AbilityUpgrade : MonoBehaviour
     // Called on all clients after server validation
     public virtual void ClientCastAbility()
     {
-        Debug.Log("An ability was cast.");
+        OnAbilityCast?.Invoke(this);
     }
     // Called on caster client after server validation
     public virtual void OnSuccessfulCast()
