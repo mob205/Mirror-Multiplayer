@@ -707,6 +707,14 @@ PrefabInstance:
       propertyPath: upgradePrefab
       value: 
       objectReference: {fileID: 8568834477373158690, guid: 46db5d665275cf042a8bee21ed42a028, type: 3}
+    - target: {fileID: 6005347641890526642, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: level
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005347641890526642, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: upgradePrefab
+      value: 
+      objectReference: {fileID: 1347927200005663624, guid: 04ce5dd02bf6dbb45ac69592a3bfc93d, type: 3}
     - target: {fileID: 6708333410352543243, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: level
       value: 2

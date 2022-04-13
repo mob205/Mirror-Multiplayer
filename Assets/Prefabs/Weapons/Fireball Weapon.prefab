@@ -49,7 +49,7 @@ MonoBehaviour:
   damage: 24
   bulletSpeed: 10
   bulletPrefab: {fileID: 5882976987005668713, guid: 7d62c47ee050034499e7d713080f5d14, type: 3}
-  bulletLifetime: 20
+  bulletLifetime: 3
 --- !u!1 &4168463762918798433
 GameObject:
   m_ObjectHideFlags: 0
