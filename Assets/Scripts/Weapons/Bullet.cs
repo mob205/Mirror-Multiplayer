@@ -20,11 +20,19 @@ public class Bullet : NetworkBehaviour
         var targetHealth = colGO.GetComponent<Health>();
         if(isServer && targetHealth)
         {
-            targetHealth.Damage(Damage, Shooter);
+            OnHitPlayer(targetHealth);
         }
         if((collisionMask.value & (1 << (colGO.layer))) > 0)
         {
-            Destroy(gameObject);
+            OnHitWorld(colGO);
         }
+    }
+    protected virtual void OnHitPlayer(Health target)
+    {
+        target.Damage(Damage, Shooter);
+    }
+    protected virtual void OnHitWorld(GameObject hitGO)
+    {
+        Destroy(gameObject);
     }
 }
