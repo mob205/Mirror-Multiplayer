@@ -46,6 +46,6 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 050f54a147eb21e4db9cbe45b18386e9, type: 3}
   baseCooldown: 10
   abilityID: shield
-  shieldPrefab: {fileID: 2518972275473081440, guid: 7c6ca33ae51eeb749a3e3c8ddc49a27f, type: 3}
-  castDistance: 1.5
+  shieldPrefab: {fileID: 1290115478548419878, guid: 7c6ca33ae51eeb749a3e3c8ddc49a27f, type: 3}
+  castDistance: 2
   shieldDuration: 999

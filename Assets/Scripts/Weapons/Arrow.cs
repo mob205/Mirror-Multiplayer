@@ -16,7 +16,7 @@ public class Arrow : Bullet
             NetworkServer.Destroy(gameObject);
         }
         // Bullets should only damage on the server.
-        if (isServer && target && colGO != Shooter)
+        if (isServer && target && colGO != Shooter && colGO.transform.parent.gameObject != Shooter)
         {
             target.Damage(Damage, Shooter);
             StickArrow(colGO);
