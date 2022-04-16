@@ -25,7 +25,7 @@ public class DashAbilityUpgrade : AbilityUpgrade
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (networkIdentity.isServer && player.CurrentState == PlayerMovement.State.Dashing && collider.GetComponent<Health>())
+        if (identity.isServer && player.CurrentState == PlayerMovement.State.Dashing && collider.GetComponent<Health>())
         {
             var health = collider.GetComponent<Health>();
             health.Damage(damage, player.gameObject);

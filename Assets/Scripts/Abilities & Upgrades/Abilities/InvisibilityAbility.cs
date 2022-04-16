@@ -38,12 +38,12 @@ public class InvisibilityAbility : AbilityUpgrade
     {
         StartCooldown();
     }
-    public override void ClientCastAbility()
+    public override void ClientCastAbility(Vector2 mousePos)
     {
         weaponRenderer = playerCombat.Weapon.GetComponentInChildren<SpriteRenderer>();
 
         targetTime = NetworkTime.time + duration;
-        if (networkIdentity.isLocalPlayer)
+        if (identity.isLocalPlayer)
         {
             var transparent = new Color(255, 255, 255, casterOpacity);
             spriteRenderer.color = transparent;
@@ -60,7 +60,7 @@ public class InvisibilityAbility : AbilityUpgrade
         {
             Instantiate(particles, transform.position, Quaternion.identity);
         }
-        base.ClientCastAbility();
+        base.ClientCastAbility(mousePos);
     }
     private void StopEffect()
     {

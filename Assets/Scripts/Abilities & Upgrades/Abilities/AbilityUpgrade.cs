@@ -13,7 +13,7 @@ public abstract class AbilityUpgrade : MonoBehaviour
     public float RemainingCooldown { get; private set; } = 0;
     public int OrderNumber { get; set; }
 
-    protected NetworkIdentity networkIdentity;
+    protected NetworkIdentity identity;
     private PlayerAbilities abilities;
     protected Camera cam;
 
@@ -21,11 +21,11 @@ public abstract class AbilityUpgrade : MonoBehaviour
 
     protected virtual void Start()
     {
-        networkIdentity = GetComponent<NetworkIdentity>();
+        identity = GetComponent<NetworkIdentity>();
         abilities = GetComponent<PlayerAbilities>();
         abilities.AddAbility(this);
 
-        if (networkIdentity.isLocalPlayer) 
+        if (identity.isLocalPlayer) 
         {
             cam = Camera.main; 
         }
@@ -33,7 +33,7 @@ public abstract class AbilityUpgrade : MonoBehaviour
     protected virtual void Update()
     {
         UpdateCooldown();
-        if (RemainingCooldown <= 0 && networkIdentity.isLocalPlayer && Input.GetButton($"Ability{OrderNumber}"))
+        if (RemainingCooldown <= 0 && identity.isLocalPlayer && Input.GetButton($"Ability{OrderNumber}"))
         {
             var mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
             abilities.RequestAbility(abilityID, mousePos);
@@ -47,7 +47,7 @@ public abstract class AbilityUpgrade : MonoBehaviour
         }
     }
     // Called on all clients after server validation
-    public virtual void ClientCastAbility()
+    public virtual void ClientCastAbility(Vector2 mousePos)
     {
         OnAbilityCast?.Invoke(this);
     }

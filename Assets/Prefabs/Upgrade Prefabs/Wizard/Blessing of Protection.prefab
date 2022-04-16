@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7723537783874873977
+--- !u!1 &28623646938265554
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,41 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 183067683212461206}
-  - component: {fileID: 1452008857172986371}
+  - component: {fileID: 7546310068220954601}
+  - component: {fileID: 5189175426538473915}
   m_Layer: 0
-  m_Name: Empowering Magic
+  m_Name: Blessing of Protection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &183067683212461206
+--- !u!4 &7546310068220954601
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7723537783874873977}
+  m_GameObject: {fileID: 28623646938265554}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.496283, y: 1.6097796, z: -0.3241627}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1452008857172986371
+--- !u!114 &5189175426538473915
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7723537783874873977}
+  m_GameObject: {fileID: 28623646938265554}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ba29ed2149aa9143982dcdcd93abad9, type: 3}
+  m_Script: {fileID: 11500000, guid: bd89962472faf564b86f28646e49c2ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageModifier: 1.3
-  speedModifier: 1.3
-  buffDuration: 8
+  ability: {fileID: 160716202244259389, guid: 59cf7d9b7e83b754ebabbf2317a191ac, type: 3}

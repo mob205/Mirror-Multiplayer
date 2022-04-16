@@ -102,7 +102,7 @@ MonoBehaviour:
   syncInterval: 0.1
   collisionMask:
     serializedVersion: 2
-    m_Bits: 72
+    m_Bits: 584
 --- !u!61 &4227163515276197109
 BoxCollider2D:
   m_ObjectHideFlags: 0

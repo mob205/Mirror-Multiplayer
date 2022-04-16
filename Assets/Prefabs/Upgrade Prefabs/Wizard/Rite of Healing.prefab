@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8568834477373158690
+--- !u!1 &6108564488421067780
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8568834477373158700}
-  - component: {fileID: 8568834477373158691}
+  - component: {fileID: 4966472284842793622}
+  - component: {fileID: 4541366411462230072}
   m_Layer: 0
   m_Name: Rite of Healing
   m_TagString: Untagged
@@ -17,13 +17,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8568834477373158700
+--- !u!4 &4966472284842793622
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8568834477373158690}
+  m_GameObject: {fileID: 6108564488421067780}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,19 +31,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8568834477373158691
+--- !u!114 &4541366411462230072
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8568834477373158690}
+  m_GameObject: {fileID: 6108564488421067780}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1c647dec1ddd5f4d939f6596774443c, type: 3}
+  m_Script: {fileID: 11500000, guid: bd89962472faf564b86f28646e49c2ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
-  baseCooldown: 20
-  abilityID: heal
-  healAmount: 35
+  ability: {fileID: 8568834477373158691, guid: 46db5d665275cf042a8bee21ed42a028, type: 3}

@@ -30,7 +30,7 @@ public class PlayerAbilities : NetworkBehaviour
         {
             abilities[ability].CastAbility(mousePos);
             OnSuccessfulCast(sender, ability);
-            RpcActivateAbility(ability);
+            RpcActivateAbility(ability, mousePos);
         }
     }
     public void RequestAbility(string ability, Vector2 mousePos)
@@ -43,9 +43,9 @@ public class PlayerAbilities : NetworkBehaviour
         abilities[ability].OnSuccessfulCast();
     }
     [ClientRpc]
-    public void RpcActivateAbility(string ability)
+    public void RpcActivateAbility(string ability, Vector2 mousePos)
     {
         OnCast?.Invoke();
-        abilities[ability].ClientCastAbility();
+        abilities[ability].ClientCastAbility(mousePos);
     }
 }

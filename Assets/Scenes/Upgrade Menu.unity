@@ -303,7 +303,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 255
+    m_Bits: 767
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -557,6 +557,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1308745499971994950, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: level
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1467568422983819098, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: level
       value: 2
@@ -582,6 +586,10 @@ PrefabInstance:
       propertyPath: upgradePrefab
       value: 
       objectReference: {fileID: 7723537783874873977, guid: b05d415230cb505448e62695a943d446, type: 3}
+    - target: {fileID: 2372735252461942530, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: level
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2372735253017890015, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: description
       value: Increases damage dealt by dashing and reduces dash cooldown.
@@ -648,6 +656,10 @@ PrefabInstance:
       value: Increases movement speed.
       objectReference: {fileID: 0}
     - target: {fileID: 2700963139864387941, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: level
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2700963139864387941, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: color.b
       value: 0.25892195
       objectReference: {fileID: 0}
@@ -659,6 +671,10 @@ PrefabInstance:
       propertyPath: color.r
       value: 0.18867925
       objectReference: {fileID: 0}
+    - target: {fileID: 2700963139864387941, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: upgradePrefab
+      value: 
+      objectReference: {fileID: 28623646938265554, guid: 65a71ece58c99ef40b3bb84ed7b4c9c8, type: 3}
     - target: {fileID: 4353710678316497877, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: level
       value: 1
@@ -706,7 +722,7 @@ PrefabInstance:
     - target: {fileID: 6003962478642138140, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: upgradePrefab
       value: 
-      objectReference: {fileID: 8568834477373158690, guid: 46db5d665275cf042a8bee21ed42a028, type: 3}
+      objectReference: {fileID: 6108564488421067780, guid: 908012b18e1a2e443818ba66754db2d0, type: 3}
     - target: {fileID: 6005347641890526642, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: level
       value: 3
