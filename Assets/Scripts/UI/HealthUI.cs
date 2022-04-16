@@ -8,6 +8,7 @@ public class HealthUI : MonoBehaviour
 {
     [SerializeField] private GameObject template;
     [SerializeField] private Vector2 offset;
+    [SerializeField] private Transform startingLocation;
 
     private Dictionary<GameObject, GameObject> playerTemplates = new Dictionary<GameObject, GameObject>();
 
@@ -46,7 +47,7 @@ public class HealthUI : MonoBehaviour
         foreach (var template in playerTemplates.Values)
         {
             if (!template) { continue; }
-            template.transform.localPosition = offset * counter;
+            template.transform.localPosition = (Vector2) startingLocation.localPosition + offset * counter;
             counter++;
         }
     }

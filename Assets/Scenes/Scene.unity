@@ -4464,8 +4464,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1751908810043630670, guid: d3671fb6c440e9647af611fe4c6957f0, type: 3}
-      propertyPath: m_Enabled
-      value: 1
+      propertyPath: offset.y
+      value: -125
       objectReference: {fileID: 0}
     - target: {fileID: 1751908810043630671, guid: d3671fb6c440e9647af611fe4c6957f0, type: 3}
       propertyPath: m_Pivot.x
@@ -4554,10 +4554,6 @@ PrefabInstance:
     - target: {fileID: 1751908810043630707, guid: d3671fb6c440e9647af611fe4c6957f0, type: 3}
       propertyPath: m_Name
       value: HUD
-      objectReference: {fileID: 0}
-    - target: {fileID: 7350378698395935413, guid: d3671fb6c440e9647af611fe4c6957f0, type: 3}
-      propertyPath: sceneId
-      value: 809980693
       objectReference: {fileID: 0}
     - target: {fileID: 7904957892862801272, guid: d3671fb6c440e9647af611fe4c6957f0, type: 3}
       propertyPath: sceneId

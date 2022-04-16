@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageModifier: 1.3
-  speedModifier: 1.3
+  speedModifier: 1.1
   buffDuration: 8
