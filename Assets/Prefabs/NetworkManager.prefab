@@ -63,7 +63,15 @@ MonoBehaviour:
   - {fileID: 4227163515276197113, guid: cd9da55cc72e1c747864395d27ec3e16, type: 3}
   - {fileID: 6704529205651473868, guid: 70c14a234431b584bb824699da7c06eb, type: 3}
   - {fileID: 644859915135664312, guid: 85cdcda99b27c244cb017ec975388f14, type: 3}
-  - {fileID: 2983767099283529081, guid: a3e6f7407459b1945961e9aedee36df0, type: 3}
+  - {fileID: 3081456013748468236, guid: a3e6f7407459b1945961e9aedee36df0, type: 3}
+  - {fileID: 9171709693406530351, guid: 1a810e7a53cc30041ae273d6ec70f002, type: 3}
+  - {fileID: 6288187391727948957, guid: 67d02b8b1e387fd47b7735ad9e854c83, type: 3}
+  - {fileID: 3432496134694722515, guid: ca7c4e141f121e94686cbbdbbb9cedd3, type: 3}
+  - {fileID: 7181425506076393962, guid: d6ca18691461d124386bc89e4fc6c5f3, type: 3}
+  - {fileID: 5882976987005668713, guid: 7d62c47ee050034499e7d713080f5d14, type: 3}
+  - {fileID: 5882976987005668713, guid: 90657eb529bd33f42867f71b38991cde, type: 3}
+  - {fileID: 5882976987005668713, guid: c47477d4add25c24ba8ca4b8c648f726, type: 3}
+  - {fileID: 2518972275473081440, guid: 7c6ca33ae51eeb749a3e3c8ddc49a27f, type: 3}
   upgradeScene: Assets/Scenes/Upgrade Menu.unity
   lobbyScene: Assets/Scenes/Lobby Scene.unity
   upgradePlayerPrefab: {fileID: 6704529205651473868, guid: 70c14a234431b584bb824699da7c06eb, type: 3}

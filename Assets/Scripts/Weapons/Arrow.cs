@@ -27,12 +27,12 @@ public class Arrow : Bullet
     //        StickArrow(colGO);
     //    }
     //}
-    protected override void OnHitPlayer(Health target)
+    protected override void OnPlayerHit(Health target)
     {
-        base.OnHitPlayer(target);
+        base.OnPlayerHit(target);
         StickArrow(target.gameObject);
     }
-    protected override void OnHitWorld(GameObject hitGO)
+    protected override void OnCollisionHit(GameObject hitGO)
     {
         StickArrow(hitGO);
     }
