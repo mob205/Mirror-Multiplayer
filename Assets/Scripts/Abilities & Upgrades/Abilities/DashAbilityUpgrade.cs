@@ -9,7 +9,6 @@ public class DashAbilityUpgrade : AbilityUpgrade
     public float distance;
     public float damage;
 
-    private Rigidbody2D rb;
     private PlayerMovement player;
     protected override void Start()
     {

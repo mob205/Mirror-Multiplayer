@@ -8,7 +8,6 @@ public class BackstabUpgrade : MonoBehaviour
     public float angleThreshold;
     private void Start()
     {
-        Debug.Log("Apply backstab upgrade.");
         var oldHitbox = GetComponentInChildren<MeleeHitbox>();
         var hitboxObj = oldHitbox.gameObject;
         var newHitbox = hitboxObj.AddComponent<BackstabHitbox>();

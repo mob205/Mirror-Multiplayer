@@ -566,6 +566,10 @@ PrefabInstance:
       value: Gain an ability that unleashes a devastating nova of fire, damaging
         all nearby enemies.
       objectReference: {fileID: 0}
+    - target: {fileID: 1308745499971994950, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: upgradePrefab
+      value: 
+      objectReference: {fileID: 966462992926005652, guid: 7580ba940032d8d4e8c84c3dbacdbfa8, type: 3}
     - target: {fileID: 1467568422983819098, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: icon
       value: 
