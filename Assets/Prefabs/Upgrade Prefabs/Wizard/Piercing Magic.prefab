@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4307306763959199250}
-  - component: {fileID: 4980155768939293019}
+  - component: {fileID: 7795080388727066827}
   m_Layer: 0
   m_Name: Piercing Magic
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4980155768939293019
+--- !u!114 &7795080388727066827
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,7 +40,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6001687902030573641}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5060765129493424686330d368813c58, type: 3}
+  m_Script: {fileID: 11500000, guid: 987a07de88659fe4ca36fb1b8069f199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newBullet: {fileID: 5410965379551777288, guid: 90657eb529bd33f42867f71b38991cde, type: 3}
+  ignoredLayers:
+    serializedVersion: 2
+    m_Bits: 576

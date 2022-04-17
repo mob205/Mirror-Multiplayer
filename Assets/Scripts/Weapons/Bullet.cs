@@ -5,7 +5,7 @@ using Mirror;
 
 public class Bullet : NetworkBehaviour
 {
-    [SerializeField] protected LayerMask collisionMask;
+    public LayerMask collisionMask;
     public GameObject Shooter { get; set; }
     public float Damage { get; set; }
 

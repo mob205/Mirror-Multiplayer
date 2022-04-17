@@ -1,4 +1,5 @@
 using Mirror;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,8 @@ public class ProjectileWeapon : WeaponController
     [SerializeField] private float bulletSpeed = 5;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private float bulletLifetime = 2;
+
+    public Action<Bullet> OnShoot;
 
     public override bool ServerFire(Vector3 target, ref GameObject go)
     {
@@ -33,12 +36,12 @@ public class ProjectileWeapon : WeaponController
     }
     public override void SimulateFire(GameObject bullet, Vector3 target)
     {
-        bullet.transform.position = transform.position;
-        bullet.transform.rotation = Utility.GetDirection(target, transform);
+        var bulletComponent = bullet.GetComponent<Bullet>();
+        bullet.transform.SetPositionAndRotation(transform.position, Utility.GetDirection(target, transform));
         bullet.GetComponent<Rigidbody2D>().velocity = bullet.gameObject.transform.right * bulletSpeed;
-        bullet.GetComponent<Bullet>().Shooter = transform.parent.gameObject;
+        bulletComponent.Shooter = transform.parent.gameObject;
+        OnShoot?.Invoke(bulletComponent);
     }
-    
     private IEnumerator DelayedDestroy(GameObject go, float delay)
     {
         yield return new WaitForSeconds(delay);

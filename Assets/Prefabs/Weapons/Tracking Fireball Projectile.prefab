@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: f87bc3d274e9e61498576419ea4bde24, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.7799196, a: 1}
+  m_Color: {r: 0.21627824, g: 0, b: 0.6981132, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -92,13 +92,14 @@ GameObject:
   m_Component:
   - component: {fileID: 5882976987005668710}
   - component: {fileID: 5410965379551777288}
+  - component: {fileID: -2561742681828863722}
   - component: {fileID: 5882976987005668709}
   - component: {fileID: 5882976987005668715}
   - component: {fileID: 5882976987005668708}
   - component: {fileID: 4811573902835270245}
   - component: {fileID: 5882976987005668712}
   m_Layer: 0
-  m_Name: Piercing Fireball Projectile
+  m_Name: Tracking Fireball Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -135,7 +136,25 @@ MonoBehaviour:
   syncInterval: 0.1
   collisionMask:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 584
+--- !u!114 &-2561742681828863722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5882976987005668713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 051cf992ec2c8bb45af16522b8f8ee38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetLayers:
+    serializedVersion: 2
+    m_Bits: 136
+  rotationSpeed: 100
+  seekRange: 15
+  searchDelay: 1
 --- !u!61 &5882976987005668709
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4883,7 +4902,7 @@ MonoBehaviour:
   sceneId: 0
   serverOnly: 0
   visible: 0
-  m_AssetId: 90657eb529bd33f42867f71b38991cde
+  m_AssetId: c47477d4add25c24ba8ca4b8c648f726
   hasSpawned: 0
 --- !u!50 &4811573902835270245
 Rigidbody2D:
