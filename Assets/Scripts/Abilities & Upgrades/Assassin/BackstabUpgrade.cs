@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BackstabUpgrade : MonoBehaviour
+public class BackstabUpgrade : Upgrade
 {
     public float backstabDamageModifier;
     public float angleThreshold;
-    private void Start()
+    public override void Initialize()
     {
         var oldHitbox = GetComponentInChildren<MeleeHitbox>();
         var hitboxObj = oldHitbox.gameObject;
         var newHitbox = hitboxObj.AddComponent<BackstabHitbox>();
+
+        Debug.Log($"Old: {oldHitbox.GetInstanceID()} | New: {newHitbox.GetInstanceID()}");
         newHitbox.DamageModifier = backstabDamageModifier;
         newHitbox.AngleThreshold = angleThreshold;
-        Destroy(oldHitbox);
+
+        // DestroyImmediate to avoid oldHitbox being used over the new one in the frame
+        DestroyImmediate(oldHitbox);
     }
 }

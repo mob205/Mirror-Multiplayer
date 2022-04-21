@@ -11,7 +11,7 @@ public class MeleeHitbox : MonoBehaviour
 
     public bool CanDamage { get; set; }
 
-    public Action<Health> OnHit;
+    public event Action<Health> OnHit;
 
     protected List<Health> damaged = new List<Health>();
     public void ClearHitPlayers()

@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class PlayerUpgrades : NetworkBehaviour
 {
-    [SerializeField] private MonoBehaviour defaultUpgrade;
-    [SerializeField] private MonoBehaviour testUpgrade;
+    [SerializeField] private Upgrade defaultUpgrade;
+    [SerializeField] private Upgrade testUpgrade;
 
     private int abilityCount;
     private void Start()
@@ -26,30 +26,35 @@ public class PlayerUpgrades : NetworkBehaviour
         foreach(var upgradeID in upgradeIDs)
         {
             var upgrade = UpgradeManager.GetUpgradeFromID(upgradeID);
-            CopyComponent(upgrade, gameObject);
+            //CopyUpgrade(upgrade, gameObject).Initialize();
+
+            var copy = CopyUpgrade(upgrade, gameObject);
+            copy.Initialize();
+            Debug.Log($"Initialized {copy.GetType()} upgrade");
         }
         if (upgradeIDs.Length == 0 && defaultUpgrade)
         {
-            CopyComponent(defaultUpgrade, gameObject);
+            CopyUpgrade(defaultUpgrade, gameObject).Initialize();
         }
 
         // Testing
         if (upgradeIDs.Length == 0 && testUpgrade)
         {
-            CopyComponent(testUpgrade, gameObject);
+            CopyUpgrade(testUpgrade, gameObject).Initialize();
         }
     }
     public void AddAbilityUpgrade(AbilityUpgrade ability)
     {
-        AbilityUpgrade component = (AbilityUpgrade) CopyComponent(ability, gameObject);
+        AbilityUpgrade component = (AbilityUpgrade) CopyUpgrade(ability, gameObject);
         component.OrderNumber = abilityCount;
         abilityCount++;
+        component.Initialize();
     }
-    private Component CopyComponent(Component original, GameObject destination)
+    private Upgrade CopyUpgrade(Upgrade original, GameObject destination)
     {
         // Get and assign values from the prefab to the new component through reflection
         System.Type type = original.GetType();
-        Component copy = destination.AddComponent(type);
+        Upgrade copy = destination.AddComponent(type) as Upgrade;
 
         System.Reflection.FieldInfo[] fields = type.GetFields();
         foreach(System.Reflection.FieldInfo field in fields)

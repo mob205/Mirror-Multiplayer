@@ -10,9 +10,9 @@ public class DashAbilityUpgrade : AbilityUpgrade
     public float damage;
 
     private PlayerMovement player;
-    protected override void Start()
+    public override void Initialize()
     {
-        base.Start();
+        base.Initialize();
         player = GetComponent<PlayerMovement>();
     }
     public override void CastAbility(Vector2 mousePos)

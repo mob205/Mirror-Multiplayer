@@ -8,7 +8,7 @@ public class UpgradeManager : NetworkBehaviour
 {
     [SerializeField] List<int> upgradePaths = new List<int>() { 3, 2 };
 
-    private static readonly Dictionary<string, MonoBehaviour> upgradesByID = new Dictionary<string, MonoBehaviour>();
+    private static readonly Dictionary<string, Upgrade> upgradesByID = new Dictionary<string, Upgrade>();
     private readonly Dictionary<string, UpgradeSlot> slotsByID = new Dictionary<string, UpgradeSlot>();
 
     private static Dictionary<NetworkConnection, List<string>> serverPlayerUpgrades = new Dictionary<NetworkConnection, List<string>>();
@@ -31,7 +31,7 @@ public class UpgradeManager : NetworkBehaviour
         {
             if (!hasInitialized && child.upgradePrefab)
             {
-                upgradesByID.Add(child.upgradeID, child.upgradePrefab.GetComponent<MonoBehaviour>());
+                upgradesByID.Add(child.upgradeID, child.upgradePrefab.GetComponent<Upgrade>());
             }
             slotsByID.Add(child.upgradeID, child);
         }
@@ -194,7 +194,7 @@ public class UpgradeManager : NetworkBehaviour
     {
         ui.UpdatePreview(classUpgradeID);
     }
-    public static MonoBehaviour GetUpgradeFromID(string id)
+    public static Upgrade GetUpgradeFromID(string id)
     {
         return upgradesByID[id];
     }

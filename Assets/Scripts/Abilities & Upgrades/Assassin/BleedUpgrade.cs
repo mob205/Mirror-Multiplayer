@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BleedUpgrade : MonoBehaviour
+public class BleedUpgrade : Upgrade
 {
     [Header("Activation")]
     public float cooldown;
@@ -18,7 +18,8 @@ public class BleedUpgrade : MonoBehaviour
     private Dictionary<Health, double> timeLastHit = new Dictionary<Health, double>();
     private float currentCD;
 
-    private void Start()
+
+    public override void Initialize()
     {
         GetComponentInChildren<MeleeHitbox>().OnHit += OnHit;
     }

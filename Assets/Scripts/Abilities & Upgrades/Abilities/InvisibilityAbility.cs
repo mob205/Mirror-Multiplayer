@@ -16,9 +16,9 @@ public class InvisibilityAbility : AbilityUpgrade
 
     private double targetTime;
     private bool isInvis;
-    protected override void Start()
+    public override void Initialize()
     {
-        base.Start();
+        base.Initialize();
         spriteRenderer = GetComponent<SpriteRenderer>();
         playerCombat = GetComponent<PlayerCombat>();
         playerAbilities = GetComponent<PlayerAbilities>();

@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageUpgrade : MonoBehaviour
+public class DamageUpgrade : Upgrade
 {
     public float damageModifier;
-    private void Start()
+    public override void Initialize()
     {
         var weapon = GetComponentInChildren<WeaponController>();
         if (weapon)

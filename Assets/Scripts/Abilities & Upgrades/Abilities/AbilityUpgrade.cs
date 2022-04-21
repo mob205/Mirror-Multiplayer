@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class AbilityUpgrade : MonoBehaviour
+public abstract class AbilityUpgrade : Upgrade
 {
     public Sprite icon;
     public float baseCooldown;
@@ -19,7 +19,7 @@ public abstract class AbilityUpgrade : MonoBehaviour
 
     public Action<AbilityUpgrade> OnAbilityCast;
 
-    protected virtual void Start()
+    public override void Initialize()
     {
         identity = GetComponent<NetworkIdentity>();
         abilities = GetComponent<PlayerAbilities>();
