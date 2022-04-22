@@ -28,20 +28,27 @@ public class PlayerUpgrades : NetworkBehaviour
             var upgrade = UpgradeManager.GetUpgradeFromID(upgradeID);
             //CopyUpgrade(upgrade, gameObject).Initialize();
 
-            var copy = CopyUpgrade(upgrade, gameObject);
-            copy.Initialize();
-            Debug.Log($"Initialized {copy.GetType()} upgrade");
+            //var copy = CopyUpgrade(upgrade, gameObject);
+            //copy.Initialize();
+            //Debug.Log($"Initialized {copy.GetType()} upgrade");
+            AddUpgrade(upgrade);
         }
         if (upgradeIDs.Length == 0 && defaultUpgrade)
         {
-            CopyUpgrade(defaultUpgrade, gameObject).Initialize();
+            AddUpgrade(defaultUpgrade);
         }
 
         // Testing
         if (upgradeIDs.Length == 0 && testUpgrade)
         {
-            CopyUpgrade(testUpgrade, gameObject).Initialize();
+            AddUpgrade(testUpgrade);
         }
+    }
+    public void AddUpgrade(Upgrade upgrade)
+    {
+        var copy = CopyUpgrade(upgrade, gameObject);
+        copy.Initialize();
+        Debug.Log($"Initialized {copy.GetType()} upgrade");
     }
     public void AddAbilityUpgrade(AbilityUpgrade ability)
     {
