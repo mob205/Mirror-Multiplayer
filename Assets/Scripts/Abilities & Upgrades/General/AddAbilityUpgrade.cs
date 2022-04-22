@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AddAbilityUpgrade : MonoBehaviour
+public class AddAbilityUpgrade : Upgrade
 {
     public AbilityUpgrade ability;
-    private void Start()
+    public override void Initialize()
     {
         GetComponent<PlayerUpgrades>().AddAbilityUpgrade(ability);
     }

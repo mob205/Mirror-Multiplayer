@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EmpowerHealUpgrade : MonoBehaviour
+public class EmpowerHealUpgrade : Upgrade
 {
     public float damageModifier;
     public float speedModifier;
@@ -12,7 +12,7 @@ public class EmpowerHealUpgrade : MonoBehaviour
     private NetworkIdentity identity;
     private PlayerCombat combat;
     private PlayerMovement movement;
-    void Start()
+    public override void Initialize()
     {
         identity = GetComponent<NetworkIdentity>();
         combat = GetComponent<PlayerCombat>();

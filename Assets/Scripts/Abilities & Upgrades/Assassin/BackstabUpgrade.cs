@@ -12,7 +12,6 @@ public class BackstabUpgrade : Upgrade
         var hitboxObj = oldHitbox.gameObject;
         var newHitbox = hitboxObj.AddComponent<BackstabHitbox>();
 
-        Debug.Log($"Old: {oldHitbox.GetInstanceID()} | New: {newHitbox.GetInstanceID()}");
         newHitbox.DamageModifier = backstabDamageModifier;
         newHitbox.AngleThreshold = angleThreshold;
 

@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PiercingBulletUpgrade : MonoBehaviour
+public class PiercingBulletUpgrade : Upgrade
 {
     public LayerMask ignoredLayers;
     private ProjectileWeapon weapon;
-    void Start()
+    public override void Initialize()
     {
         weapon = GetComponentInChildren<ProjectileWeapon>();
         weapon.OnShoot += ApplyUpgrade;

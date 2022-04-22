@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FirerateUpgrade : MonoBehaviour
+public class FirerateUpgrade : Upgrade
 {
     public float firerateModifier;
-    public void Start()
+    public override void Initialize()
     {
         GetComponent<PlayerCombat>().Weapon.ModifyFirerate(firerateModifier);
     }

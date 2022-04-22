@@ -1,14 +1,14 @@
 using Mirror;
 using UnityEngine;
 
-public class ThiefUpgrade : MonoBehaviour
+public class ThiefUpgrade : Upgrade
 {
     public float damageModPerCoin;
     public float stealMin;
     public float stealMax;
 
     private NetworkIdentity identity;
-    private void Start()
+    public override void Initialize()
     {
         identity = GetComponent<NetworkIdentity>();
         if (!identity.isServer) { return; }

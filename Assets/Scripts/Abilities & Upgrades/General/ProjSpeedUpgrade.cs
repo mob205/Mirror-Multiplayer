@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjSpeedUpgrade : MonoBehaviour
+public class ProjSpeedUpgrade : Upgrade
 {
     public float projectileSpeedModifier;
-    void Start()
+    public override void Initialize()
     {
         var weapon = (ProjectileWeapon) GetComponent<PlayerCombat>().Weapon;
         weapon.ModifyBulletSpeed(projectileSpeedModifier);

@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DashAbilityBuff : MonoBehaviour
+public class DashAbilityBuff : Upgrade
 {
     public float damageModifier;
     public float cooldownModifier;
-    void Start()
+    public override void Initialize()
     {
         var ability = GetComponent<DashAbilityUpgrade>();
         if (ability)

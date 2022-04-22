@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpeedUpgrade : MonoBehaviour
+public class SpeedUpgrade : Upgrade
 {
     public float speedModifier;
     private PlayerMovement player;
-    void Start()
+    public override void Initialize()
     {
         player = GetComponent<PlayerMovement>();
         player.speedModifier *= speedModifier;
