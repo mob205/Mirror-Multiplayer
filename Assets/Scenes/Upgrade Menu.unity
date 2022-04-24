@@ -557,78 +557,87 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1308745499971994950, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: icon
-      value: 
-      objectReference: {fileID: 21300000, guid: a4a05160d25e45e498b6afeb3b47868b, type: 3}
-    - target: {fileID: 1308745499971994950, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+    - target: {fileID: 214562363193388519, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 214562363193388519, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: color.b
+      value: 0.15284546
+      objectReference: {fileID: 0}
+    - target: {fileID: 214562363193388519, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: color.g
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 214562363193388519, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: color.r
+      value: 0.1014151
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152770855072474376, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152770855072474376, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: color.b
+      value: 0.08232466
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152770855072474376, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: color.g
+      value: 0.58047116
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152770855072474376, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: color.r
+      value: 0.6981132
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152770855072474376, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: description
-      value: Gain an ability that unleashes a devastating nova of fire after a brief
-        charge-up. All enemies with a line of sight will take massive damage.
+      value: 'Earn extra money when winning a round.
+
+'
       objectReference: {fileID: 0}
-    - target: {fileID: 1308745499971994950, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+    - target: {fileID: 1152770855072474376, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: upgradePrefab
       value: 
-      objectReference: {fileID: 966462992926005652, guid: 7580ba940032d8d4e8c84c3dbacdbfa8, type: 3}
-    - target: {fileID: 1467568422983819098, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: icon
-      value: 
-      objectReference: {fileID: 21300000, guid: cb66da754673e1149b30a1138bf33e8b, type: 3}
-    - target: {fileID: 2372735252251007118, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: icon
-      value: 
-      objectReference: {fileID: 21300000, guid: db11946a8a564444e826f073b5fda998, type: 3}
-    - target: {fileID: 2372735252251007118, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: color.b
-      value: 0.2636726
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372735252251007118, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: color.g
-      value: 0.254902
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372735252251007118, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: color.r
-      value: 0.67058825
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372735252404502487, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: icon
-      value: 
-      objectReference: {fileID: 21300000, guid: 4eabe2cb54aa23d4ebabc3d2a27a7ddc, type: 3}
-    - target: {fileID: 2372735252592694992, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: icon
-      value: 
-      objectReference: {fileID: 21300000, guid: cf3f4474fb9312c4c9487e394405fd44, type: 3}
-    - target: {fileID: 2372735253017890015, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: icon
-      value: 
-      objectReference: {fileID: 21300000, guid: 0635730e4c514a84a936074c68bcc615, type: 3}
+      objectReference: {fileID: 2086087787756052626, guid: 6a46984e715288940940bc1a67241f3a, type: 3}
     - target: {fileID: 2372735253203677286, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: upgradePrefab
-      value: 
-      objectReference: {fileID: 2844630738356445586, guid: 00541ced15ca88944a5d1f5b67750cd7, type: 3}
-    - target: {fileID: 2372735253325352713, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: icon
-      value: 
-      objectReference: {fileID: 21300000, guid: 6b2cfe6a010338547b911a103971d38f, type: 3}
-    - target: {fileID: 2372735253326001264, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: icon
-      value: 
-      objectReference: {fileID: 21300000, guid: c094f6905152917498d5ef40bbc422d9, type: 3}
-    - target: {fileID: 2372735253380435487, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: icon
-      value: 
-      objectReference: {fileID: 21300000, guid: 226b4c39a5c23ff4aa2814b00a58cedb, type: 3}
-    - target: {fileID: 2372735253380435487, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372735253203677286, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: color.b
-      value: 0.2636726
+      value: 0.15284546
       objectReference: {fileID: 0}
-    - target: {fileID: 2372735253380435487, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+    - target: {fileID: 2372735253203677286, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: color.g
-      value: 0.254902
+      value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 2372735253380435487, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+    - target: {fileID: 2372735253203677286, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: color.r
-      value: 0.67058825
+      value: 0.1014151
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372735253203677286, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: description
+      value: Increases health.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372735253856175125, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372735253856175125, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: color.b
+      value: 0.0117646875
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372735253856175125, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: color.g
+      value: 0.26527297
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372735253856175125, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: color.r
+      value: 0.74509805
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372735253856175125, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: description
+      value: Increases firerate and swing speed.
       objectReference: {fileID: 0}
     - target: {fileID: 2372735253866130337, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: m_RootOrder
@@ -682,67 +691,94 @@ PrefabInstance:
       propertyPath: sceneId
       value: 719890398
       objectReference: {fileID: 0}
-    - target: {fileID: 2372735254139133109, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: icon
-      value: 
-      objectReference: {fileID: 21300000, guid: 5e84c9e4a5cd313439af1310f851f02d, type: 3}
-    - target: {fileID: 2372735254168269947, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: icon
-      value: 
-      objectReference: {fileID: 21300000, guid: 91b91c6e5ca4bcc45b1d99db2c90837a, type: 3}
-    - target: {fileID: 2372735254168269947, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+    - target: {fileID: 2372735253908863703, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372735253908863703, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: color.b
-      value: 0.2636726
+      value: 0.08232466
       objectReference: {fileID: 0}
-    - target: {fileID: 2372735254168269947, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+    - target: {fileID: 2372735253908863703, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: color.g
-      value: 0.254902
+      value: 0.58047116
       objectReference: {fileID: 0}
-    - target: {fileID: 2372735254168269947, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+    - target: {fileID: 2372735253908863703, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: color.r
-      value: 0.67058825
+      value: 0.6981132
       objectReference: {fileID: 0}
-    - target: {fileID: 2700963139864387941, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: icon
-      value: 
-      objectReference: {fileID: 21300000, guid: bc894ccfe1f7cb645800d686a82a666c, type: 3}
-    - target: {fileID: 2700963139864387941, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+    - target: {fileID: 5320806389379951268, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320806389379951268, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: color.b
+      value: 0.08232466
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320806389379951268, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: color.g
+      value: 0.58047116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320806389379951268, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: color.r
+      value: 0.6981132
+      objectReference: {fileID: 0}
+    - target: {fileID: 6763927864230216458, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6763927864230216458, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: color.b
+      value: 0.0117646875
+      objectReference: {fileID: 0}
+    - target: {fileID: 6763927864230216458, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: color.g
+      value: 0.26527297
+      objectReference: {fileID: 0}
+    - target: {fileID: 6763927864230216458, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: color.r
+      value: 0.74509805
+      objectReference: {fileID: 0}
+    - target: {fileID: 6972265421529151659, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6972265421529151659, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: color.b
+      value: 0.0117646875
+      objectReference: {fileID: 0}
+    - target: {fileID: 6972265421529151659, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: color.g
+      value: 0.26527297
+      objectReference: {fileID: 0}
+    - target: {fileID: 6972265421529151659, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: color.r
+      value: 0.74509805
+      objectReference: {fileID: 0}
+    - target: {fileID: 6972265421529151659, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: description
-      value: Gain an ability that projects a shield, blocking all enemies and attacks
-        from that direction. Your attacks pass through the shield.
+      value: Increases damage.
       objectReference: {fileID: 0}
-    - target: {fileID: 4353710678316497877, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: icon
+    - target: {fileID: 6972265421529151659, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: upgradePrefab
       value: 
-      objectReference: {fileID: 21300000, guid: fc3f184b6a8179d4f8f5f5c724539f4c, type: 3}
-    - target: {fileID: 4436375977700009846, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: icon
-      value: 
-      objectReference: {fileID: 21300000, guid: 03c9a6ceddca24741961c23c91312b80, type: 3}
-    - target: {fileID: 6003962478642138140, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: icon
-      value: 
-      objectReference: {fileID: 21300000, guid: 5e35c1064fc63bf4ebef8e4aeec25160, type: 3}
-    - target: {fileID: 6005347641890526642, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: icon
-      value: 
-      objectReference: {fileID: 21300000, guid: ced7def465155ba44964bf75f2b42e04, type: 3}
-    - target: {fileID: 6005347641890526642, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: description
-      value: Fireballs automatically seek out and follow enemies.
+      objectReference: {fileID: 2722727750442310508, guid: 6de07881b4c1064488bb00905fe862c9, type: 3}
+    - target: {fileID: 8484022815092137378, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: color.a
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6708333410352543243, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: icon
-      value: 
-      objectReference: {fileID: 21300000, guid: 46b68da2d556f67449c9e0bcb0ed8ab2, type: 3}
-    - target: {fileID: 6708333410352543243, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: description
-      value: Fireballs can pass through walls.
+    - target: {fileID: 8484022815092137378, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: color.b
+      value: 0.15284546
       objectReference: {fileID: 0}
-    - target: {fileID: 8583422451497828715, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: icon
-      value: 
-      objectReference: {fileID: 21300000, guid: 7d2007b377e484f4fb80b4da079d8aba, type: 3}
+    - target: {fileID: 8484022815092137378, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: color.g
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8484022815092137378, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: color.r
+      value: 0.1014151
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55053d1471080b142942645d5c431eaa, type: 3}
 --- !u!1001 &7560750405187656218
@@ -858,60 +894,3 @@ PrefabInstance:
       objectReference: {fileID: 1541078052}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7535709e44217d248b893323894713b6, type: 3}
---- !u!1001 &9190358332216170555
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6336499961912269474, guid: a03845fa44c596d40afd245b0c628507, type: 3}
-      propertyPath: m_Name
-      value: Archer Class Health
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121405401166701387, guid: a03845fa44c596d40afd245b0c628507, type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121405401166701387, guid: a03845fa44c596d40afd245b0c628507, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121405401166701387, guid: a03845fa44c596d40afd245b0c628507, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121405401166701387, guid: a03845fa44c596d40afd245b0c628507, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121405401166701387, guid: a03845fa44c596d40afd245b0c628507, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121405401166701387, guid: a03845fa44c596d40afd245b0c628507, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121405401166701387, guid: a03845fa44c596d40afd245b0c628507, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121405401166701387, guid: a03845fa44c596d40afd245b0c628507, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121405401166701387, guid: a03845fa44c596d40afd245b0c628507, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121405401166701387, guid: a03845fa44c596d40afd245b0c628507, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121405401166701387, guid: a03845fa44c596d40afd245b0c628507, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a03845fa44c596d40afd245b0c628507, type: 3}

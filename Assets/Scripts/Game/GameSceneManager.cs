@@ -7,15 +7,26 @@ using UnityEngine;
 
 public class GameSceneManager : NetworkBehaviour
 {
+    public static GameSceneManager instance;
+
     [SerializeField] private float sceneChangeDelay = 5;
     [SerializeField] private int playerKillReward = 100;
     [SerializeField] private int playerWinReward = 100;
+
+    public int WinReward
+    {
+        get
+        {
+            return playerWinReward;
+        }
+    }
 
     private CustomNetworkManager nm;
     public static event Action<uint> OnPlayerWin;
     bool hasWon;
     private void Start()
     {
+        instance = this;
         if (isServer)
         {
             nm = CustomNetworkManager.singleton;

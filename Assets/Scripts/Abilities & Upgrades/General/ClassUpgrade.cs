@@ -21,15 +21,5 @@ public class ClassUpgrade : Upgrade
         {
             playerUpgrades.AddUpgrade(upgrade);
         }
-        //var health = GetComponent<Health>();
-        //health.MaxHealth *= healthModifier;
-        //if (NetworkServer.active)
-        //{
-        //    health.Damage(-health.MaxHealth, null);
-        //}
-        //if (classAbility)
-        //{
-        //    GetComponent<PlayerUpgrades>().AddAbilityUpgrade(classAbility);
-        //}
     }
 }

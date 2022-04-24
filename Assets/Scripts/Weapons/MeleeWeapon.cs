@@ -51,4 +51,8 @@ public class MeleeWeapon : WeaponController
 
         hitbox.CanDamage = false;
     }
+    public void ModifySwingSpeed(float modifier)
+    {
+        swingTime *= modifier;
+    }
 }

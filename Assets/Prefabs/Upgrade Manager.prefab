@@ -104,7 +104,7 @@ MonoBehaviour:
   nextUpgradeID: 
   description: 
   icon: {fileID: 0}
-  color: {r: 0, g: 0, b: 0, a: 0}
+  color: {r: 0.07929868, g: 0.6226415, b: 0.20541918, a: 0}
 --- !u!1 &599183696836056438
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,7 +156,7 @@ MonoBehaviour:
   prereqUpgradeID: 
   nextUpgradeID: 
   description: Increases the fireball travel speed.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: fc3f184b6a8179d4f8f5f5c724539f4c, type: 3}
   color: {r: 0.12677999, g: 0.5947134, b: 0.7264151, a: 1}
 --- !u!1 &819954640630277554
 GameObject:
@@ -312,8 +312,8 @@ MonoBehaviour:
   cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
-  description: 
-  icon: {fileID: 0}
+  description: Fireballs automatically seek out and follow enemies.
+  icon: {fileID: 21300000, guid: ced7def465155ba44964bf75f2b42e04, type: 3}
   color: {r: 0.12677999, g: 0.5947134, b: 0.7264151, a: 1}
 --- !u!1 &1390658307186496145
 GameObject:
@@ -344,7 +344,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 956560513349954301}
-  m_Father: {fileID: 2372735253203677273}
+  m_Father: {fileID: 2372735253908863702}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1152770855072474376
@@ -367,7 +367,7 @@ MonoBehaviour:
   nextUpgradeID: 
   description: 
   icon: {fileID: 0}
-  color: {r: 0, g: 0, b: 0, a: 0}
+  color: {r: 0.8490566, g: 0.6517822, b: 0.1481844, a: 0}
 --- !u!1 &1784259192905393436
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,7 +419,7 @@ MonoBehaviour:
   prereqUpgradeID: 
   nextUpgradeID: 
   description: Fireballs can pass through walls.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 46b68da2d556f67449c9e0bcb0ed8ab2, type: 3}
   color: {r: 0.5754717, g: 0.12215203, b: 0.2419996, a: 1}
 --- !u!1 &2372735252251007104
 GameObject:
@@ -472,8 +472,8 @@ MonoBehaviour:
   prereqUpgradeID: 
   nextUpgradeID: 
   description: Deal increased damage when attacking an enemy from behind.
-  icon: {fileID: 0}
-  color: {r: 0.6981132, g: 0.20118797, b: 0.19428623, a: 1}
+  icon: {fileID: 21300000, guid: db11946a8a564444e826f073b5fda998, type: 3}
+  color: {r: 0.67058825, g: 0.254902, b: 0.2636726, a: 1}
 --- !u!1 &2372735252404502473
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,7 +525,7 @@ MonoBehaviour:
   prereqUpgradeID: 
   nextUpgradeID: 
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 4eabe2cb54aa23d4ebabc3d2a27a7ddc, type: 3}
   color: {r: 0.6981132, g: 0.48336005, b: 0.25355998, a: 1}
 --- !u!1 &2372735252461942532
 GameObject:
@@ -693,7 +693,7 @@ MonoBehaviour:
   nextUpgradeID: 
   description: Lethal, fast-moving assassin. Use deception, mobility, and burst damage
     to quickly take down enemies.
-  icon: {fileID: 21300000, guid: d83dae502569c3a41a5d31a102df3699, type: 3}
+  icon: {fileID: 21300000, guid: cf3f4474fb9312c4c9487e394405fd44, type: 3}
   color: {r: 0.4811321, g: 0.2746084, b: 0.28451037, a: 1}
 --- !u!1 &2372735253017890001
 GameObject:
@@ -746,7 +746,7 @@ MonoBehaviour:
   prereqUpgradeID: 
   nextUpgradeID: 
   description: Increases damage dealt by dashing and reduces dash cooldown.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 0635730e4c514a84a936074c68bcc615, type: 3}
   color: {r: 0.6981132, g: 0.48336005, b: 0.25355998, a: 1}
 --- !u!1 &2372735253039332819
 GameObject:
@@ -829,7 +829,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4682341782252862424}
+  - {fileID: 7271240328571927113}
   m_Father: {fileID: 2372735252523093130}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -847,13 +847,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   upgradeID: knight_endurance
-  upgradePrefab: {fileID: 0}
+  upgradePrefab: {fileID: 2844630738356445586, guid: 00541ced15ca88944a5d1f5b67750cd7, type: 3}
   cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
   description: 
   icon: {fileID: 0}
-  color: {r: 0, g: 0, b: 0, a: 0}
+  color: {r: 0.07929868, g: 0.6226415, b: 0.20541918, a: 0}
 --- !u!1 &2372735253325352715
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,7 +905,7 @@ MonoBehaviour:
   nextUpgradeID: 
   description: Gain an ability that turns you completely invisible for 10 seconds.
     Attacking or using abilities will break your invisibility.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 6b2cfe6a010338547b911a103971d38f, type: 3}
   color: {r: 0.32175478, g: 0.2507565, b: 0.3301887, a: 1}
 --- !u!1 &2372735253326001266
 GameObject:
@@ -959,7 +959,7 @@ MonoBehaviour:
   nextUpgradeID: 
   description: Defeating enemy players steals a portion of their money. Deal extra
     damage for every coin you have at the start of each round.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: c094f6905152917498d5ef40bbc422d9, type: 3}
   color: {r: 0.32175478, g: 0.2507565, b: 0.3301887, a: 1}
 --- !u!1 &2372735253380435473
 GameObject:
@@ -1012,8 +1012,8 @@ MonoBehaviour:
   nextUpgradeID: 
   description: Attacking an enemy 3 times in rapid succession causes a heavy bleeding
     effect, dealing massive damage over time.
-  icon: {fileID: 0}
-  color: {r: 0.6981132, g: 0.20118797, b: 0.19428623, a: 1}
+  icon: {fileID: 21300000, guid: 226b4c39a5c23ff4aa2814b00a58cedb, type: 3}
+  color: {r: 0.67058825, g: 0.254902, b: 0.2636726, a: 1}
 --- !u!1 &2372735253856175127
 GameObject:
   m_ObjectHideFlags: 0
@@ -1060,13 +1060,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   upgradeID: knight_strength
-  upgradePrefab: {fileID: 0}
+  upgradePrefab: {fileID: 6637077807432071165, guid: d75b4eec9450e6744a02fc20a9282e49, type: 3}
   cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
   description: 
   icon: {fileID: 0}
-  color: {r: 0, g: 0, b: 0, a: 0}
+  color: {r: 0.745283, g: 0.010546438, b: 0.010546438, a: 0}
 --- !u!1 &2372735253866130339
 GameObject:
   m_ObjectHideFlags: 0
@@ -1163,7 +1163,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 7271240328571927113}
+  - {fileID: 4682341782252862424}
   m_Father: {fileID: 2372735252523093130}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1187,7 +1187,7 @@ MonoBehaviour:
   nextUpgradeID: 
   description: Increases movement speed.
   icon: {fileID: 0}
-  color: {r: 0, g: 0, b: 0, a: 0}
+  color: {r: 0.8490566, g: 0.6517822, b: 0.1481844, a: 0}
 --- !u!1 &2372735253968725633
 GameObject:
   m_ObjectHideFlags: 0
@@ -1294,7 +1294,7 @@ MonoBehaviour:
   nextUpgradeID: 
   description: Master of magic and sorcery. Cast powerful spells to protect yourself
     and destroy others.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 5e84c9e4a5cd313439af1310f851f02d, type: 3}
   color: {r: 0.45913768, g: 0.14702742, b: 0.5283019, a: 1}
 --- !u!1 &2372735254168269949
 GameObject:
@@ -1347,8 +1347,8 @@ MonoBehaviour:
   prereqUpgradeID: 
   nextUpgradeID: 
   description: Increases damage dealt by dagger.
-  icon: {fileID: 0}
-  color: {r: 0.6981132, g: 0.20118797, b: 0.19428623, a: 1}
+  icon: {fileID: 21300000, guid: 91b91c6e5ca4bcc45b1d99db2c90837a, type: 3}
+  color: {r: 0.67058825, g: 0.254902, b: 0.2636726, a: 1}
 --- !u!1 &3769274120030303229
 GameObject:
   m_ObjectHideFlags: 0
@@ -1400,7 +1400,7 @@ MonoBehaviour:
   nextUpgradeID: 
   description: 
   icon: {fileID: 0}
-  color: {r: 0, g: 0, b: 0, a: 0}
+  color: {r: 0.8490566, g: 0.6517822, b: 0.1481844, a: 0}
 --- !u!1 &3847852060450690800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1452,7 +1452,7 @@ MonoBehaviour:
   prereqUpgradeID: 
   nextUpgradeID: 
   description: Gain an ability that instantly restores health on cast.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 5e35c1064fc63bf4ebef8e4aeec25160, type: 3}
   color: {r: 0.18867925, g: 0.754717, b: 0.25892195, a: 1}
 --- !u!1 &4006306584211620372
 GameObject:
@@ -1505,7 +1505,7 @@ MonoBehaviour:
   prereqUpgradeID: 
   nextUpgradeID: 
   description: Increases firerate.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 03c9a6ceddca24741961c23c91312b80, type: 3}
   color: {r: 0.12677999, g: 0.5947134, b: 0.7264151, a: 1}
 --- !u!1 &4258898311830052280
 GameObject:
@@ -1559,7 +1559,7 @@ MonoBehaviour:
   nextUpgradeID: 
   description: Your heal ability now increases damage dealt and movement speed for
     8 seconds after casting.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: cb66da754673e1149b30a1138bf33e8b, type: 3}
   color: {r: 0.18867925, g: 0.754717, b: 0.25892195, a: 1}
 --- !u!1 &4272946250468113744
 GameObject:
@@ -1590,7 +1590,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4412062741305600442}
-  m_Father: {fileID: 2372735253908863702}
+  m_Father: {fileID: 2372735253203677273}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &214562363193388519
@@ -1613,7 +1613,7 @@ MonoBehaviour:
   nextUpgradeID: 
   description: 
   icon: {fileID: 0}
-  color: {r: 0, g: 0, b: 0, a: 0}
+  color: {r: 0.07929868, g: 0.6226415, b: 0.20541918, a: 0}
 --- !u!1 &4753008741909225060
 GameObject:
   m_ObjectHideFlags: 0
@@ -1659,12 +1659,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 3
   upgradeID: wizard_power
-  upgradePrefab: {fileID: 0}
+  upgradePrefab: {fileID: 966462992926005652, guid: 7580ba940032d8d4e8c84c3dbacdbfa8, type: 3}
   cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
-  description: 
-  icon: {fileID: 0}
+  description: Gain an ability that unleashes a devastating nova of fire after a
+    brief charge-up. All enemies with a line of sight will take massive damage.
+  icon: {fileID: 21300000, guid: a4a05160d25e45e498b6afeb3b47868b, type: 3}
   color: {r: 0.5754717, g: 0.12215203, b: 0.2419996, a: 1}
 --- !u!1 &4754780888239914755
 GameObject:
@@ -1820,8 +1821,9 @@ MonoBehaviour:
   cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
-  description: 
-  icon: {fileID: 0}
+  description: Gain an ability that projects a shield, blocking all enemies and attacks
+    from that direction. Your attacks pass through the shield.
+  icon: {fileID: 21300000, guid: bc894ccfe1f7cb645800d686a82a666c, type: 3}
   color: {r: 0.18867925, g: 0.754717, b: 0.25892195, a: 1}
 --- !u!1 &6171706714382055863
 GameObject:
@@ -1874,7 +1876,7 @@ MonoBehaviour:
   prereqUpgradeID: 
   nextUpgradeID: 
   description: Increases damage dealt by fireballs.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 7d2007b377e484f4fb80b4da079d8aba, type: 3}
   color: {r: 0.5754717, g: 0.12215203, b: 0.2419996, a: 1}
 --- !u!1 &6347923776673958202
 GameObject:
@@ -1981,7 +1983,7 @@ MonoBehaviour:
   nextUpgradeID: 
   description: 
   icon: {fileID: 0}
-  color: {r: 0, g: 0, b: 0, a: 0}
+  color: {r: 0.745283, g: 0.010546438, b: 0.010546438, a: 0}
 --- !u!1 &7211440381346975670
 GameObject:
   m_ObjectHideFlags: 0
@@ -2191,4 +2193,4 @@ MonoBehaviour:
   nextUpgradeID: 
   description: 
   icon: {fileID: 0}
-  color: {r: 0, g: 0, b: 0, a: 0}
+  color: {r: 0.745283, g: 0.010546438, b: 0.010546438, a: 0}

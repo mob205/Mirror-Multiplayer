@@ -5,8 +5,10 @@ using UnityEngine;
 public class FirerateUpgrade : Upgrade
 {
     public float firerateModifier;
+    protected WeaponController weapon;
     public override void Initialize()
     {
-        GetComponent<PlayerCombat>().Weapon.ModifyFirerate(firerateModifier);
+        weapon = GetComponent<PlayerCombat>().Weapon;
+        weapon.ModifyFirerate(firerateModifier);
     }
 }
