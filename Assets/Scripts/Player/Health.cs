@@ -11,6 +11,8 @@ public class Health : NetworkBehaviour
     [SyncVar] private float currentHealth;
     public float CurrentHealth { get { return currentHealth;  } }
     public float MaxHealth { get { return maxHealth; } set { maxHealth = value; } }
+    public float DamageResistance { get; set; }
+
     public static event Action<Health, uint> OnDeath;
     public void Start()
     {
@@ -19,7 +21,7 @@ public class Health : NetworkBehaviour
     [Server]
     public void Damage(float amount, GameObject attacker)
     {
-        currentHealth -= amount;
+        currentHealth -= amount * (1 - DamageResistance);
         if(currentHealth > maxHealth)
         {
             currentHealth = maxHealth;
