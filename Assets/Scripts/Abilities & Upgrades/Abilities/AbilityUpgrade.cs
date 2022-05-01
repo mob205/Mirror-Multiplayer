@@ -15,6 +15,7 @@ public abstract class AbilityUpgrade : Upgrade
 
     protected NetworkIdentity identity;
     private PlayerAbilities abilities;
+    private PlayerMovement playerMovement;
     protected Camera cam;
 
     public Action<AbilityUpgrade> OnAbilityCast;
@@ -23,6 +24,7 @@ public abstract class AbilityUpgrade : Upgrade
     {
         identity = GetComponent<NetworkIdentity>();
         abilities = GetComponent<PlayerAbilities>();
+        playerMovement = GetComponent<PlayerMovement>();
         abilities.AddAbility(this);
 
         if (identity.isLocalPlayer) 
@@ -33,7 +35,7 @@ public abstract class AbilityUpgrade : Upgrade
     protected virtual void Update()
     {
         UpdateCooldown();
-        if (RemainingCooldown <= 0 && identity.isLocalPlayer && Input.GetButton($"Ability{OrderNumber}"))
+        if (RemainingCooldown <= 0 && identity.isLocalPlayer && Input.GetButton($"Ability{OrderNumber}") && playerMovement.CurrentState != PlayerMovement.State.Immobilized)
         {
             var mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
             abilities.RequestAbility(abilityID, mousePos);

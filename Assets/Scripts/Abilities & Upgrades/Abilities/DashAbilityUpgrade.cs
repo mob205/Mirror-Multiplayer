@@ -19,7 +19,8 @@ public class DashAbilityUpgrade : AbilityUpgrade
     {
         var dirAngle = Utility.GetDirection(mousePos, transform).eulerAngles.z * Mathf.Deg2Rad;
         var directionVector = new Vector2(Mathf.Cos(dirAngle), Mathf.Sin(dirAngle));
-        player.StartDash(directionVector, speed, distance/speed);
+        player.SetState(PlayerMovement.State.Dashing, distance/speed);
+        player.SetDashVector(directionVector, speed);
         StartCooldown();
     }
     private void OnTriggerEnter2D(Collider2D collider)

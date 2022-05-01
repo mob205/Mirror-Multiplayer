@@ -6,19 +6,22 @@ using UnityEngine;
 public class PlayerCombat : NetworkBehaviour
 {
     public float FacingAngle { get; private set; }
+    public WeaponController Weapon { get { return weapon; } }
+
     private Camera mainCam;
     private WeaponController weapon;
-    public WeaponController Weapon { get { return weapon; } }
+    private PlayerMovement playerMovement;
 
     public Action OnFire;
     void Awake()
     {
         mainCam = Camera.main;
         weapon = GetComponentInChildren<WeaponController>();
+        playerMovement = GetComponent<PlayerMovement>();
     }
     private void Update()
     {
-        if (hasAuthority && weapon)
+        if (hasAuthority && weapon && playerMovement.CurrentState != PlayerMovement.State.Immobilized)
         {
             var target = mainCam.ScreenToWorldPoint(Input.mousePosition);
             if (NetworkClient.ready)

@@ -9,15 +9,16 @@ public class PlayerMovement : NetworkBehaviour
 {
     public enum State
     {
-        Walking,
-        Dashing
+        Walking = 0,
+        Dashing = 1,
+        Immobilized = 2
     }
     [SerializeField] private float speed = 5f;
     [SerializeField] private LayerMask dashingLayer;
 
     [HideInInspector] [SyncVar] public float speedModifier = 1;
     public State CurrentState { get; private set; } = State.Walking;
-    private Vector3 dashVector;
+    [SyncVar] private Vector3 dashVector;
     private Rigidbody2D rb;
     private void Awake()
     {
@@ -30,6 +31,7 @@ public class PlayerMovement : NetworkBehaviour
     }
     private void Update()
     {
+        if(CurrentState == State.Immobilized) { return; }
         if(CurrentState == State.Dashing)
         {
             gameObject.layer = LayerMask.NameToLayer("Dashing");
@@ -58,30 +60,27 @@ public class PlayerMovement : NetworkBehaviour
     {
         rb.MovePosition(transform.position + dashVector * Time.fixedDeltaTime);
     }
-    public void StartDash(Vector3 dir, float speed, float duration)
-    {
-        dashVector = dir * speed;
-        CurrentState = State.Dashing;
-        var target = NetworkServer.spawned[netId].connectionToClient;
-        TargetStartDash(target, dashVector, duration);
-        StartCoroutine(ResetState(duration));
-    }
-    [TargetRpc]
-    private void TargetStartDash(NetworkConnection target, Vector2 dashVector, float duration)
-    {
-        CurrentState = State.Dashing;
-        this.dashVector = dashVector;
-        StartCoroutine(ResetState(duration));
-    }
-    [Command(requiresAuthority = false)]
-    public void CmdSetState(State state)
+    [Server]
+    public void SetState(State state, float resetDelay)
     {
         CurrentState = state;
+        StartCoroutine(ResetState(resetDelay));
+        RpcSetState(state, resetDelay);
+    }
+    [ClientRpc]
+    public void RpcSetState(State state, float resetDelay)
+    {
+        CurrentState = state;
+        StartCoroutine(ResetState(resetDelay));
+    }
+    [Server]
+    public void SetDashVector(Vector3 dir, float speed)
+    {
+        dashVector = dir * speed;
     }
     private IEnumerator ResetState(float time)
     {
         yield return new WaitForSeconds(time);
         CurrentState = State.Walking;
-        CmdSetState(CurrentState);
     }
 }

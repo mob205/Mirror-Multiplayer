@@ -8,12 +8,17 @@ public class PlayerAbilities : NetworkBehaviour
 {
     private Dictionary<string, AbilityUpgrade> abilities = new Dictionary<string, AbilityUpgrade>();
     private AbilityUI abilityUI;
+    private PlayerMovement player;
 
     public Action OnCast;
 
     public override void OnStartAuthority()
     {
         abilityUI = FindObjectOfType<AbilityUI>();
+    }
+    public override void OnStartServer()
+    {
+        player = GetComponent<PlayerMovement>();
     }
     public void AddAbility(AbilityUpgrade ability)
     {
@@ -26,7 +31,7 @@ public class PlayerAbilities : NetworkBehaviour
     [Command]
     public void CmdCastAbility(string ability, Vector2 mousePos, NetworkConnectionToClient sender = null)
     {
-        if(abilities[ability].RemainingCooldown <= 0)
+        if(abilities[ability].RemainingCooldown <= 0 && player.CurrentState != PlayerMovement.State.Immobilized)
         {
             abilities[ability].CastAbility(mousePos);
             OnSuccessfulCast(sender, ability);

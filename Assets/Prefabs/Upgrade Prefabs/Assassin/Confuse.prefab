@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6170388175102469465
+--- !u!1 &211998454630308750
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7509592243152316127}
-  - component: {fileID: 6097138774034558606}
+  - component: {fileID: 211998454630308751}
+  - component: {fileID: 211998454630308748}
   m_Layer: 0
-  m_Name: Sword Attack Boost
+  m_Name: Confuse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7509592243152316127
+--- !u!4 &211998454630308751
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6170388175102469465}
+  m_GameObject: {fileID: 211998454630308750}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,22 +31,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6097138774034558606
+--- !u!114 &211998454630308748
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6170388175102469465}
+  m_GameObject: {fileID: 211998454630308750}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d5a4412de33026478de8f02dc562759, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d9eabe64c9c5b54da8be36d0923244e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 6bbf0f23909bea34383ee75be4a63e4e, type: 3}
-  baseCooldown: 20
-  abilityID: attackboost
-  duration: 8
-  attackModifier: 1.25
-  firerateModifier: 1.15
-  particlePrefab: {fileID: 464828209411085468, guid: 63293ddfbc187d342b0cb2f24be43d9f, type: 3}
+  stunDuration: 5
