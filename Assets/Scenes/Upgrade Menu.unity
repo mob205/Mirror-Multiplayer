@@ -739,6 +739,10 @@ PrefabInstance:
       propertyPath: color.r
       value: 0.6981132
       objectReference: {fileID: 0}
+    - target: {fileID: 5320806389379951268, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: upgradePrefab
+      value: 
+      objectReference: {fileID: 5868565334679891423, guid: c0a9bc45ef8dfe346a5d58b8be36062f, type: 3}
     - target: {fileID: 6763927864230216458, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: color.a
       value: 1
@@ -755,6 +759,10 @@ PrefabInstance:
       propertyPath: color.r
       value: 0.74509805
       objectReference: {fileID: 0}
+    - target: {fileID: 6763927864230216458, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: upgradePrefab
+      value: 
+      objectReference: {fileID: 5988760039469689722, guid: 1bd5409970b5ced43bf0d23dd3357ef1, type: 3}
     - target: {fileID: 6972265421529151659, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: color.a
       value: 1

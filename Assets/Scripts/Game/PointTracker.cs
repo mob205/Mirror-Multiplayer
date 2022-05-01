@@ -23,19 +23,24 @@ public class PointTracker : NetworkBehaviour
     private void OnPlayerWin(uint winnerID)
     {
         var conn = NetworkServer.spawned[winnerID].connectionToClient;
-        if (serverPoints.ContainsKey(conn))
-        {
-            serverPoints[conn]++;
-        } 
-        else
-        {
-            serverPoints.Add(conn, 1);
-        }
-        SendPoints();
+        AddPoints(conn, 1);
         if (isServer && serverPoints[conn] >= RoundsToWin)
         {
             StartWin();
         }
+    }
+    [Server]
+    public void AddPoints(NetworkConnection conn, int amount)
+    {
+        if (serverPoints.ContainsKey(conn))
+        {
+            serverPoints[conn] += amount;
+        }
+        else
+        {
+            serverPoints.Add(conn, amount);
+        }
+        SendPoints();
     }
     [Server]
     private void SendPoints()

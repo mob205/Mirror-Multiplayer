@@ -43,9 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1222c07deb7e6a642b836fe265874ec9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 12482fff3e66600499e5099e89397791, type: 3}
   baseCooldown: 25
   abilityID: resistance
-  duration: 8
+  duration: 5
   resistance: 0.4
   particlePrefab: {fileID: 7154104029221350475, guid: 24c28a97a2e8ef442ae1d314d8ec6162, type: 3}
