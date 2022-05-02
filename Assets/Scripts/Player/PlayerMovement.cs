@@ -31,17 +31,7 @@ public class PlayerMovement : NetworkBehaviour
     }
     private void Update()
     {
-        if(CurrentState == State.Immobilized) { return; }
-        if(CurrentState == State.Dashing)
-        {
-            gameObject.layer = LayerMask.NameToLayer("Dashing");
-        }
-        else
-        {
-            gameObject.layer = LayerMask.NameToLayer("Player");
-        }
-
-        if (!hasAuthority) { return; }
+        if(CurrentState == State.Immobilized || !hasAuthority) { return; }
         if (CurrentState == State.Walking)
         {
             ProcessInput();
@@ -82,5 +72,6 @@ public class PlayerMovement : NetworkBehaviour
     {
         yield return new WaitForSeconds(time);
         CurrentState = State.Walking;
+        gameObject.layer = LayerMask.NameToLayer("Player");
     }
 }

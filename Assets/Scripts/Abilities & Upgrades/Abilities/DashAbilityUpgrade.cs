@@ -21,7 +21,13 @@ public class DashAbilityUpgrade : AbilityUpgrade
         var directionVector = new Vector2(Mathf.Cos(dirAngle), Mathf.Sin(dirAngle));
         player.SetState(PlayerMovement.State.Dashing, distance/speed);
         player.SetDashVector(directionVector, speed);
+        gameObject.layer = LayerMask.NameToLayer("Dashing");
         StartCooldown();
+    }
+    public override void ClientCastAbility(Vector2 mousePos)
+    {
+        gameObject.layer = LayerMask.NameToLayer("Dashing");
+        base.ClientCastAbility(mousePos);
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {

@@ -616,6 +616,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2086087787756052626, guid: 6a46984e715288940940bc1a67241f3a, type: 3}
     - target: {fileID: 2372735252404502487, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: description
+      value: Dashing into an enemy briefly stuns them, preventing them from moving
+        and attacking.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372735252404502487, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: upgradePrefab
       value: 
       objectReference: {fileID: 211998454630308750, guid: bf438d207c8c06e47a8d1d6a57914db1, type: 3}
@@ -731,6 +736,18 @@ PrefabInstance:
       propertyPath: color.r
       value: 0.6981132
       objectReference: {fileID: 0}
+    - target: {fileID: 2372735253968725633, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: m_Name
+      value: Dashmaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372735253968725647, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: upgradeID
+      value: assassin_ghost
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372735253968725647, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: upgradePrefab
+      value: 
+      objectReference: {fileID: 3939433933769085408, guid: f7f0105fd95127344bbd49bd03a133f3, type: 3}
     - target: {fileID: 5320806389379951268, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: color.a
       value: 1

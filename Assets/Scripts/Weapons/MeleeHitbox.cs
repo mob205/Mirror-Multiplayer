@@ -22,9 +22,10 @@ public class MeleeHitbox : MonoBehaviour
     {
         if (!CanDamage) { return; }
         var target = collision.GetComponent<Health>();
-        if(target && !damaged.Contains(target) && collision.gameObject != Shooter)
+        if (target && !damaged.Contains(target) && collision.gameObject != Shooter)
         {
             DamageTarget(target, Damage);
+            Debug.Log($"Damaging {collision.name}");
         }
     }
     protected virtual void DamageTarget(Health target, float damage)
