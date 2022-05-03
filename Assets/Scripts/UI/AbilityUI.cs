@@ -15,6 +15,5 @@ public class AbilityUI : MonoBehaviour
         displayObj.transform.localPosition = startingLocation.localPosition + (Vector3)(offset * displayObjects.Count);
         displayObj.SetAbility(ability);
         displayObjects.Add(displayObj);
-
     }
 }

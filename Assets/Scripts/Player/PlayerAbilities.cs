@@ -31,7 +31,7 @@ public class PlayerAbilities : NetworkBehaviour
     [Command]
     public void CmdCastAbility(string ability, Vector2 mousePos, NetworkConnectionToClient sender = null)
     {
-        if(abilities[ability].RemainingCooldown <= 0 && player.CurrentState != PlayerMovement.State.Immobilized)
+        if(abilities[ability].RemainingCharges >= 1 && abilities[ability].RemainingCastDelay <= 0 && player.CurrentState != PlayerMovement.State.Immobilized)
         {
             abilities[ability].CastAbility(mousePos);
             RpcActivateAbility(ability, mousePos);

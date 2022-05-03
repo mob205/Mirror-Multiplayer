@@ -12,9 +12,11 @@ public abstract class AbilityUpgrade : Upgrade
     public string abilityID;
     [Header("Charges")]
     public int maxCharges = 1;
-    public float castDelay;
+    public float baseCastDelay;
 
     public float RemainingCooldown { get; private set; } = 0;
+    public float RemainingCastDelay { get; private set; } = 0;
+    public float RemainingCharges { get; private set; } = 0;
     public int OrderNumber { get; set; }
 
     protected NetworkIdentity identity;
@@ -29,6 +31,7 @@ public abstract class AbilityUpgrade : Upgrade
         identity = GetComponent<NetworkIdentity>();
         abilities = GetComponent<PlayerAbilities>();
         playerMovement = GetComponent<PlayerMovement>();
+        AddMaxCharges();
         abilities.AddAbility(this);
 
         if (identity.isLocalPlayer) 
@@ -39,7 +42,7 @@ public abstract class AbilityUpgrade : Upgrade
     protected virtual void Update()
     {
         UpdateCooldown();
-        if (RemainingCooldown <= 0 && identity.isLocalPlayer && Input.GetButton($"Ability{OrderNumber}") && playerMovement.CurrentState != PlayerMovement.State.Immobilized)
+        if (Input.GetButton($"Ability{OrderNumber}") && RemainingCastDelay <= 0 && RemainingCharges >= 1 && identity.isLocalPlayer && playerMovement.CurrentState != PlayerMovement.State.Immobilized)
         {
             var mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
             abilities.RequestAbility(abilityID, mousePos);
@@ -47,23 +50,59 @@ public abstract class AbilityUpgrade : Upgrade
     }
     private void UpdateCooldown()
     {
-        if (RemainingCooldown >= 0)
+        if (RemainingCooldown > 0)
         {
             RemainingCooldown -= Time.deltaTime;
+            if(RemainingCooldown <= 0)
+            {
+                AddCharge();
+            }
+        }
+        if(RemainingCastDelay > 0)
+        {
+            RemainingCastDelay -= Time.deltaTime;
         }
     }
     // Called on all clients after server validation
     public virtual void ClientCastAbility(Vector2 mousePos)
     {
+        if (!(abilities.isServer && abilities.isClient))
+        {
+            // Exclude hosts so charges are not subtracted twice.
+            RemainingCharges--;
+        }
         StartCooldown();
+        StartCastDelay();
         OnAbilityCast?.Invoke(this);
     }
     public virtual void CastAbility(Vector2 mousePos)
     {
+        RemainingCharges--;
         StartCooldown();
+        StartCastDelay();
     }
-    protected void StartCooldown()
+    public void AddMaxCharges()
     {
-        RemainingCooldown = baseCooldown;
+        RemainingCharges = maxCharges;
     }
+    private void AddCharge()
+    {
+        RemainingCharges++;
+        if(RemainingCharges < maxCharges)
+        {
+            StartCooldown();
+        }
+    }
+    private void StartCastDelay()
+    {
+        RemainingCastDelay = baseCastDelay;
+    }
+    private void StartCooldown()
+    {
+        if (RemainingCooldown <= 0)
+        {
+            RemainingCooldown = baseCooldown;
+        }
+    }
+    
 }
