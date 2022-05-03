@@ -22,18 +22,19 @@ public class AbilityDisplay : MonoBehaviour
         {
             slider.value = ability.RemainingCooldown / ability.baseCooldown;
         }
-        if(chargeText)
+        if(ability.maxCharges > 1)
         {
+            chargeDisplay.SetActive(true);
             chargeText.text = ability.RemainingCharges.ToString();
+        }
+        else
+        {
+            chargeDisplay.SetActive(false);
         }
     }
     public void SetAbility(AbilityUpgrade ability)
     {
         this.ability = ability;
         iconImage.sprite = ability.icon;
-        if(ability.maxCharges == 1)
-        {
-            chargeDisplay.SetActive(false);
-        }
     }
 }
