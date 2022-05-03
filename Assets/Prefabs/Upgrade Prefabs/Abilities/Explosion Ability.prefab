@@ -46,6 +46,8 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: a4a05160d25e45e498b6afeb3b47868b, type: 3}
   baseCooldown: 15
   abilityID: explosion
+  maxCharges: 1
+  castDelay: 0
   expParticlePrefab: {fileID: 5039031505961498422, guid: 209b3225fe83e8248ab34a0769f248fa, type: 3}
   startParticlePrefab: {fileID: 755975309610476890, guid: e5c1542350983734f8e81f14d7c98a4f, type: 3}
   wallLayers:

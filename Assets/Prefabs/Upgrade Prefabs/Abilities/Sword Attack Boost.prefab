@@ -46,6 +46,8 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 6bbf0f23909bea34383ee75be4a63e4e, type: 3}
   baseCooldown: 20
   abilityID: attackboost
+  maxCharges: 1
+  castDelay: 0
   duration: 8
   attackModifier: 1.25
   firerateModifier: 1.15

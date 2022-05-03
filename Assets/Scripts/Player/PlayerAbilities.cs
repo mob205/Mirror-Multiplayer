@@ -34,18 +34,12 @@ public class PlayerAbilities : NetworkBehaviour
         if(abilities[ability].RemainingCooldown <= 0 && player.CurrentState != PlayerMovement.State.Immobilized)
         {
             abilities[ability].CastAbility(mousePos);
-            OnSuccessfulCast(sender, ability);
             RpcActivateAbility(ability, mousePos);
         }
     }
     public void RequestAbility(string ability, Vector2 mousePos)
     {
         CmdCastAbility(ability, mousePos);
-    }
-    [TargetRpc]
-    private void OnSuccessfulCast(NetworkConnection target, string ability)
-    {
-        abilities[ability].OnSuccessfulCast();
     }
     [ClientRpc]
     public void RpcActivateAbility(string ability, Vector2 mousePos)

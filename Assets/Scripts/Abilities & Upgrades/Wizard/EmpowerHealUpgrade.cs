@@ -28,11 +28,11 @@ public class EmpowerHealUpgrade : Upgrade
     }
     private IEnumerator ApplyBuff()
     {
-        Debug.Log("Applying buff.");
         combat.Weapon.ModifyDamage(damageModifier);
         movement.speedModifier *= speedModifier;
+
         yield return new WaitForSeconds(buffDuration);
-        Debug.Log("Getting rid of buff");
+
         combat.Weapon.ModifyDamage(1 / damageModifier);
         movement.speedModifier /= speedModifier;
     }

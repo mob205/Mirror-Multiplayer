@@ -43,6 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ba29ed2149aa9143982dcdcd93abad9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageModifier: 1.3
-  speedModifier: 1.1
+  damageModifier: 1.15
+  speedModifier: 1.3
   buffDuration: 8

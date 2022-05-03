@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DashAbilityUpgrade : AbilityUpgrade
+public class DashAbility : AbilityUpgrade
 {
+    [Header("Gameplay")]
     public float speed;
     public float distance;
     public float damage;
@@ -22,7 +23,7 @@ public class DashAbilityUpgrade : AbilityUpgrade
         player.SetState(PlayerMovement.State.Dashing, distance/speed);
         player.SetDashVector(directionVector, speed);
         gameObject.layer = LayerMask.NameToLayer("Dashing");
-        StartCooldown();
+        base.CastAbility(mousePos);
     }
     public override void ClientCastAbility(Vector2 mousePos)
     {

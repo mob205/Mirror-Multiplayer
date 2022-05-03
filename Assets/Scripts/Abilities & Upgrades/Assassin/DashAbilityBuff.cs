@@ -8,7 +8,7 @@ public class DashAbilityBuff : Upgrade
     public float cooldownModifier;
     public override void Initialize()
     {
-        var ability = GetComponent<DashAbilityUpgrade>();
+        var ability = GetComponent<DashAbility>();
         if (ability)
         {
             ability.damage *= damageModifier;

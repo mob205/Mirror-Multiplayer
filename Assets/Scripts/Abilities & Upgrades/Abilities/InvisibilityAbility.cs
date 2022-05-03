@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class InvisibilityAbility : AbilityUpgrade
 {
+    [Header("Gameplay")]
     public float duration;
     public float casterOpacity;
     public ParticleSystem particles;
@@ -36,7 +37,7 @@ public class InvisibilityAbility : AbilityUpgrade
     }
     public override void CastAbility(Vector2 mousePos)
     {
-        StartCooldown();
+        base.CastAbility(mousePos);
     }
     public override void ClientCastAbility(Vector2 mousePos)
     {

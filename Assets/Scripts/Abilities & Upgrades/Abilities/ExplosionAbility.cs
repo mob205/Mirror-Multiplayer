@@ -5,7 +5,7 @@ using System.Linq;
 
 public class ExplosionAbility : AbilityUpgrade
 {
-    [Header("General")]
+    [Header("Particles")]
     public ParticleSystem expParticlePrefab;
     public ParticleSystem startParticlePrefab;
     public LayerMask wallLayers;
@@ -16,7 +16,7 @@ public class ExplosionAbility : AbilityUpgrade
     public override void CastAbility(Vector2 mousePos)
     {
         StartCoroutine(DelayedCalculateDamage());
-        StartCooldown();
+        base.CastAbility(mousePos);
     }
     public override void ClientCastAbility(Vector2 mousePos)
     {

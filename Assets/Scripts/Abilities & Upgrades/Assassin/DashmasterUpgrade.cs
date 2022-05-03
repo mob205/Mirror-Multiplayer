@@ -7,7 +7,7 @@ public class DashmasterUpgrade : Upgrade
     public string layerName;
     public override void Initialize()
     {
-        GetComponent<DashAbilityUpgrade>().OnAbilityCast += ChangeLayer;
+        GetComponent<DashAbility>().OnAbilityCast += ChangeLayer;
     }
     private void ChangeLayer(AbilityUpgrade ability)
     {

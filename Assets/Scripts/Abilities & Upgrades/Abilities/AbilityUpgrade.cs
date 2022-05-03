@@ -6,9 +6,13 @@ using UnityEngine;
 
 public abstract class AbilityUpgrade : Upgrade
 {
+    [Header("General")]
     public Sprite icon;
     public float baseCooldown;
     public string abilityID;
+    [Header("Charges")]
+    public int maxCharges = 1;
+    public float castDelay;
 
     public float RemainingCooldown { get; private set; } = 0;
     public int OrderNumber { get; set; }
@@ -51,14 +55,13 @@ public abstract class AbilityUpgrade : Upgrade
     // Called on all clients after server validation
     public virtual void ClientCastAbility(Vector2 mousePos)
     {
+        StartCooldown();
         OnAbilityCast?.Invoke(this);
     }
-    // Called on caster client after server validation
-    public virtual void OnSuccessfulCast()
+    public virtual void CastAbility(Vector2 mousePos)
     {
         StartCooldown();
     }
-    public abstract void CastAbility(Vector2 mousePos);
     protected void StartCooldown()
     {
         RemainingCooldown = baseCooldown;

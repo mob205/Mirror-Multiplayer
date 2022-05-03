@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AttackBoostAbility : AbilityUpgrade
 {
+    [Header("Gameplay")]
     public float duration;
     public float attackModifier;
     public float firerateModifier;
@@ -13,7 +14,7 @@ public class AttackBoostAbility : AbilityUpgrade
     public override void CastAbility(Vector2 mousePos)
     {
         StartCoroutine(ApplyBuff());
-        StartCooldown();
+        base.CastAbility(mousePos);
     }
     public override void ClientCastAbility(Vector2 mousePos)
     {

@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShieldAbilityUpgrade : AbilityUpgrade
+public class ShieldAbility : AbilityUpgrade
 {
+    [Header("Gameplay")]
     public GameObject shieldPrefab;
     public float castDistance;
     public float shieldDuration;
@@ -12,7 +13,7 @@ public class ShieldAbilityUpgrade : AbilityUpgrade
     public override void CastAbility(Vector2 mousePos)
     {
         SpawnShield(mousePos);
-        StartCooldown();
+        base.CastAbility(mousePos);
     }
     public override void ClientCastAbility(Vector2 mousePos)
     {
