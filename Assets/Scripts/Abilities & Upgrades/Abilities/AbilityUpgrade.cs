@@ -31,7 +31,7 @@ public abstract class AbilityUpgrade : Upgrade
         identity = GetComponent<NetworkIdentity>();
         abilities = GetComponent<PlayerAbilities>();
         playerMovement = GetComponent<PlayerMovement>();
-        AddMaxCharges();
+        ResetCharges();
         abilities.AddAbility(this);
 
         if (identity.isLocalPlayer) 
@@ -81,7 +81,7 @@ public abstract class AbilityUpgrade : Upgrade
         StartCooldown();
         StartCastDelay();
     }
-    public void AddMaxCharges()
+    public void ResetCharges()
     {
         RemainingCharges = maxCharges;
     }

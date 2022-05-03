@@ -7,6 +7,7 @@ public class Bullet : NetworkBehaviour
 {
     public LayerMask collisionMask;
     public GameObject Shooter { get; set; }
+    public WeaponController Weapon { get; set; }
     public float Damage { get; set; }
 
 
@@ -30,6 +31,7 @@ public class Bullet : NetworkBehaviour
     protected virtual void OnPlayerHit(Health target)
     {
         target.Damage(Damage, Shooter);
+        Weapon.TriggerHit(target);
     }
     protected virtual void OnCollisionHit(GameObject hitGO)
     {

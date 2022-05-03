@@ -21,7 +21,7 @@ public class BleedUpgrade : Upgrade
 
     public override void Initialize()
     {
-        GetComponentInChildren<MeleeHitbox>().OnHit += OnHit;
+        GetComponentInChildren<WeaponController>().OnHit += OnHit;
     }
     private void Update()
     {

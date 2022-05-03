@@ -46,8 +46,8 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: cf3f4474fb9312c4c9487e394405fd44, type: 3}
   baseCooldown: 10
   abilityID: dash
-  maxCharges: 2
-  baseCastDelay: 1.5
+  maxCharges: 1
+  baseCastDelay: 0
   speed: 32
   distance: 8
   damage: 10

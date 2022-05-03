@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,8 @@ public abstract class WeaponController : MonoBehaviour
 
     protected bool canFire = true;
     protected Camera mainCam;
+
+    public event Action<Health> OnHit;
 
     private void Start()
     {
@@ -40,8 +43,8 @@ public abstract class WeaponController : MonoBehaviour
     {
         fireRate *= modifier;
     }
-    //public void ModifyAbilityDamage(float modifier)
-    //{
-    //    AbilityModifier *= modifier;
-    //}
+    public void TriggerHit(Health target)
+    {
+        OnHit?.Invoke(target);
+    }
 }

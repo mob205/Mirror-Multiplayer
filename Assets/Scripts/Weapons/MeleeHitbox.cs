@@ -8,10 +8,10 @@ public class MeleeHitbox : MonoBehaviour
 {
     public float Damage { get; set; }
     public GameObject Shooter { get; set; }
-
+    public WeaponController Weapon { get; set; }
     public bool CanDamage { get; set; }
 
-    public event Action<Health> OnHit;
+    //public event Action<Health> OnHit;
 
     protected List<Health> damaged = new List<Health>();
     public void ClearHitPlayers()
@@ -32,7 +32,8 @@ public class MeleeHitbox : MonoBehaviour
     {
         target.Damage(damage, Shooter);
         damaged.Add(target);
-        OnHit?.Invoke(target);
+        Weapon.TriggerHit(target);
+        //OnHit?.Invoke(target);
     }
 }
 

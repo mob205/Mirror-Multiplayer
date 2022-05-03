@@ -18,6 +18,7 @@ public class MeleeWeapon : WeaponController
         hitbox.ClearHitPlayers();
         hitbox.Damage = damage;
         hitbox.Shooter = transform.parent.gameObject;
+        hitbox.Weapon = this;
 
         hitbox.CanDamage = true;
 

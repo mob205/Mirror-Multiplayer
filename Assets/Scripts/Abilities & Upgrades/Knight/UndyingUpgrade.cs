@@ -17,7 +17,7 @@ public class UndyingUpgrade : Upgrade
         {
             health.Damage(-health.MaxHealth, null);
         }
-        GetComponentInChildren<MeleeHitbox>().OnHit += OnHit;
+        GetComponentInChildren<WeaponController>().OnHit += OnHit;
     }
     private void OnHit(Health target)
     {

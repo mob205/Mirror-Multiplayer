@@ -40,6 +40,7 @@ public class ProjectileWeapon : WeaponController
         bullet.transform.SetPositionAndRotation(transform.position, Utility.GetDirection(target, transform));
         bullet.GetComponent<Rigidbody2D>().velocity = bullet.gameObject.transform.right * bulletSpeed;
         bulletComponent.Shooter = transform.parent.gameObject;
+        bulletComponent.Weapon = this;
         OnShoot?.Invoke(bulletComponent);
     }
     private IEnumerator DelayedDestroy(GameObject go, float delay)

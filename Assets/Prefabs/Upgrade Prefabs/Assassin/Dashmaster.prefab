@@ -43,4 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e801e48de5aecb4c8e028e0882c5084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerName: Ghost
+  charges: 3
+  castDelay: 2
+  dashLayerName: Ghost

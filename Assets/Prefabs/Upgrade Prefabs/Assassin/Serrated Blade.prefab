@@ -46,6 +46,6 @@ MonoBehaviour:
   cooldown: 5
   resetDelay: 2
   hitsNeeded: 3
-  totalDamage: 25
+  totalDamage: 35
   TPS: 5
   duration: 2
