@@ -10,7 +10,7 @@ public class HealthUpgrade : Upgrade
     {
         var health = GetComponent<Health>();
         health.MaxHealth *= healthModifier;
-        if (GetComponent<NetworkIdentity>().isServer)
+        if (NetworkServer.active)
         {
             health.Damage(-health.MaxHealth, null);
         }

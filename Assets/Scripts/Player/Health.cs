@@ -14,7 +14,7 @@ public class Health : NetworkBehaviour
     public float DamageResistance { get; set; }
 
     public static event Action<Health, uint> OnDeath;
-    public void Start()
+    public override void OnStartServer()
     {
         currentHealth = maxHealth;
     }
