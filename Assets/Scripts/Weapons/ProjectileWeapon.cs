@@ -23,7 +23,7 @@ public class ProjectileWeapon : WeaponController
         var bulletComponent = ShootBullet(target, bulletGO);
 
         var identity = GetComponentInParent<NetworkIdentity>();
-        if (!(identity.isServer && identity.isClient))
+        if (!identity.isHost)
         {
             // Exclude hosts so event is not triggered twice
             OnShoot?.Invoke(bulletComponent);
@@ -46,7 +46,7 @@ public class ProjectileWeapon : WeaponController
     {
         var bulletComponent = bullet.GetComponent<Bullet>();
         bullet.transform.SetPositionAndRotation(transform.position, Utility.GetDirection(target, transform));
-        bullet.GetComponent<Rigidbody2D>().velocity = bullet.gameObject.transform.right * bulletSpeed;
+        bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * bulletSpeed;
         bulletComponent.Shooter = transform.parent.gameObject;
         bulletComponent.Weapon = this;
         bulletComponent.Damage = damage;

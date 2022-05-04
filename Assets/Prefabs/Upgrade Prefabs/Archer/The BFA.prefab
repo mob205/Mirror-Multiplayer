@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3939433933769085408
+--- !u!1 &2449383710075794075
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3939433933769085410}
-  - component: {fileID: 3939433933769085409}
+  - component: {fileID: 5916726482714040498}
+  - component: {fileID: 382451531808272764}
   m_Layer: 0
-  m_Name: Dashmaster
+  m_Name: The BFA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3939433933769085410
+--- !u!4 &5916726482714040498
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3939433933769085408}
+  m_GameObject: {fileID: 2449383710075794075}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,18 +31,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3939433933769085409
+--- !u!114 &382451531808272764
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3939433933769085408}
+  m_GameObject: {fileID: 2449383710075794075}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e801e48de5aecb4c8e028e0882c5084, type: 3}
+  m_Script: {fileID: 11500000, guid: bd89962472faf564b86f28646e49c2ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charges: 3
-  castDelay: 1
-  dashLayerName: Ghost
+  ability: {fileID: 6179465669736258738, guid: 48a082db6a60a9a4bb4f907586d9a809, type: 3}

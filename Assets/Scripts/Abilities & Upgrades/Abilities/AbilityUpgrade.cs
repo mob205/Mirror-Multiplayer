@@ -66,7 +66,7 @@ public abstract class AbilityUpgrade : Upgrade
     // Called on all clients after server validation
     public virtual void ClientCastAbility(Vector2 mousePos)
     {
-        if (!(abilities.isServer && abilities.isClient))
+        if (!identity.isHost)
         {
             // Exclude hosts so charges are not subtracted twice.
             RemainingCharges--;

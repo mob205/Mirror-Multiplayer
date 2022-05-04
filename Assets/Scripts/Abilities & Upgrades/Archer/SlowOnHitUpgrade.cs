@@ -38,12 +38,12 @@ public class SlowOnHitUpgrade : Upgrade
         {
             slowedPlayers.Add(player, slowDuration);
             player.speedModifier *= speedModifier;
-            Debug.Log("Player slowed");
         }
     }
     private void OnDestroy()
     {
-        foreach (var player in slowedPlayers)
+        var currentSlowed = new Dictionary<PlayerMovement, float>(slowedPlayers);
+        foreach (var player in currentSlowed)
         {
             slowedPlayers.Remove(player.Key);
             player.Key.speedModifier /= speedModifier;

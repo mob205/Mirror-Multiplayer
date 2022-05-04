@@ -641,6 +641,10 @@ PrefabInstance:
       propertyPath: upgradePrefab
       value: 
       objectReference: {fileID: 7631717448519902487, guid: 01f5ea020bde34c4db4d49c0eb6da369, type: 3}
+    - target: {fileID: 9032090099715822883, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: upgradePrefab
+      value: 
+      objectReference: {fileID: 2449383710075794075, guid: ce5f13215a99fd744a6a19bdf0bb9f63, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55053d1471080b142942645d5c431eaa, type: 3}
 --- !u!1001 &7560750405187656218

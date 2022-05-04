@@ -19,7 +19,7 @@ public class Bullet : NetworkBehaviour
         if(colGO.transform.parent && colGO.transform.parent.gameObject == Shooter) { return; }
 
         var targetHealth = colGO.GetComponent<Health>();
-        if(isServer && targetHealth)
+        if(NetworkServer.active && targetHealth)
         {
             OnPlayerHit(targetHealth);
         }
@@ -31,7 +31,10 @@ public class Bullet : NetworkBehaviour
     protected virtual void OnPlayerHit(Health target)
     {
         target.Damage(Damage, Shooter);
-        Weapon.TriggerHit(target);
+        if (Weapon)
+        {
+            Weapon.TriggerHit(target);
+        }
     }
     protected virtual void OnCollisionHit(GameObject hitGO)
     {
