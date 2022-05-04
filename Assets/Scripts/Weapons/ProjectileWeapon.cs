@@ -10,7 +10,7 @@ public class ProjectileWeapon : WeaponController
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private float bulletLifetime = 2;
 
-    public Action<Bullet> OnShoot;
+    public event Action<Bullet> OnShoot;
 
     public override bool ServerFire(Vector3 target, ref GameObject go)
     {
@@ -20,28 +20,37 @@ public class ProjectileWeapon : WeaponController
 
         // Spawn the bullet and set its velocity server-side
         GameObject bulletGO = Instantiate(bulletPrefab, transform.position, dir);
-        bulletGO.GetComponent<Rigidbody2D>().velocity = bulletGO.gameObject.transform.right * bulletSpeed;
+        var bulletComponent = ShootBullet(target, bulletGO);
 
-        var bullet = bulletGO.GetComponent<Bullet>();
-        bullet.Shooter = transform.parent.gameObject;
-        bullet.Damage = damage;
+        var identity = GetComponentInParent<NetworkIdentity>();
+        if (!(identity.isServer && identity.isClient))
+        {
+            // Exclude hosts so event is not triggered twice
+            OnShoot?.Invoke(bulletComponent);
+        }
 
         NetworkServer.Spawn(bulletGO); 
 
         StartCoroutine(DelayedDestroy(bulletGO, bulletLifetime));
         StartCoroutine(ToggleFire());
 
-        go = bullet.gameObject;
+        go = bulletGO;
         return true;
     }
     public override void SimulateFire(GameObject bullet, Vector3 target)
+    {
+        var bulletComponent = ShootBullet(target, bullet);
+        OnShoot?.Invoke(bulletComponent);
+    }
+    private Bullet ShootBullet(Vector3 target, GameObject bullet)
     {
         var bulletComponent = bullet.GetComponent<Bullet>();
         bullet.transform.SetPositionAndRotation(transform.position, Utility.GetDirection(target, transform));
         bullet.GetComponent<Rigidbody2D>().velocity = bullet.gameObject.transform.right * bulletSpeed;
         bulletComponent.Shooter = transform.parent.gameObject;
         bulletComponent.Weapon = this;
-        OnShoot?.Invoke(bulletComponent);
+        bulletComponent.Damage = damage;
+        return bulletComponent;
     }
     private IEnumerator DelayedDestroy(GameObject go, float delay)
     {
