@@ -7,7 +7,7 @@ using UnityEngine;
 public class ProjectileWeapon : WeaponController
 {
     [SerializeField] private float bulletSpeed = 5;
-    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Bullet weaponBulletPrefab;
     [SerializeField] private float bulletLifetime = 2;
 
     public event Action<Bullet> OnShoot;
@@ -15,7 +15,7 @@ public class ProjectileWeapon : WeaponController
     public override bool ServerFire(Vector3 target)
     {
         if (!canFire) { return false; }
-        var bullet = ShootBullet(target);
+        var bullet = ShootWeaponBullet(target);
 
         if (!playerIdentity.isHost)
         {
@@ -26,16 +26,26 @@ public class ProjectileWeapon : WeaponController
     }
     public override void SimulateFire(Vector3 target)
     {
-        var bullet = ShootBullet(target);
+        var dir = Utility.GetDirection(target, transform);
+        var bullet = ShootWeaponBullet(target);
+
         OnShoot?.Invoke(bullet);
     }
-    private Bullet ShootBullet(Vector3 target)
+    private Bullet ShootWeaponBullet(Vector3 target)
     {
         var dir = Utility.GetDirection(target, transform);
+
+        var bullet = ShootBullet(weaponBulletPrefab, dir);
+
+        StartCoroutine(ToggleFire());
+
+        return bullet;
+    }
+    public Bullet ShootBullet(Bullet bulletPrefab, Quaternion dir)
+    {
         var bullet = Instantiate(bulletPrefab, transform.position, dir);
         var bulletComponent = bullet.GetComponent<Bullet>();
 
-        bullet.transform.SetPositionAndRotation(transform.position, Utility.GetDirection(target, transform));
         bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * bulletSpeed;
 
         bulletComponent.Shooter = transform.parent.gameObject;
@@ -43,12 +53,12 @@ public class ProjectileWeapon : WeaponController
         bulletComponent.Damage = damage;
 
         StartCoroutine(DelayedDestroy(bullet.gameObject, bulletLifetime));
-        StartCoroutine(ToggleFire());
 
         return bulletComponent;
     }
     private IEnumerator DelayedDestroy(GameObject go, float delay)
     {
+        Debug.Log($"Waiting {delay} seconds");
         yield return new WaitForSeconds(delay);
         if (go)
         {
@@ -57,10 +67,14 @@ public class ProjectileWeapon : WeaponController
     }
     public void ChangeBullet(Bullet newPrefab)
     {
-        bulletPrefab = newPrefab.gameObject;
+        weaponBulletPrefab = newPrefab;
     }
     public void ModifyBulletSpeed(float modifier)
     {
         bulletSpeed *= modifier;
+    }
+    public void SetBulletLifetime(float lifetime)
+    {
+        bulletLifetime = lifetime;
     }
 }

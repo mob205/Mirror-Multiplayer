@@ -21,6 +21,11 @@ public class Health : NetworkBehaviour
     [Server]
     public void Damage(float amount, GameObject attacker)
     {
+        if(currentHealth < 0)
+        {
+            Debug.Log("Already dead!");
+            return;
+        }
         currentHealth -= amount * (1 - DamageResistance);
         if(currentHealth > maxHealth)
         {

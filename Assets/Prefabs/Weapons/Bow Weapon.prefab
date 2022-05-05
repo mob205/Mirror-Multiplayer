@@ -129,5 +129,5 @@ MonoBehaviour:
   fireRate: 1
   damage: 14
   bulletSpeed: 18
-  bulletPrefab: {fileID: 4227163515276197113, guid: cd9da55cc72e1c747864395d27ec3e16, type: 3}
+  weaponBulletPrefab: {fileID: -549299000793330776, guid: cd9da55cc72e1c747864395d27ec3e16, type: 3}
   bulletLifetime: 15

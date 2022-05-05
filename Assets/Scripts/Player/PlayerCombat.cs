@@ -12,7 +12,7 @@ public class PlayerCombat : NetworkBehaviour
     private WeaponController weapon;
     private PlayerMovement playerMovement;
 
-    public Action OnFire;
+    public event Action OnFire;
     void Awake()
     {
         mainCam = Camera.main;

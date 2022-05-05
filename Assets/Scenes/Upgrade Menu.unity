@@ -633,6 +633,10 @@ PrefabInstance:
       propertyPath: description
       value: Earn 3 points when winning a round.
       objectReference: {fileID: 0}
+    - target: {fileID: 5360290603724239340, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: upgradePrefab
+      value: 
+      objectReference: {fileID: 1139449283577722448, guid: 23e76c9713acc1b47b3e3cb4ce8ef5f0, type: 3}
     - target: {fileID: 5838695083337913533, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: description
       value: Hitting an enemy with an arrow briefly slows them.
