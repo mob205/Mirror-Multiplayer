@@ -9,7 +9,7 @@ public class MeleeWeapon : WeaponController
     [SerializeField] private MeleeHitbox hitbox;
 
     private Quaternion swingRot = Quaternion.identity;
-    public override bool ServerFire(Vector3 target, ref GameObject go)
+    public override bool ServerFire(Vector3 target)
     {
         if (!canFire) { return false; }
         if (!hitbox) { hitbox = GetComponentInChildren<MeleeHitbox>(); }
@@ -22,13 +22,17 @@ public class MeleeWeapon : WeaponController
 
         hitbox.CanDamage = true;
 
+        if (!playerIdentity.isHost)
+        {
+            StartCoroutine(SwingWeapon());
+        }
         StartCoroutine(ToggleFire());
         return true;
     }
-    public override void SimulateFire(GameObject go, Vector3 target)
+    public override void SimulateFire(Vector3 target)
     {
-        transform.rotation = Utility.GetDirection(target, transform);
         StartCoroutine(SwingWeapon());
+        StartCoroutine(ToggleFire());
     }
     public override void RotateWeapon(Vector3 target)
     {

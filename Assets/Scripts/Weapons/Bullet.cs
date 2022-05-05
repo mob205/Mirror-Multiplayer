@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 
-public class Bullet : NetworkBehaviour
+public class Bullet : MonoBehaviour
 {
     public LayerMask collisionMask;
     public GameObject Shooter { get; set; }

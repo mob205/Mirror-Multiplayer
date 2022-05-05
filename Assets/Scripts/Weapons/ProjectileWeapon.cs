@@ -12,44 +12,39 @@ public class ProjectileWeapon : WeaponController
 
     public event Action<Bullet> OnShoot;
 
-    public override bool ServerFire(Vector3 target, ref GameObject go)
+    public override bool ServerFire(Vector3 target)
     {
         if (!canFire) { return false; }
-        // Getting the direction client-side will result in the shot missing if client is moving and shooting. 
-        var dir = Utility.GetDirection(target, transform);
+        var bullet = ShootBullet(target);
 
-        // Spawn the bullet and set its velocity server-side
-        GameObject bulletGO = Instantiate(bulletPrefab, transform.position, dir);
-        var bulletComponent = ShootBullet(target, bulletGO);
-
-        var identity = GetComponentInParent<NetworkIdentity>();
-        if (!identity.isHost)
+        if (!playerIdentity.isHost)
         {
             // Exclude hosts so event is not triggered twice
-            OnShoot?.Invoke(bulletComponent);
+            OnShoot?.Invoke(bullet);
         }
-
-        NetworkServer.Spawn(bulletGO); 
-
-        StartCoroutine(DelayedDestroy(bulletGO, bulletLifetime));
-        StartCoroutine(ToggleFire());
-
-        go = bulletGO;
         return true;
     }
-    public override void SimulateFire(GameObject bullet, Vector3 target)
+    public override void SimulateFire(Vector3 target)
     {
-        var bulletComponent = ShootBullet(target, bullet);
-        OnShoot?.Invoke(bulletComponent);
+        var bullet = ShootBullet(target);
+        OnShoot?.Invoke(bullet);
     }
-    private Bullet ShootBullet(Vector3 target, GameObject bullet)
+    private Bullet ShootBullet(Vector3 target)
     {
+        var dir = Utility.GetDirection(target, transform);
+        var bullet = Instantiate(bulletPrefab, transform.position, dir);
         var bulletComponent = bullet.GetComponent<Bullet>();
+
         bullet.transform.SetPositionAndRotation(transform.position, Utility.GetDirection(target, transform));
         bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * bulletSpeed;
+
         bulletComponent.Shooter = transform.parent.gameObject;
         bulletComponent.Weapon = this;
         bulletComponent.Damage = damage;
+
+        StartCoroutine(DelayedDestroy(bullet.gameObject, bulletLifetime));
+        StartCoroutine(ToggleFire());
+
         return bulletComponent;
     }
     private IEnumerator DelayedDestroy(GameObject go, float delay)
@@ -57,7 +52,7 @@ public class ProjectileWeapon : WeaponController
         yield return new WaitForSeconds(delay);
         if (go)
         {
-            NetworkServer.Destroy(go);
+            Destroy(go);
         }
     }
     public void ChangeBullet(Bullet newPrefab)

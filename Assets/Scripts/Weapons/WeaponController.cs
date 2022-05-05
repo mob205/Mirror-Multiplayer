@@ -1,3 +1,4 @@
+using Mirror;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,25 +10,27 @@ public abstract class WeaponController : MonoBehaviour
     [SerializeField] protected float fireRate = 1;
     [SerializeField] protected float damage = 10;
 
-    //public float AbilityModifier { get; private set; }
+    public bool CanFire { get { return canFire; } }
 
     protected bool canFire = true;
     protected Camera mainCam;
+    protected NetworkIdentity playerIdentity;
 
     public event Action<Health> OnHit;
 
     private void Start()
     {
         mainCam = Camera.main;
+        playerIdentity = GetComponentInParent<NetworkIdentity>();
     }
 
     public virtual void RotateWeapon(Vector3 target)
     {
         transform.rotation = Utility.GetDirection(target, transform);
     }
-    public abstract bool ServerFire(Vector3 target, ref GameObject go);
+    public abstract bool ServerFire(Vector3 target);
 
-    public abstract void SimulateFire(GameObject go, Vector3 target);
+    public abstract void SimulateFire(Vector3 target);
 
     protected IEnumerator ToggleFire()
     {

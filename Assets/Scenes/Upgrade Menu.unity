@@ -634,13 +634,28 @@ PrefabInstance:
       value: Earn 3 points when winning a round.
       objectReference: {fileID: 0}
     - target: {fileID: 5838695083337913533, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: description
+      value: Hitting an enemy with an arrow briefly slows them.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5838695083337913533, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: upgradePrefab
       value: 
       objectReference: {fileID: 4085876632625429234, guid: c86f598ac0f611d488fba5a0d974a47d, type: 3}
     - target: {fileID: 6690810797829040911, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: description
+      value: 'Increases damage.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690810797829040911, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: upgradePrefab
       value: 
       objectReference: {fileID: 7631717448519902487, guid: 01f5ea020bde34c4db4d49c0eb6da369, type: 3}
+    - target: {fileID: 9032090099715822883, guid: 55053d1471080b142942645d5c431eaa, type: 3}
+      propertyPath: description
+      value: Gain an ability that fires a giant arrow that gains damage as it travels.
+        This arrow can pass through walls.
+      objectReference: {fileID: 0}
     - target: {fileID: 9032090099715822883, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: upgradePrefab
       value: 

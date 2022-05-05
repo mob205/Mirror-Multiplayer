@@ -28,7 +28,7 @@ public class PlayerCombat : NetworkBehaviour
             {
                 CmdRotateWeapon(target);
             }
-            if (Input.GetButton("Fire1"))
+            if (Input.GetButton("Fire1") && weapon.CanFire)
             {
                 CmdFire(target);
             }
@@ -37,16 +37,15 @@ public class PlayerCombat : NetworkBehaviour
     [Command]
     private void CmdFire(Vector3 target)
     {
-        GameObject go = null;
-        if (weapon.ServerFire(target, ref go))
+        if (weapon.ServerFire(target))
         {
-            RpcSimulateFire(go, target);
+            RpcSimulateFire(target);
         }
     }
     [ClientRpc]
-    private void RpcSimulateFire(GameObject go, Vector3 target)
+    private void RpcSimulateFire(Vector3 target)
     {
-        weapon.SimulateFire(go, target);
+        weapon.SimulateFire(target);
         OnFire?.Invoke();
     }
     // In the future, rotation may happen in the parent player object, not the weapon.
