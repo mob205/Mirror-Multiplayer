@@ -5,8 +5,9 @@ using System;
 
 public class CustomNetworkManager : NetworkManager
 {
-    [Scene] [SerializeField] public string upgradeScene;
-    [Scene] [SerializeField] public string lobbyScene;
+    [Scene] public string upgradeScene;
+    [Scene] public string lobbyScene;
+    [Scene] public string winScene;
     [SerializeField] GameObject upgradePlayerPrefab;
     [SerializeField] GameObject lobbyPlayerPrefab;
 
@@ -21,12 +22,11 @@ public class CustomNetworkManager : NetworkManager
     }
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Z) && Debug.isDebugBuild)
         {
-            Debug.Log("Switching to upgrade scene. FOR DEBUG ONLY");
             ServerChangeScene(upgradeScene);
         }
-        else if (Input.GetKeyDown(KeyCode.X))
+        else if (Input.GetKeyDown(KeyCode.X) && Debug.isDebugBuild)
         {
             StartLevel();
         }
@@ -42,6 +42,10 @@ public class CustomNetworkManager : NetworkManager
         {
             GameObject player = Instantiate(lobbyPlayerPrefab);
             NetworkServer.AddPlayerForConnection(conn, player);
+        }
+        else if(SceneManager.GetActiveScene().path == winScene)
+        {
+            return;
         }
         else
         {
@@ -65,6 +69,6 @@ public class CustomNetworkManager : NetworkManager
     [Server]
     public void StartLevel()
     {
-        ServerChangeScene("Scene");
+        ServerChangeScene("Template Level");
     }
 }

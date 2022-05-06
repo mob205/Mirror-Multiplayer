@@ -13,6 +13,9 @@ public class GameSceneManager : NetworkBehaviour
     [SerializeField] private int playerKillReward = 100;
     [SerializeField] private int playerWinReward = 100;
 
+    public static event Action<uint> OnWinRound;
+    public static string lastWinnerName;
+
     public int WinReward
     {
         get
@@ -22,8 +25,8 @@ public class GameSceneManager : NetworkBehaviour
     }
 
     private CustomNetworkManager nm;
-    public static event Action<uint> OnPlayerWin;
-    bool hasWon;
+    private bool hasWonRound;
+    private bool hasWonGame;
     private void Start()
     {
         instance = this;
@@ -32,6 +35,7 @@ public class GameSceneManager : NetworkBehaviour
             nm = CustomNetworkManager.singleton;
             PlayerHealth.OnPlayerDeath += OnPlayerDeath;
             CustomNetworkManager.OnPlayerDisconnect += OnPlayerDisconnect;
+            PointTracker.OnGameWin += OnGameWin;
         }
     }
     [Server]
@@ -49,7 +53,8 @@ public class GameSceneManager : NetworkBehaviour
         if (alivePlayers.Length == 1)
         {
             var winnerID = alivePlayers[0].netId;
-            StartCoroutine(StartPlayerWin(winnerID));
+            lastWinnerName = alivePlayers[0].GetComponent<PlayerDisplayer>().playerName;
+            StartCoroutine(StartPlayerWinRound(winnerID));
             if(killerConn != null)
             {
                 cm.ModifyCoins(killerConn, playerWinReward);
@@ -64,23 +69,40 @@ public class GameSceneManager : NetworkBehaviour
         if(alivePlayers.Count == 1)
         {
             var winnerID = alivePlayers[0].netId;
-            StartCoroutine(StartPlayerWin(winnerID));
+            StartCoroutine(StartPlayerWinRound(winnerID));
         }
     }
     [Server]
-    private IEnumerator StartPlayerWin(uint winnerID)
+    private IEnumerator StartPlayerWinRound(uint winnerID)
     {
-        if (hasWon) { yield break; }
-        if (isServerOnly) { OnPlayerWin?.Invoke(winnerID); }
-        hasWon = !hasWon;
-        RpcAlertWin(winnerID);
+        if (hasWonRound) { yield break; }
+        if (isServerOnly) { OnWinRound?.Invoke(winnerID); }
+        hasWonRound = !hasWonRound;
+        RpcAlertWinRound(winnerID, lastWinnerName);
         yield return new WaitForSeconds(sceneChangeDelay);
-        nm.ServerChangeScene(nm.upgradeScene);
+        ChangeScene();
     }
-    [ClientRpc]
-    public void RpcAlertWin(uint playerID)
+    private void ChangeScene()
     {
-        OnPlayerWin?.Invoke(playerID);
+        if (hasWonGame)
+        {
+            nm.ServerChangeScene(nm.winScene);
+        }
+        else
+        {
+            nm.ServerChangeScene(nm.upgradeScene);
+        }
+    }
+    private void OnGameWin(NetworkConnection conn)
+    {
+        hasWonGame = true;
+    }
+
+    [ClientRpc]
+    public void RpcAlertWinRound(uint playerID, string playerName)
+    {
+        lastWinnerName = playerName;
+        OnWinRound?.Invoke(playerID);
     }
     private void OnDestroy()
     {
@@ -88,6 +110,7 @@ public class GameSceneManager : NetworkBehaviour
         {
             PlayerHealth.OnPlayerDeath -= OnPlayerDeath;
             CustomNetworkManager.OnPlayerDisconnect -= OnPlayerDisconnect;
+            PointTracker.OnGameWin -= OnGameWin;
         }
     }
 }

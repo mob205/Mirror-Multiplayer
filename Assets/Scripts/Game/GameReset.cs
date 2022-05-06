@@ -11,4 +11,8 @@ public class GameReset : NetworkBehaviour
         UpgradeManager.ResetStatics();
         PointTracker.ResetStatics();
     }
+    public override void OnStartClient()
+    {
+        CoinManager.ClientCoins = 0;
+    }
 }

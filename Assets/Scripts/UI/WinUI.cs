@@ -12,7 +12,7 @@ public class WinUI : NetworkBehaviour
     {
         if (isServer)
         {
-            GameSceneManager.OnPlayerWin += CmdGetPlayerName;
+            GameSceneManager.OnWinRound += CmdGetPlayerName;
         }
     }
     [ClientRpc]
@@ -31,7 +31,7 @@ public class WinUI : NetworkBehaviour
     {
         if (isServer)
         {
-            GameSceneManager.OnPlayerWin -= CmdGetPlayerName;
+            GameSceneManager.OnWinRound -= CmdGetPlayerName;
         }
     }
 }

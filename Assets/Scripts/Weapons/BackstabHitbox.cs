@@ -18,7 +18,6 @@ public class BackstabHitbox : MeleeHitbox
         if(Mathf.Abs(diff) < AngleThreshold)
         {
             base.DamageTarget(target, Damage * DamageModifier);
-            Debug.Log("BACKSTAB!");
         }
         else
         {

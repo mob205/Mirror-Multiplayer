@@ -1,4 +1,5 @@
 using Mirror;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,14 +7,16 @@ using UnityEngine;
 
 public class PointTracker : NetworkBehaviour
 {
-    public int RoundsToWin { get; set; } = 10;
+    public int RoundsToWin { get; set; } = 2;
 
     private static Dictionary<NetworkConnection, int> serverPoints = new Dictionary<NetworkConnection, int>();
     private Dictionary<uint, int> localPoints = new Dictionary<uint, int>();
 
+    public static event Action<NetworkConnection> OnGameWin;
+
     public override void OnStartServer()
     {
-        GameSceneManager.OnPlayerWin += OnPlayerWin;
+        GameSceneManager.OnWinRound += OnPlayerWin;
     }
     public override void OnStartClient()
     {
@@ -26,7 +29,7 @@ public class PointTracker : NetworkBehaviour
         AddPoints(conn, 1);
         if (isServer && serverPoints[conn] >= RoundsToWin)
         {
-            StartWin();
+            StartWin(conn);
         }
     }
     [Server]
@@ -82,11 +85,10 @@ public class PointTracker : NetworkBehaviour
             return 0;
         }
     }
-
     [Server]
-    private void StartWin()
+    private void StartWin(NetworkConnection winner)
     {
-        Debug.Log("major dubbleyoos");
+        OnGameWin?.Invoke(winner);
     }
     [Server]
     public static void ResetStatics()
@@ -95,6 +97,6 @@ public class PointTracker : NetworkBehaviour
     }
     private void OnDestroy()
     {
-        GameSceneManager.OnPlayerWin -= OnPlayerWin;
+        GameSceneManager.OnWinRound -= OnPlayerWin;
     }
 }

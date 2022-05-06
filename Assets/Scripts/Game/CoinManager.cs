@@ -7,7 +7,7 @@ public class CoinManager : NetworkBehaviour
 {
     public static CoinManager instance;
     private static Dictionary<NetworkConnection, int> coins = new Dictionary<NetworkConnection, int>();
-    public static int ClientCoins { get; private set; } = 0;
+    public static int ClientCoins { get; set; } = 0;
     public void Start()
     {
         if (instance)

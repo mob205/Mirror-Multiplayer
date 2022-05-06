@@ -13,7 +13,7 @@ public class WinBonusUpgrade : Upgrade
         if (NetworkServer.active)
         {
             identity = GetComponent<NetworkIdentity>();
-            GameSceneManager.OnPlayerWin += OnWin;
+            GameSceneManager.OnWinRound += OnWin;
         }
     }
     private void OnWin(uint winnerID)
@@ -23,6 +23,6 @@ public class WinBonusUpgrade : Upgrade
             var bonusAmount = Mathf.FloorToInt(GameSceneManager.instance.WinReward * (percentBonus / 100));
             CoinManager.instance.ModifyCoins(identity.connectionToClient, bonusAmount);
         }
-        GameSceneManager.OnPlayerWin -= OnWin;
+        GameSceneManager.OnWinRound -= OnWin;
     }
 }

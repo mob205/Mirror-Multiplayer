@@ -50,7 +50,7 @@ MonoBehaviour:
   cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
-  description: 
+  description: Increases fire rate.
   icon: {fileID: 0}
   color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &77229324904360368
@@ -155,7 +155,9 @@ MonoBehaviour:
   cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
-  description: Increases the fireball travel speed.
+  description: 'Increases the travel speed of fireballs.
+
+'
   icon: {fileID: 21300000, guid: fc3f184b6a8179d4f8f5f5c724539f4c, type: 3}
   color: {r: 0.12677999, g: 0.5947134, b: 0.7264151, a: 1}
 --- !u!1 &819954640630277554
@@ -207,7 +209,7 @@ MonoBehaviour:
   cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
-  description: 
+  description: Your attacks shoot a volley of 5 arrows.
   icon: {fileID: 0}
   color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &950027369101568831
@@ -263,7 +265,7 @@ MonoBehaviour:
   description: 'Increases damage.
 
 '
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: ced7def465155ba44964bf75f2b42e04, type: 3}
   color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1129087838925152854
 GameObject:
@@ -1510,7 +1512,7 @@ MonoBehaviour:
   cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
-  description: Increases firerate.
+  description: Increases fire rate.
   icon: {fileID: 21300000, guid: 03c9a6ceddca24741961c23c91312b80, type: 3}
   color: {r: 0.12677999, g: 0.5947134, b: 0.7264151, a: 1}
 --- !u!1 &4258898311830052280
@@ -1718,12 +1720,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 3
   upgradeID: archer_general
-  upgradePrefab: {fileID: 0}
+  upgradePrefab: {fileID: 2492866183964644328, guid: 3b251a3e84e83db438e72b576a568536, type: 3}
   cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
-  description: 
-  icon: {fileID: 0}
+  description: Greatly boost summoned turrets in all stats.
+  icon: {fileID: 21300000, guid: 90b4d019d934c8446bb1b6d2ef2c1e98, type: 3}
   color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &5331141975672780861
 GameObject:
@@ -1775,7 +1777,7 @@ MonoBehaviour:
   cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
-  description: 
+  description: Increases the travel speed of arrows.
   icon: {fileID: 0}
   color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &5634360817148887337
@@ -2089,12 +2091,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 2
   upgradeID: archer_commander
-  upgradePrefab: {fileID: 1301907023161683230, guid: 028581564aa21cb4c915d3bb2d4a1115, type: 3}
+  upgradePrefab: {fileID: 2694341803439451643, guid: 4c81985f03570ab408a7666f4d15ac5b, type: 3}
   cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
-  description: 
-  icon: {fileID: 0}
+  description: Gain an ability that summons turrets that shoot nearby enemies.
+  icon: {fileID: 21300000, guid: c792f3c9bed154242abc4b2345d274a0, type: 3}
   color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8597497524003751704
 GameObject:
@@ -2147,7 +2149,7 @@ MonoBehaviour:
   nextUpgradeID: 
   description: Gain an ability that fires a giant arrow that gains damage as it travels.
     This arrow can pass through walls.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 6f6901b98bc0ab34a99dde686a4a98cc, type: 3}
   color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8847948153287272934
 GameObject:

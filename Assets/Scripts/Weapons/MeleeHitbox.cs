@@ -11,8 +11,6 @@ public class MeleeHitbox : MonoBehaviour
     public WeaponController Weapon { get; set; }
     public bool CanDamage { get; set; }
 
-    //public event Action<Health> OnHit;
-
     protected List<Health> damaged = new List<Health>();
     public void ClearHitPlayers()
     {
@@ -25,7 +23,6 @@ public class MeleeHitbox : MonoBehaviour
         if (target && !damaged.Contains(target) && collision.gameObject != Shooter)
         {
             DamageTarget(target, Damage);
-            Debug.Log($"Damaging {collision.name}");
         }
     }
     protected virtual void DamageTarget(Health target, float damage)
@@ -33,7 +30,6 @@ public class MeleeHitbox : MonoBehaviour
         target.Damage(damage, Shooter);
         damaged.Add(target);
         Weapon.TriggerHit(target);
-        //OnHit?.Invoke(target);
     }
 }
 

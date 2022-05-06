@@ -11,7 +11,7 @@ public class ExtraPointsUpgrade : Upgrade
     {
         if (NetworkServer.active)
         {
-            GameSceneManager.OnPlayerWin += AwardBonus;
+            GameSceneManager.OnWinRound += AwardBonus;
         }
     }
     private void AwardBonus(uint winner)
@@ -20,7 +20,6 @@ public class ExtraPointsUpgrade : Upgrade
         var tracker = FindObjectOfType<PointTracker>();
         if(winner == identity.netId)
         {
-            Debug.Log("BONUS DUCKS!");
             var conn = NetworkServer.spawned[winner].connectionToClient;
             tracker.AddPoints(conn, bonusPoints);
         }
@@ -29,7 +28,7 @@ public class ExtraPointsUpgrade : Upgrade
     {
         if (NetworkServer.active)
         {
-            GameSceneManager.OnPlayerWin -= AwardBonus;
+            GameSceneManager.OnWinRound -= AwardBonus;
         }
     }
 }

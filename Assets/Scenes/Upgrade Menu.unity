@@ -557,18 +557,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1509337116867082406, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: icon
-      value: 
-      objectReference: {fileID: 21300000, guid: 90b4d019d934c8446bb1b6d2ef2c1e98, type: 3}
-    - target: {fileID: 1509337116867082406, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: description
-      value: Greatly boost summoned turrets in all stats.
-      objectReference: {fileID: 0}
-    - target: {fileID: 1509337116867082406, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: upgradePrefab
-      value: 
-      objectReference: {fileID: 2492866183964644328, guid: 3b251a3e84e83db438e72b576a568536, type: 3}
     - target: {fileID: 2372735253866130337, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -621,18 +609,6 @@ PrefabInstance:
       propertyPath: sceneId
       value: 719890398
       objectReference: {fileID: 0}
-    - target: {fileID: 5817335088628776183, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: icon
-      value: 
-      objectReference: {fileID: 21300000, guid: c792f3c9bed154242abc4b2345d274a0, type: 3}
-    - target: {fileID: 5817335088628776183, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: description
-      value: Gain an ability that summons up to three turrets that shoot nearby enemies.
-      objectReference: {fileID: 0}
-    - target: {fileID: 5817335088628776183, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: upgradePrefab
-      value: 
-      objectReference: {fileID: 2694341803439451643, guid: 4c81985f03570ab408a7666f4d15ac5b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55053d1471080b142942645d5c431eaa, type: 3}
 --- !u!1001 &7560750405187656218

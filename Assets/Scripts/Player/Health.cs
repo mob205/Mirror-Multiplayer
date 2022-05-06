@@ -22,7 +22,6 @@ public class Health : NetworkBehaviour
     {
         if(currentHealth < 0)
         {
-            Debug.Log("Already dead!");
             return;
         }
         currentHealth -= amount * (1 - DamageResistance);
@@ -33,7 +32,10 @@ public class Health : NetworkBehaviour
         if(currentHealth <= 0)
         {
             var killerID = attacker.GetComponent<NetworkIdentity>().netId;
-            StartDeath(killerID);
+            if (isServerOnly)
+            {
+                StartDeath(killerID);
+            }
             RpcStartDeath(killerID);
         }
     }

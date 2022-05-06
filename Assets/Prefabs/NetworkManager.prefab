@@ -51,7 +51,7 @@ MonoBehaviour:
   autoStartServerBuild: 1
   serverTickRate: 30
   offlineScene: Assets/Scenes/Main Menu.unity
-  onlineScene: Assets/Scenes/Scene.unity
+  onlineScene: Assets/Scenes/Lobby Scene.unity
   transport: {fileID: 6174048691559581987}
   networkAddress: localhost
   maxConnections: 4
@@ -71,6 +71,7 @@ MonoBehaviour:
   - {fileID: 258475911093632599, guid: 09563ac4a84bab246a0dfaa58bf2a8e2, type: 3}
   upgradeScene: Assets/Scenes/Upgrade Menu.unity
   lobbyScene: Assets/Scenes/Lobby Scene.unity
+  winScene: Assets/Scenes/Win Scene.unity
   upgradePlayerPrefab: {fileID: 6704529205651473868, guid: 70c14a234431b584bb824699da7c06eb, type: 3}
   lobbyPlayerPrefab: {fileID: 644859915135664312, guid: 85cdcda99b27c244cb017ec975388f14, type: 3}
 --- !u!114 &6174048691559581987
