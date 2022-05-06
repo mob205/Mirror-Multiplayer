@@ -15,13 +15,17 @@ public class ProjectileWeapon : WeaponController
     public override bool ServerFire(Vector3 target)
     {
         if (!canFire) { return false; }
-        var bullet = ShootWeaponBullet(target);
 
         if (!playerIdentity.isHost)
         {
+            var bullet = ShootWeaponBullet(target);
+
             // Exclude hosts so event is not triggered twice
             OnShoot?.Invoke(bullet);
         }
+
+        StartCoroutine(ToggleFire());
+
         return true;
     }
     public override void SimulateFire(Vector3 target)
@@ -30,15 +34,13 @@ public class ProjectileWeapon : WeaponController
         var bullet = ShootWeaponBullet(target);
 
         OnShoot?.Invoke(bullet);
+
+        StartCoroutine(ToggleFire());
     }
     private Bullet ShootWeaponBullet(Vector3 target)
     {
         var dir = Utility.GetDirection(target, transform);
-
         var bullet = ShootBullet(weaponBulletPrefab, dir);
-
-        StartCoroutine(ToggleFire());
-
         return bullet;
     }
     public Bullet ShootBullet(Bullet bulletPrefab, Quaternion dir)

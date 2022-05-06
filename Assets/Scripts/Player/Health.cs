@@ -33,11 +33,17 @@ public class Health : NetworkBehaviour
         if(currentHealth <= 0)
         {
             var killerID = attacker.GetComponent<NetworkIdentity>().netId;
-            DoDeathSequence(killerID);
+            StartDeath(killerID);
+            RpcStartDeath(killerID);
         }
     }
-    protected virtual void DoDeathSequence(uint killerID)
+    protected virtual void StartDeath(uint killerID)
     {
         gameObject.SetActive(false);
+    }
+    [ClientRpc]
+    private void RpcStartDeath(uint killerID)
+    {
+        StartDeath(killerID);
     }
 }

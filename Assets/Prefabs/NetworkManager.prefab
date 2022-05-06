@@ -67,6 +67,8 @@ MonoBehaviour:
   - {fileID: 6288187391727948957, guid: 67d02b8b1e387fd47b7735ad9e854c83, type: 3}
   - {fileID: 3432496134694722515, guid: ca7c4e141f121e94686cbbdbbb9cedd3, type: 3}
   - {fileID: 7181425506076393962, guid: d6ca18691461d124386bc89e4fc6c5f3, type: 3}
+  - {fileID: 258475911093632599, guid: f95f64f649eae8043bb41dccf7a029b5, type: 3}
+  - {fileID: 258475911093632599, guid: 09563ac4a84bab246a0dfaa58bf2a8e2, type: 3}
   upgradeScene: Assets/Scenes/Upgrade Menu.unity
   lobbyScene: Assets/Scenes/Lobby Scene.unity
   upgradePlayerPrefab: {fileID: 6704529205651473868, guid: 70c14a234431b584bb824699da7c06eb, type: 3}

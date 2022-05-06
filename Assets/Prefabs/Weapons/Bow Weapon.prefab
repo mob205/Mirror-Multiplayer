@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 1
-  damage: 14
+  damage: 20
   bulletSpeed: 18
   weaponBulletPrefab: {fileID: -549299000793330776, guid: cd9da55cc72e1c747864395d27ec3e16, type: 3}
   bulletLifetime: 15

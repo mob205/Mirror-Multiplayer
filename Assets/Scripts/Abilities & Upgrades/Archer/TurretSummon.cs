@@ -26,6 +26,15 @@ public class TurretSummon : NetworkBehaviour
     public override void OnStartServer()
     {
         StartCoroutine(DelayedFindTarget());
+
+    }
+    private void Start()
+    {
+        var casterWeapon = caster.GetComponentInChildren<ProjectileWeapon>();
+        if (casterWeapon)
+        {
+            casterWeapon.OnShoot += OnCasterShoot;
+        }
     }
     private void Update()
     {
@@ -40,6 +49,10 @@ public class TurretSummon : NetworkBehaviour
                 StartCoroutine(ToggleFire());
             }
         }
+    }
+    private void OnCasterShoot(Bullet bullet)
+    {
+        Physics2D.IgnoreCollision(bullet.GetComponent<BoxCollider2D>(), GetComponent<BoxCollider2D>());
     }
     [ClientRpc]
     private void RpcFire(Vector2 target)

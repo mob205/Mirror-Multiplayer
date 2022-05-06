@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3684694071575066841}
   - component: {fileID: -4082070536943564960}
   m_Layer: 3
-  m_Name: Turret Summon
+  m_Name: Upgraded Turret Summon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,15 +51,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  range: 6
+  range: 8
   targetLayers:
     serializedVersion: 2
     m_Bits: 1160
   retargetDelay: 1
   weaponPivot: {fileID: 258475911181556200}
-  attackSpeed: 1
-  damage: 8
-  bulletSpeed: 10
+  attackSpeed: 2
+  damage: 15
+  bulletSpeed: 12
   bulletPrefab: {fileID: -549299000793330776, guid: cd9da55cc72e1c747864395d27ec3e16, type: 3}
   bulletSpawn: {fileID: 258475911597337312}
   caster: {fileID: 0}
@@ -77,7 +77,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  maxHealth: 50
+  maxHealth: 75
 --- !u!212 &258475911093632598
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -118,7 +118,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d83290b554a67364bae66b4cf46b9ff8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 91787f15872b76f499f93df5ac4f9064, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -144,7 +144,7 @@ MonoBehaviour:
   sceneId: 0
   serverOnly: 0
   visible: 0
-  m_AssetId: f95f64f649eae8043bb41dccf7a029b5
+  m_AssetId: 09563ac4a84bab246a0dfaa58bf2a8e2
   hasSpawned: 0
 --- !u!61 &3684694071575066841
 BoxCollider2D:
