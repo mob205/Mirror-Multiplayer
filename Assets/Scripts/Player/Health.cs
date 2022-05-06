@@ -13,7 +13,6 @@ public class Health : NetworkBehaviour
     public float MaxHealth { get { return maxHealth; } set { maxHealth = value; } }
     public float DamageResistance { get; set; }
 
-    public static event Action<Health, uint> OnDeath;
     public override void OnStartServer()
     {
         currentHealth = maxHealth;
@@ -34,13 +33,11 @@ public class Health : NetworkBehaviour
         if(currentHealth <= 0)
         {
             var killerID = attacker.GetComponent<NetworkIdentity>().netId;
-            RpcStartDeath(killerID);
+            DoDeathSequence(killerID);
         }
     }
-    [ClientRpc]
-    public void RpcStartDeath(uint killerID)
+    protected virtual void DoDeathSequence(uint killerID)
     {
         gameObject.SetActive(false);
-        OnDeath?.Invoke(this, killerID);
     }
 }

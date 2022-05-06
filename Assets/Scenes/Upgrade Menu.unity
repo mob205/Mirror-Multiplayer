@@ -557,14 +557,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1527621342721993515, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: description
-      value: Increases health.
-      objectReference: {fileID: 0}
-    - target: {fileID: 1527621342721993515, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: upgradePrefab
-      value: 
-      objectReference: {fileID: 6336499961912269474, guid: a03845fa44c596d40afd245b0c628507, type: 3}
     - target: {fileID: 2372735253866130337, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -617,53 +609,6 @@ PrefabInstance:
       propertyPath: sceneId
       value: 719890398
       objectReference: {fileID: 0}
-    - target: {fileID: 4303766986392173983, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: upgradePrefab
-      value: 
-      objectReference: {fileID: 6841135326801075346, guid: 26fe78cb07b6c354290a930c98615cfa, type: 3}
-    - target: {fileID: 4571683502803235899, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: upgradePrefab
-      value: 
-      objectReference: {fileID: 6841135326801075346, guid: 26fe78cb07b6c354290a930c98615cfa, type: 3}
-    - target: {fileID: 4754780888239914755, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: m_Name
-      value: General
-      objectReference: {fileID: 0}
-    - target: {fileID: 5320806389379951268, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: description
-      value: Earn 3 points when winning a round.
-      objectReference: {fileID: 0}
-    - target: {fileID: 5360290603724239340, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: upgradePrefab
-      value: 
-      objectReference: {fileID: 1139449283577722448, guid: 23e76c9713acc1b47b3e3cb4ce8ef5f0, type: 3}
-    - target: {fileID: 5838695083337913533, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: description
-      value: Hitting an enemy with an arrow briefly slows them.
-      objectReference: {fileID: 0}
-    - target: {fileID: 5838695083337913533, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: upgradePrefab
-      value: 
-      objectReference: {fileID: 4085876632625429234, guid: c86f598ac0f611d488fba5a0d974a47d, type: 3}
-    - target: {fileID: 6690810797829040911, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: description
-      value: 'Increases damage.
-
-'
-      objectReference: {fileID: 0}
-    - target: {fileID: 6690810797829040911, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: upgradePrefab
-      value: 
-      objectReference: {fileID: 7631717448519902487, guid: 01f5ea020bde34c4db4d49c0eb6da369, type: 3}
-    - target: {fileID: 9032090099715822883, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: description
-      value: Gain an ability that fires a giant arrow that gains damage as it travels.
-        This arrow can pass through walls.
-      objectReference: {fileID: 0}
-    - target: {fileID: 9032090099715822883, guid: 55053d1471080b142942645d5c431eaa, type: 3}
-      propertyPath: upgradePrefab
-      value: 
-      objectReference: {fileID: 2449383710075794075, guid: ce5f13215a99fd744a6a19bdf0bb9f63, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55053d1471080b142942645d5c431eaa, type: 3}
 --- !u!1001 &7560750405187656218

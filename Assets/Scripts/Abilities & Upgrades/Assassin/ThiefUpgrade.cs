@@ -19,7 +19,7 @@ public class ThiefUpgrade : Upgrade
         {
             weapon.ModifyDamage(damageBoost);
         }
-        Health.OnDeath += StealCoins;
+        PlayerHealth.OnPlayerDeath += StealCoins;
     }
     private void StealCoins(Health killedTarget, uint killerID)
     {
@@ -36,6 +36,9 @@ public class ThiefUpgrade : Upgrade
     }
     private void OnDestroy()
     {
-        Health.OnDeath -= StealCoins;
+        if (identity.isServer)
+        {
+            PlayerHealth.OnPlayerDeath -= StealCoins;
+        }
     }
 }

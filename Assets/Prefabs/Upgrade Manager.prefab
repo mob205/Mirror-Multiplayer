@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 2
   upgradeID: archer_urf
-  upgradePrefab: {fileID: 0}
+  upgradePrefab: {fileID: 6841135326801075346, guid: 26fe78cb07b6c354290a930c98615cfa, type: 3}
   cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 3
   upgradeID: archer_rain
-  upgradePrefab: {fileID: 0}
+  upgradePrefab: {fileID: 1139449283577722448, guid: 23e76c9713acc1b47b3e3cb4ce8ef5f0, type: 3}
   cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
@@ -256,11 +256,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   upgradeID: archer_precision
-  upgradePrefab: {fileID: 0}
+  upgradePrefab: {fileID: 7631717448519902487, guid: 01f5ea020bde34c4db4d49c0eb6da369, type: 3}
   cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
-  description: 
+  description: 'Increases damage.
+
+'
   icon: {fileID: 0}
   color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1129087838925152854
@@ -1402,7 +1404,7 @@ MonoBehaviour:
   cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
-  description: 
+  description: Earn 3 points when winning a round.
   icon: {fileID: 0}
   color: {r: 0.6981132, g: 0.58047116, b: 0.08232466, a: 1}
 --- !u!1 &3847852060450690800
@@ -1682,7 +1684,7 @@ GameObject:
   - component: {fileID: 3382713640488309903}
   - component: {fileID: 1509337116867082406}
   m_Layer: 0
-  m_Name: The Champion
+  m_Name: General
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1769,7 +1771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   upgradeID: archer_light
-  upgradePrefab: {fileID: 0}
+  upgradePrefab: {fileID: 6841135326801075346, guid: 26fe78cb07b6c354290a930c98615cfa, type: 3}
   cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
@@ -1928,11 +1930,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 2
   upgradeID: archer_cripple
-  upgradePrefab: {fileID: 0}
+  upgradePrefab: {fileID: 4085876632625429234, guid: c86f598ac0f611d488fba5a0d974a47d, type: 3}
   cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
-  description: 
+  description: Hitting an enemy with an arrow briefly slows them.
   icon: {fileID: 0}
   color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &6625664822516017868
@@ -2034,11 +2036,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   upgradeID: archer_armor
-  upgradePrefab: {fileID: 0}
+  upgradePrefab: {fileID: 6336499961912269474, guid: a03845fa44c596d40afd245b0c628507, type: 3}
   cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
-  description: 
+  description: Increases health.
   icon: {fileID: 0}
   color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &7378329935916107060
@@ -2087,7 +2089,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 2
   upgradeID: archer_commander
-  upgradePrefab: {fileID: 0}
+  upgradePrefab: {fileID: 1301907023161683230, guid: 028581564aa21cb4c915d3bb2d4a1115, type: 3}
   cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
@@ -2139,11 +2141,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 3
   upgradeID: archer_bfa
-  upgradePrefab: {fileID: 0}
+  upgradePrefab: {fileID: 2449383710075794075, guid: ce5f13215a99fd744a6a19bdf0bb9f63, type: 3}
   cost: 0
   prereqUpgradeID: 
   nextUpgradeID: 
-  description: 
+  description: Gain an ability that fires a giant arrow that gains damage as it travels.
+    This arrow can pass through walls.
   icon: {fileID: 0}
   color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8847948153287272934

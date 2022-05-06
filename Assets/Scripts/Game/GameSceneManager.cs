@@ -30,12 +30,12 @@ public class GameSceneManager : NetworkBehaviour
         if (isServer)
         {
             nm = CustomNetworkManager.singleton;
-            Health.OnDeath += OnPlayerDeath;
+            PlayerHealth.OnPlayerDeath += OnPlayerDeath;
             CustomNetworkManager.OnPlayerDisconnect += OnPlayerDisconnect;
         }
     }
     [Server]
-    private void OnPlayerDeath(Health player, uint killer)
+    private void OnPlayerDeath(PlayerHealth player, uint killer)
     {
         var cm = CoinManager.instance;
         NetworkConnectionToClient killerConn = null;
@@ -45,8 +45,8 @@ public class GameSceneManager : NetworkBehaviour
             cm.ModifyCoins(killerConn, playerKillReward);
         }
 
-        var alivePlayers = FindObjectsOfType<Health>();
-        if(alivePlayers.Length == 1)
+        var alivePlayers = FindObjectsOfType<PlayerHealth>();
+        if (alivePlayers.Length == 1)
         {
             var winnerID = alivePlayers[0].netId;
             StartCoroutine(StartPlayerWin(winnerID));
@@ -59,8 +59,8 @@ public class GameSceneManager : NetworkBehaviour
     [Server]
     private void OnPlayerDisconnect(NetworkIdentity player)
     {
-        List<Health> alivePlayers = FindObjectsOfType<Health>().ToList();
-        alivePlayers.Remove(player.GetComponent<Health>());
+        var alivePlayers = FindObjectsOfType<PlayerHealth>().ToList();
+        alivePlayers.Remove(player.GetComponent<PlayerHealth>());
         if(alivePlayers.Count == 1)
         {
             var winnerID = alivePlayers[0].netId;
@@ -86,7 +86,7 @@ public class GameSceneManager : NetworkBehaviour
     {
         if (isServer)
         {
-            Health.OnDeath -= OnPlayerDeath;
+            PlayerHealth.OnPlayerDeath -= OnPlayerDeath;
             CustomNetworkManager.OnPlayerDisconnect -= OnPlayerDisconnect;
         }
     }

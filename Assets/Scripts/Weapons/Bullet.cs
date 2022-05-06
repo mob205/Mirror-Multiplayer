@@ -10,7 +10,6 @@ public class Bullet : MonoBehaviour
     public WeaponController Weapon { get; set; }
     public float Damage { get; set; }
 
-
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         var colGO = collision.gameObject;

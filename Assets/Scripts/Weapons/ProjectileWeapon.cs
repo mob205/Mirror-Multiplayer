@@ -58,7 +58,6 @@ public class ProjectileWeapon : WeaponController
     }
     private IEnumerator DelayedDestroy(GameObject go, float delay)
     {
-        Debug.Log($"Waiting {delay} seconds");
         yield return new WaitForSeconds(delay);
         if (go)
         {
