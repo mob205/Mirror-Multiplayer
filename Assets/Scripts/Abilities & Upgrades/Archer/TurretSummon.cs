@@ -88,6 +88,9 @@ public class TurretSummon : NetworkBehaviour
         float leastDistance = Mathf.Infinity;
         foreach (var target in targetsInRange)
         {
+            var turret = target.GetComponent<TurretSummon>();
+            if(turret && turret.caster == caster) { continue; }
+
             var squaredDist = (target.gameObject.transform.position - transform.position).sqrMagnitude;
             if (target.gameObject != gameObject && squaredDist < leastDistance && (targetLayers.value & (1 << (target.gameObject.layer))) > 0 && target.gameObject != caster)
             {
