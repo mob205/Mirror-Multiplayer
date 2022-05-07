@@ -51,7 +51,7 @@ MonoBehaviour:
   prereqUpgradeID: 
   nextUpgradeID: 
   description: Increases fire rate.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 64956e3280c42f54084089ad1e720047, type: 3}
   color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &77229324904360368
 GameObject:
@@ -210,7 +210,7 @@ MonoBehaviour:
   prereqUpgradeID: 
   nextUpgradeID: 
   description: Your attacks shoot a volley of 5 arrows.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 78871001da6641e4c96f302add6e804c, type: 3}
   color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &950027369101568831
 GameObject:
@@ -1072,7 +1072,7 @@ MonoBehaviour:
   prereqUpgradeID: 
   nextUpgradeID: 
   description: Increases firerate and swing speed.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: e35d36647aba94c42b9a94518c952b82, type: 3}
   color: {r: 0.74509805, g: 0.26527297, b: 0.0117646875, a: 1}
 --- !u!1 &2372735253866130339
 GameObject:
@@ -1193,7 +1193,7 @@ MonoBehaviour:
   prereqUpgradeID: 
   nextUpgradeID: 
   description: Increases movement speed.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 5789dc14cbc7f47499533e33e5b915e6, type: 3}
   color: {r: 0.6981132, g: 0.58047116, b: 0.08232466, a: 1}
 --- !u!1 &2372735253968725633
 GameObject:
@@ -1407,7 +1407,7 @@ MonoBehaviour:
   prereqUpgradeID: 
   nextUpgradeID: 
   description: Earn 3 points when winning a round.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 42dcfc1db3724a14d946a7bae873f1d4, type: 3}
   color: {r: 0.6981132, g: 0.58047116, b: 0.08232466, a: 1}
 --- !u!1 &3847852060450690800
 GameObject:
@@ -1778,7 +1778,7 @@ MonoBehaviour:
   prereqUpgradeID: 
   nextUpgradeID: 
   description: Increases the travel speed of arrows.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: c6882849df675624aa6edcddb1a4cfb3, type: 3}
   color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &5634360817148887337
 GameObject:
@@ -1937,7 +1937,7 @@ MonoBehaviour:
   prereqUpgradeID: 
   nextUpgradeID: 
   description: Hitting an enemy with an arrow briefly slows them.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: c909e2d94a961994cb2b6113e0879a10, type: 3}
   color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &6625664822516017868
 GameObject:
@@ -1990,7 +1990,7 @@ MonoBehaviour:
   prereqUpgradeID: 
   nextUpgradeID: 
   description: Increases damage.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 190e89ec6c4aa7542828f13d8b7d50ea, type: 3}
   color: {r: 0.74509805, g: 0.26527297, b: 0.0117646875, a: 1}
 --- !u!1 &7211440381346975670
 GameObject:
@@ -2043,7 +2043,7 @@ MonoBehaviour:
   prereqUpgradeID: 
   nextUpgradeID: 
   description: Increases health.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 5e35c1064fc63bf4ebef8e4aeec25160, type: 3}
   color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &7378329935916107060
 GameObject:

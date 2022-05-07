@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbe90450353acd84495c2781c470bb4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 6f6901b98bc0ab34a99dde686a4a98cc, type: 3}
   baseCooldown: 8
   abilityID: bfa
   maxCharges: 1
