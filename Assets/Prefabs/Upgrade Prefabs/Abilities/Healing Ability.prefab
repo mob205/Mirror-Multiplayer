@@ -47,5 +47,5 @@ MonoBehaviour:
   baseCooldown: 20
   abilityID: heal
   maxCharges: 1
-  castDelay: 0
-  healAmount: 35
+  baseCastDelay: 0
+  healAmount: 40

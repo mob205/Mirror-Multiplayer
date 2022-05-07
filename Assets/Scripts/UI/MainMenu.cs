@@ -23,6 +23,10 @@ public class MainMenu : MonoBehaviour
     }
     public void JoinServer()
     {
+        if (string.IsNullOrWhiteSpace(nameField.text))
+        {
+            return;
+        }
         if (hasAttemptedJoin)
         {
             manager.StopClient();
@@ -41,6 +45,10 @@ public class MainMenu : MonoBehaviour
     }
     public void StartHost()
     {
+        if (string.IsNullOrWhiteSpace(nameField.text))
+        {
+            return;
+        }
         PlayerPrefs.SetString("PlayerName", nameField.text);
         manager.StartHost();
         hostButton.interactable = false;

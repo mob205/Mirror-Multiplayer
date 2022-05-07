@@ -47,7 +47,7 @@ MonoBehaviour:
   baseCooldown: 15
   abilityID: invis
   maxCharges: 1
-  castDelay: 0
-  duration: 10
+  baseCastDelay: 0
+  duration: 15
   casterOpacity: 0.5
   particles: {fileID: 6164175450105900093, guid: 294a880a2ee9d2b41bed5d0970ac6a65, type: 3}

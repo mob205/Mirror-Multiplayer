@@ -74,7 +74,7 @@ MonoBehaviour:
   distance: {x: 0, y: 0.6}
   shadowTransform: {fileID: 7893702825337664581}
   minAmount: 10
-  maxAmount: 75
+  maxAmount: 30
 --- !u!212 &7155226685387390584
 SpriteRenderer:
   m_ObjectHideFlags: 0

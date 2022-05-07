@@ -9,6 +9,7 @@ public class UpgradeDisplay : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI descText;
     public TextMeshProUGUI lvlText;
+    public TextMeshProUGUI coinText;
     public Image iconImage;
     public Button button;
     public Image panel;

@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthModifier: 1.5
-  healthOnHit: 8
+  healthOnHit: 12

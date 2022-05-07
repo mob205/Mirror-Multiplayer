@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 2.45
-  damage: 14
+  damage: 12
   attackArcDegrees: 250
   swingTime: 0.2
   hitbox: {fileID: 7072975407784947284}

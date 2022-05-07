@@ -63,6 +63,7 @@ public class UpgradeUI : MonoBehaviour
             displayObj.transform.localPosition = positions[i];
             displayObj.nameText.text = upgradeSlot.name;
             displayObj.descText.text = upgradeSlot.description;
+            displayObj.coinText.text = upgradeSlot.cost.ToString();
             displayObj.iconImage.sprite = upgradeSlot.icon;
             displayObj.panel.color = upgradeSlot.color;
             displayObj.button.onClick.AddListener(() =>

@@ -9,6 +9,7 @@ public class TrapItem : Item
     [HideInInspector] public GameObject caster;
 
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private ParticleSystem particles;
     [Header("Stats")]
     [SerializeField] private float invisDelay;
     [SerializeField] private float minDamage;
@@ -39,7 +40,7 @@ public class TrapItem : Item
     }
     protected override void LocalActivate(Collider2D collision)
     {
-        Debug.Log("trap activated");
+        Instantiate(particles, transform.position, Quaternion.identity);
     }
 
     protected override void ServerActivate(Collider2D collision)
