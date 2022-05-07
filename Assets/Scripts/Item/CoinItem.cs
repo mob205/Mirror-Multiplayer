@@ -11,7 +11,7 @@ public class CoinItem : Item
     [Client]
     protected override void LocalActivate(Collider2D collision)
     {
-        Debug.Log("Coin collected.");
+        // SFX here
     }
     [Server]
     protected override void ServerActivate(Collider2D collision)

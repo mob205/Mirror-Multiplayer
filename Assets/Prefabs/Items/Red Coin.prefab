@@ -133,7 +133,7 @@ MonoBehaviour:
   sceneId: 0
   serverOnly: 0
   visible: 0
-  m_AssetId: a3e6f7407459b1945961e9aedee36df0
+  m_AssetId: 1a810e7a53cc30041ae273d6ec70f002
   hasSpawned: 0
 --- !u!114 &5866396736551414307
 MonoBehaviour:
@@ -155,7 +155,7 @@ MonoBehaviour:
   speed: 3
   distance: {x: 0, y: 0.6}
   shadowTransform: {fileID: 4037444432277570918}
-  minReward: 75
+  minAmount: 75
   maxAmount: 125
 --- !u!212 &3947275841668255579
 SpriteRenderer:
@@ -216,7 +216,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9171709693406530351}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

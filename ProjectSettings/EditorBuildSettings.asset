@@ -9,18 +9,21 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: ca38c9f50129dd94892dd6cd2b513842
   - enabled: 1
-    path: Assets/Scenes/Level Scenes/Level 01.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Lobby Scene.unity
+    guid: a4dbbc94f613d3649993a83117aed6d4
   - enabled: 1
     path: Assets/Scenes/Upgrade Menu.unity
     guid: b39669c37fc94ef48b04aeb4f3685917
   - enabled: 1
-    path: Assets/Scenes/Lobby Scene.unity
-    guid: a4dbbc94f613d3649993a83117aed6d4
-  - enabled: 1
     path: Assets/Scenes/Win Scene.unity
     guid: 8afd4f5c6017b744f90a76973f4413b1
   - enabled: 1
+    path: Assets/Scenes/Level Scenes/Level 01.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Level Scenes/Level 02.unity
+    guid: cde0ba62b957189449acbbdd90706f93
+  - enabled: 0
     path: Assets/Scenes/Level Scenes/Template Level.unity
     guid: 928f7d0fc36b94045b0c72b446acd069
   m_configObjects: {}

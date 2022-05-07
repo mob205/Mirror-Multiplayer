@@ -69,11 +69,11 @@ MonoBehaviour:
   syncInterval: 0.1
   interactableLayers:
     serializedVersion: 2
-    m_Bits: 136
+    m_Bits: 1160
   speed: 3
   distance: {x: 0, y: 0.6}
   shadowTransform: {fileID: 7893702825337664581}
-  minReward: 50
+  minAmount: 10
   maxAmount: 75
 --- !u!212 &7155226685387390584
 SpriteRenderer:
@@ -134,7 +134,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3081456013748468236}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

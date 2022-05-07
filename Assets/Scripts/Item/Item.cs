@@ -13,13 +13,13 @@ public abstract class Item : NetworkBehaviour
     [SerializeField] private Transform shadowTransform;
 
     private Vector2 startPos;
-    private float startTime;
+    private double startTime;
     private Vector2 shadowOffset;
 
     protected virtual void Start()
     {
         startPos = transform.position;
-        startTime = Time.time;
+        startTime = NetworkTime.time;
         if (shadowTransform)
         {
             shadowOffset = shadowTransform.position;
@@ -27,7 +27,7 @@ public abstract class Item : NetworkBehaviour
     }
     private void Update()
     {
-        float oscillateFactor = 0.5f * (1 + Mathf.Sin(speed * (Time.time - startTime) - (Mathf.PI / 2)));
+        float oscillateFactor = 0.5f * (1 + Mathf.Sin(speed * (float)(NetworkTime.time - startTime) - (Mathf.PI / 2)));
         transform.position = Vector2.Lerp(startPos, startPos + distance, oscillateFactor);
         if (shadowTransform)
         {
