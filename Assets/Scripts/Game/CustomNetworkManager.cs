@@ -2,12 +2,14 @@ using UnityEngine;
 using Mirror;
 using UnityEngine.SceneManagement;
 using System;
+using System.Collections.Generic;
 
 public class CustomNetworkManager : NetworkManager
 {
     [Scene] public string upgradeScene;
     [Scene] public string lobbyScene;
     [Scene] public string winScene;
+    [Scene] public List<string> levelScenes;
     [SerializeField] GameObject upgradePlayerPrefab;
     [SerializeField] GameObject lobbyPlayerPrefab;
 
@@ -69,6 +71,7 @@ public class CustomNetworkManager : NetworkManager
     [Server]
     public void StartLevel()
     {
-        ServerChangeScene("Template Level");
+        var randomScene = levelScenes[UnityEngine.Random.Range(0, levelScenes.Count)];
+        ServerChangeScene(randomScene);
     }
 }
