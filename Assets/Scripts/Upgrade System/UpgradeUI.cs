@@ -12,9 +12,9 @@ public class UpgradeUI : MonoBehaviour
 
     private List<UpgradeDisplay> displayObjects = new List<UpgradeDisplay>();
     private UpgradeManager upgradeManager;
-    private void Awake()
+    public void Initialize(UpgradeManager upgradeManager)
     {
-        upgradeManager = FindObjectOfType<UpgradeManager>();
+        this.upgradeManager = upgradeManager;
     }
     private void ClearDisplay()
     {

@@ -22,6 +22,7 @@ public class UpgradeManager : NetworkBehaviour
         cm = CoinManager.instance;
         InitializeDictionaries();
         CmdGetAvailableUpgrades();
+        Debug.Log("UpgradeManager started");
     }
     private void InitializeDictionaries()
     {
