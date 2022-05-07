@@ -72,6 +72,10 @@ MonoBehaviour:
   upgradeScene: Assets/Scenes/Upgrade Menu.unity
   lobbyScene: Assets/Scenes/Lobby Scene.unity
   winScene: Assets/Scenes/Win Scene.unity
+  levelScenes:
+  - Assets/Scenes/Level Scenes/Level 01.unity
+  - Assets/Scenes/Level Scenes/Level 02.unity
+  - Assets/Scenes/Level Scenes/Level 03.unity
   upgradePlayerPrefab: {fileID: 6704529205651473868, guid: 70c14a234431b584bb824699da7c06eb, type: 3}
   lobbyPlayerPrefab: {fileID: 644859915135664312, guid: 85cdcda99b27c244cb017ec975388f14, type: 3}
 --- !u!114 &6174048691559581987

@@ -1041,13 +1041,22 @@ namespace Mirror
         public static void RegisterStartPosition(Transform start)
         {
             // Debug.Log($"RegisterStartPosition: {start.gameObject.name} {start.position}");
-            startPositions.Add(start);
+            //startPositions.Add(start);
+            
+            var randomNumber = UnityEngine.Random.Range(0, startPositions.Count + 1);
+            startPositions.Insert(randomNumber, start);
+
+            //var randomIndex = UnityEngine.Random.Range(0, startPositions.Count);
+            //Debug.Log($"Random index of {start.name} is {randomIndex}");
+            //startPositions.Insert(randomIndex, start);
 
             // reorder the list so that round-robin spawning uses the start positions
             // in hierarchy order.  This assumes all objects with NetworkStartPosition
             // component are siblings, either in the scene root or together as children
             // under a single parent in the scene.
-            startPositions = startPositions.OrderBy(transform => transform.GetSiblingIndex()).ToList();
+
+            //startPositions = startPositions.OrderBy(transform => transform.GetSiblingIndex()).ToList();
+
         }
 
         /// <summary>Unregister a Transform from start positions.</summary>
