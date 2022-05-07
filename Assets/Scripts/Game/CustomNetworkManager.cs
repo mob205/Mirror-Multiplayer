@@ -32,10 +32,10 @@ public class CustomNetworkManager : NetworkManager
         {
             StartLevel();
         }
-        else if (Input.GetKeyDown(KeyCode.C) && Debug.isDebugBuild)
-        {
-            ServerChangeScene("Template Level");
-        }
+        //else if (Input.GetKeyDown(KeyCode.M) && Debug.isDebugBuild)
+        //{
+        //    ServerChangeScene("Template Level");
+        //}
         else if(Input.GetKeyDown(KeyCode.V) && Debug.isDebugBuild)
         {
             CoinManager.instance.ModifyCoins(NetworkServer.connections[0], 1000);

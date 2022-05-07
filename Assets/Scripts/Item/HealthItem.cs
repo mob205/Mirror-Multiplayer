@@ -9,7 +9,7 @@ public class HealthItem : Item
     [SerializeField] private int maxAmount;
 
     [Client]
-    protected override void LocalActivate(Collider2D collision)
+    protected override void RpcLocalActivate(GameObject collider)
     {
         Debug.Log("Health collected.");
     }

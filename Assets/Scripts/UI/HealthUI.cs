@@ -22,9 +22,12 @@ public class HealthUI : MonoBehaviour
         var playerTemplate = Instantiate(template, transform);
         playerTemplates.Add(player, playerTemplate);
 
-        playerTemplate.GetComponentInChildren<TextMeshProUGUI>().text = player.GetComponent<PlayerDisplayer>().playerName;
+        var displayer = player.GetComponent<PlayerDisplayer>();
+        playerTemplate.GetComponentInChildren<TextMeshProUGUI>().text = displayer.playerName;
         playerTemplate.GetComponentInChildren<HealthTracker>().target = player.GetComponent<Health>();
         playerTemplate.GetComponentInChildren<PointDisplay>().target = player.GetComponent<NetworkIdentity>().netId;
+
+        displayer.hasDisplayed = true;
 
         RepositionUI();
     }

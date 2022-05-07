@@ -38,7 +38,8 @@ public class TrapItem : Item
         }
         return isTriggerable;
     }
-    protected override void LocalActivate(Collider2D collision)
+    [ClientRpc]
+    protected override void RpcLocalActivate(GameObject collisionGO)
     {
         Instantiate(particles, transform.position, Quaternion.identity);
     }

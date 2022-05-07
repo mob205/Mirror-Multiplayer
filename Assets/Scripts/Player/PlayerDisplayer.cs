@@ -10,7 +10,16 @@ public class PlayerDisplayer : NetworkBehaviour
     public static event Action<GameObject> OnStartPlayerUI;
     public static event Action<GameObject> OnRemovePlayerUI;
 
-    private void Start()
+    public bool hasDisplayed;
+
+    public void Update()
+    {
+        if(!string.IsNullOrEmpty(playerName) && !hasDisplayed)
+        {
+            OnStartPlayerUI?.Invoke(gameObject);
+        }
+    }
+    public override void OnStartClient()
     {
         if (isLocalPlayer && string.IsNullOrEmpty(playerName))
         {

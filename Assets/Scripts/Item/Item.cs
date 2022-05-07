@@ -37,11 +37,10 @@ public abstract class Item : NetworkBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Check if the colliding object is in a player layer
-        if ((interactableLayers.value & (1 << (collision.gameObject.layer))) > 0)
+        if (isServer && IsTriggerable(collision) && (interactableLayers.value & (1 << (collision.gameObject.layer))) > 0)
         {
-            if (!IsTriggerable(collision)) { return; }
-            LocalActivate(collision);
-            if (isServer) { ServerActivate(collision); }
+            ServerActivate(collision);
+            RpcLocalActivate(collision.gameObject);
             NetworkServer.Destroy(gameObject);
         }
     }
@@ -49,6 +48,10 @@ public abstract class Item : NetworkBehaviour
     {
         return true;
     }
-    protected abstract void LocalActivate(Collider2D collision);
+    [ClientRpc]
+    protected virtual void RpcLocalActivate(GameObject colliderGO)
+    {
+        // FX here
+    }
     protected abstract void ServerActivate(Collider2D collision);
 }
