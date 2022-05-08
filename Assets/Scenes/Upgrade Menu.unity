@@ -623,15 +623,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2372735252461942530, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: cost
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2372735252523093131, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: cost
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2372735252592694992, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: cost
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2372735253017890015, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: cost
@@ -727,7 +727,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: e2779318cd919b34884f6b0193f91576, type: 3}
     - target: {fileID: 2372735254139133109, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: cost
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2372735254168269947, guid: 55053d1471080b142942645d5c431eaa, type: 3}
       propertyPath: cost

@@ -47,5 +47,5 @@ MonoBehaviour:
   baseCooldown: 20
   abilityID: turret
   maxCharges: 2
-  baseCastDelay: 1
+  baseCastDelay: 4
   turretPrefab: {fileID: 258475911093632618, guid: f95f64f649eae8043bb41dccf7a029b5, type: 3}

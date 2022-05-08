@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 5e35c1064fc63bf4ebef8e4aeec25160, type: 3}
-  baseCooldown: 20
+  baseCooldown: 30
   abilityID: heal
   maxCharges: 1
   baseCastDelay: 0
-  healAmount: 40
+  healAmount: 30

@@ -43,6 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da17a9ccb80fd3e49acf72ee9c344e93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageModPerCoin: 0.0001
+  damageModPerCoin: 0.00015
   stealMin: 0.15
   stealMax: 0.25

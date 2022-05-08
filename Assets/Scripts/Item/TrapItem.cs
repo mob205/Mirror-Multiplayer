@@ -15,12 +15,17 @@ public class TrapItem : Item
     [SerializeField] private float minDamage;
     [SerializeField] private float maxDamage;
 
+    public float itemLifetime;
+
     private bool isTriggerable;
     protected override void Start()
     {
         base.Start();
         StartCoroutine(StartInvisibility());
+        StartCoroutine(StartLifetime());
     }
+   
+
     private IEnumerator StartInvisibility()
     {
         yield return new WaitForSeconds(invisDelay);
@@ -49,5 +54,10 @@ public class TrapItem : Item
         var health = collision.GetComponent<Health>();
         var amount = Random.Range(minDamage, maxDamage + 1);
         health.Damage(amount, caster);
+    }
+    private IEnumerator StartLifetime()
+    {
+        yield return new WaitForSeconds(itemLifetime);
+        Destroy(gameObject);
     }
 }

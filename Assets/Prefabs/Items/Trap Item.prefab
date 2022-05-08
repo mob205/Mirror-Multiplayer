@@ -76,8 +76,8 @@ MonoBehaviour:
   spriteRenderer: {fileID: 7181425506076393963}
   particles: {fileID: 4368010088170090128, guid: fe88794803819494c9de2c7cd8e9d8e4, type: 3}
   invisDelay: 2
-  minDamage: 15
-  maxDamage: 25
+  minDamage: 20
+  maxDamage: 30
 --- !u!212 &7181425506076393963
 SpriteRenderer:
   m_ObjectHideFlags: 0

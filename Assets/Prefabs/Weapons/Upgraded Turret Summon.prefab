@@ -57,9 +57,9 @@ MonoBehaviour:
     m_Bits: 1160
   retargetDelay: 1
   weaponPivot: {fileID: 258475911181556200}
-  attackSpeed: 1.5
-  damage: 15
-  bulletSpeed: 12
+  attackSpeed: 1.35
+  damage: 12
+  bulletSpeed: 10
   bulletPrefab: {fileID: -549299000793330776, guid: cd9da55cc72e1c747864395d27ec3e16, type: 3}
   bulletSpawn: {fileID: 258475911597337312}
   caster: {fileID: 0}
