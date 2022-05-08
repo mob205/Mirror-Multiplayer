@@ -12,6 +12,7 @@ public class GameSceneManager : NetworkBehaviour
     [SerializeField] private float sceneChangeDelay = 5;
     [SerializeField] private int playerKillReward = 100;
     [SerializeField] private int playerWinReward = 100;
+    [SerializeField] private int baseReward = 100;
 
     public static event Action<uint> OnWinRound;
     public static string lastWinnerName;
@@ -79,6 +80,12 @@ public class GameSceneManager : NetworkBehaviour
         if (isServerOnly) { OnWinRound?.Invoke(winnerID); }
         hasWonRound = !hasWonRound;
         RpcAlertWinRound(winnerID, lastWinnerName);
+
+        var cm = CoinManager.instance;
+        foreach (var conn in NetworkServer.connections)
+        {
+            cm.ModifyCoins(conn.Value, baseReward);
+        }
         yield return new WaitForSeconds(sceneChangeDelay);
         ChangeScene();
     }

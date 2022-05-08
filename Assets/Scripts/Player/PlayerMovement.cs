@@ -29,7 +29,7 @@ public class PlayerMovement : NetworkBehaviour
         var cam = FindObjectOfType<PlayerCamera>();
         if (cam) { cam.SetFollowTarget(gameObject); }
     }
-    private void Update()
+    private void FixedUpdate()
     {
         if(CurrentState == State.Immobilized || !hasAuthority) { return; }
         if (CurrentState == State.Walking)

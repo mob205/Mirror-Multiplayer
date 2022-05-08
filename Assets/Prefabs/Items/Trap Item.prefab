@@ -78,6 +78,7 @@ MonoBehaviour:
   invisDelay: 2
   minDamage: 20
   maxDamage: 30
+  itemLifetime: 45
 --- !u!212 &7181425506076393963
 SpriteRenderer:
   m_ObjectHideFlags: 0

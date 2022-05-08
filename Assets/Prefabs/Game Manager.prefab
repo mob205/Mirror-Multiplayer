@@ -66,7 +66,8 @@ MonoBehaviour:
   syncInterval: 0.1
   sceneChangeDelay: 3.5
   playerKillReward: 50
-  playerWinReward: 75
+  playerWinReward: 50
+  baseReward: 100
 --- !u!114 &6162694239378197186
 MonoBehaviour:
   m_ObjectHideFlags: 0
