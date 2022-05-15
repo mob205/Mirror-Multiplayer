@@ -40,7 +40,7 @@ public class SlowOnHitUpgrade : Upgrade
             player.speedModifier *= speedModifier;
         }
     }
-    private void OnDestroy()
+    private void UnslowAll()
     {
         var currentSlowed = new Dictionary<PlayerMovement, float>(slowedPlayers);
         foreach (var player in currentSlowed)
@@ -48,5 +48,13 @@ public class SlowOnHitUpgrade : Upgrade
             slowedPlayers.Remove(player.Key);
             player.Key.speedModifier /= speedModifier;
         }
+    }
+    private void OnDestroy()
+    {
+        UnslowAll();
+    }
+    private void OnDisable()
+    {
+        UnslowAll();
     }
 }

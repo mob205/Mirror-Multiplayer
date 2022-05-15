@@ -151,7 +151,7 @@ MonoBehaviour:
   syncInterval: 0.1
   interactableLayers:
     serializedVersion: 2
-    m_Bits: 136
+    m_Bits: 1160
   speed: 3
   distance: {x: 0, y: 0.6}
   shadowTransform: {fileID: 4037444432277570918}

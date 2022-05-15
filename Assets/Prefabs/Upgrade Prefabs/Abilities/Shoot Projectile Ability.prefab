@@ -50,5 +50,5 @@ MonoBehaviour:
   baseCastDelay: 0
   bulletPrefab: {fileID: 8259587314136858691, guid: 39cbf946c69f4614da225a51774d82f6, type: 3}
   baseDamage: 5
-  bulletSpeed: 25
-  damageGainRate: 100
+  bulletSpeed: 20
+  lifetime: 10

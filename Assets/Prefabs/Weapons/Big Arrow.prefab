@@ -99,7 +99,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionMask:
     serializedVersion: 2
-    m_Bits: 2568
+    m_Bits: 520
+  damageGainRate: 80
+  updatesPerSecond: 10
 --- !u!61 &4227163515276197109
 BoxCollider2D:
   m_ObjectHideFlags: 0

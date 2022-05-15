@@ -5,10 +5,10 @@ using UnityEngine;
 public class ShootProjectileAbility : AbilityUpgrade
 {
     [Header("Projectile")]
-    public RampupBullet bulletPrefab;
+    public Bullet bulletPrefab;
     public float baseDamage;
     public float bulletSpeed;
-    public float damageGainRate;
+    public float lifetime;
     public override void CastAbility(Vector2 mousePos)
     {
         ShootBullet(mousePos);
@@ -31,6 +31,12 @@ public class ShootProjectileAbility : AbilityUpgrade
         bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * bulletSpeed;
         bullet.Shooter = transform.gameObject;
         bullet.Damage = baseDamage;
-        bullet.DamageGainRate = damageGainRate;
+
+        StartCoroutine(DelayedDestroy(bullet));
+    }
+    private IEnumerator DelayedDestroy(Bullet bullet)
+    {
+        yield return new WaitForSeconds(lifetime);
+        Destroy(bullet);
     }
 }
