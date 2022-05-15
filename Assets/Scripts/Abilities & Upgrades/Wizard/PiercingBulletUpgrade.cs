@@ -9,7 +9,7 @@ public class PiercingBulletUpgrade : Upgrade
     public override void Initialize()
     {
         weapon = GetComponentInChildren<ProjectileWeapon>();
-        weapon.OnShoot += ApplyUpgrade;
+        weapon.OnShootEffects += ApplyUpgrade;
     }
     private void ApplyUpgrade(Bullet bullet)
     {

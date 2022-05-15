@@ -6,44 +6,36 @@ using UnityEngine;
 
 public class ProjectileWeapon : WeaponController
 {
-    [SerializeField] private float bulletSpeed = 5;
-    [SerializeField] private Bullet weaponBulletPrefab;
-    [SerializeField] private float bulletLifetime = 2;
+    public float bulletSpeed = 5;
+    public Bullet weaponBulletPrefab;
+    public float bulletLifetime = 2;
 
     public event Action<Bullet> OnShoot;
+    public event Action<Bullet> OnShootEffects;
 
     public override bool ServerFire(Vector3 target)
     {
         if (!canFire) { return false; }
 
-        if (!playerIdentity.isHost)
-        {
-            var bullet = ShootWeaponBullet(target);
-
-            // Exclude hosts so event is not triggered twice
-            OnShoot?.Invoke(bullet);
-        }
-
-        StartCoroutine(ToggleFire());
+        ShootWeaponBullet(target);
 
         return true;
     }
     public override void SimulateFire(Vector3 target)
     {
-        var dir = Utility.GetDirection(target, transform);
-        var bullet = ShootWeaponBullet(target);
-
-        OnShoot?.Invoke(bullet);
-
-        StartCoroutine(ToggleFire());
+        if (!netIdentity.isHost)
+        {
+            ShootWeaponBullet(target);
+        }
     }
     private Bullet ShootWeaponBullet(Vector3 target)
     {
         var dir = Utility.GetDirection(target, transform);
-        var bullet = ShootBullet(weaponBulletPrefab, dir);
+        var bullet = ShootBullet(weaponBulletPrefab, dir, bulletSpeed, damage, bulletLifetime, true);
+        StartCoroutine(ToggleFire());
         return bullet;
     }
-    public Bullet ShootBullet(Bullet bulletPrefab, Quaternion dir)
+    public Bullet ShootBullet(Bullet bulletPrefab, Quaternion dir, float bulletSpeed, float damage, float bulletLifetime, bool triggerEffects)
     {
         var bullet = Instantiate(bulletPrefab, transform.position, dir);
         var bulletComponent = bullet.GetComponent<Bullet>();
@@ -53,6 +45,12 @@ public class ProjectileWeapon : WeaponController
         bulletComponent.Shooter = transform.parent.gameObject;
         bulletComponent.Weapon = this;
         bulletComponent.Damage = damage;
+
+        OnShoot?.Invoke(bulletComponent);
+        if (triggerEffects)
+        {
+            OnShootEffects?.Invoke(bulletComponent);
+        }
 
         StartCoroutine(DelayedDestroy(bullet.gameObject, bulletLifetime));
 
@@ -65,14 +63,6 @@ public class ProjectileWeapon : WeaponController
         {
             Destroy(go);
         }
-    }
-    public void ChangeBullet(Bullet newPrefab)
-    {
-        weaponBulletPrefab = newPrefab;
-    }
-    public void ModifyBulletSpeed(float modifier)
-    {
-        bulletSpeed *= modifier;
     }
     public void SetBulletLifetime(float lifetime)
     {

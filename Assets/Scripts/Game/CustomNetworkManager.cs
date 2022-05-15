@@ -9,6 +9,7 @@ public class CustomNetworkManager : NetworkManager
     [Scene] public string upgradeScene;
     [Scene] public string lobbyScene;
     [Scene] public string winScene;
+    [Scene] public string testScene;
     [Scene] public List<string> levelScenes;
     [SerializeField] GameObject upgradePlayerPrefab;
     [SerializeField] GameObject lobbyPlayerPrefab;
@@ -32,10 +33,10 @@ public class CustomNetworkManager : NetworkManager
         {
             StartLevel();
         }
-        //else if (Input.GetKeyDown(KeyCode.M) && Debug.isDebugBuild)
-        //{
-        //    ServerChangeScene("Template Level");
-        //}
+        else if (Input.GetKeyDown(KeyCode.V) && Debug.isDebugBuild)
+        {
+            ServerChangeScene(testScene);
+        }
         else if(Input.GetKeyDown(KeyCode.V) && Debug.isDebugBuild)
         {
             CoinManager.instance.ModifyCoins(NetworkServer.connections[0], 1000);

@@ -8,6 +8,6 @@ public class ProjSpeedUpgrade : Upgrade
     public override void Initialize()
     {
         var weapon = (ProjectileWeapon) GetComponent<PlayerCombat>().Weapon;
-        weapon.ModifyBulletSpeed(projectileSpeedModifier);
+        weapon.bulletSpeed *= projectileSpeedModifier;
     }
 }

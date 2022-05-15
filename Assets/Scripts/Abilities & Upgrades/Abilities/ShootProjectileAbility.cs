@@ -25,18 +25,6 @@ public class ShootProjectileAbility : AbilityUpgrade
     private void ShootBullet(Vector3 mousePos)
     {
         var dir = Utility.GetDirection(mousePos, transform);
-        var bullet = Instantiate(bulletPrefab, transform.position, dir);
-
-        bullet.transform.SetPositionAndRotation(transform.position, dir);
-        bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * bulletSpeed;
-        bullet.Shooter = transform.gameObject;
-        bullet.Damage = baseDamage;
-
-        StartCoroutine(DelayedDestroy(bullet));
-    }
-    private IEnumerator DelayedDestroy(Bullet bullet)
-    {
-        yield return new WaitForSeconds(lifetime);
-        Destroy(bullet);
+        GetComponentInChildren<ProjectileWeapon>().ShootBullet(bulletPrefab, dir, bulletSpeed, baseDamage, lifetime, true);
     }
 }

@@ -22,7 +22,7 @@ public class MeleeWeapon : WeaponController
 
         hitbox.CanDamage = true;
 
-        if (!playerIdentity.isHost)
+        if (!netIdentity.isHost)
         {
             StartCoroutine(SwingWeapon());
         }

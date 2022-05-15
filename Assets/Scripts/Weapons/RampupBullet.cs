@@ -23,8 +23,4 @@ public class RampupBullet : Bullet
             yield return new WaitForSeconds(1 / updatesPerSecond);
         }
     }
-    public void OnDestroy()
-    {
-        Debug.Log($"{startTime}, {Damage}");
-    }
 }

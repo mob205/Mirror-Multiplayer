@@ -14,14 +14,14 @@ public abstract class WeaponController : MonoBehaviour
 
     protected bool canFire = true;
     protected Camera mainCam;
-    protected NetworkIdentity playerIdentity;
+    protected NetworkIdentity netIdentity;
 
     public event Action<Health> OnHit;
 
     private void Start()
     {
         mainCam = Camera.main;
-        playerIdentity = GetComponentInParent<NetworkIdentity>();
+        netIdentity = GetComponentInParent<NetworkIdentity>();
     }
 
     public virtual void RotateWeapon(Vector3 target)

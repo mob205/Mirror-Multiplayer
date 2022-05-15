@@ -9,6 +9,6 @@ public class ChangeProjectileUpgrade : Upgrade
     public override void Initialize()
     {
         var weapon = (ProjectileWeapon) GetComponent<PlayerCombat>().Weapon;
-        weapon.ChangeBullet(newBullet);
+        weapon.weaponBulletPrefab = newBullet;
     }
 }

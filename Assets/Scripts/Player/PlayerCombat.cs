@@ -45,7 +45,10 @@ public class PlayerCombat : NetworkBehaviour
     [ClientRpc]
     private void RpcSimulateFire(Vector3 target)
     {
-        weapon.SimulateFire(target);
+        if (weapon)
+        {
+            weapon.SimulateFire(target);
+        }
         OnFire?.Invoke();
     }
     // In the future, rotation may happen in the parent player object, not the weapon.

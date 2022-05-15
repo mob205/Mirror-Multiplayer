@@ -11,8 +11,8 @@ public class MultishotUpgrade : Upgrade
     public override void Initialize()
     {
         weapon = GetComponentInChildren<ProjectileWeapon>();
-        weapon.OnShoot += OnShoot;
-        weapon.SetBulletLifetime(bulletLifetime);
+        weapon.OnShootEffects += OnShoot;
+        weapon.bulletLifetime = bulletLifetime;
     }
     private void OnShoot(Bullet bullet)
     {
@@ -31,7 +31,7 @@ public class MultishotUpgrade : Upgrade
                 newAngle = baseAngle - (degreeOffset * layer);
             }
             var rot = Quaternion.Euler(new Vector3(0, 0, newAngle));
-            weapon.ShootBullet(bullet, rot);
+            weapon.ShootBullet(bullet, rot, weapon.bulletSpeed, bullet.Damage, weapon.bulletLifetime, false);
         }
     }
 }
