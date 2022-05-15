@@ -10,6 +10,7 @@ public class ExplosionAbility : AbilityUpgrade
     public ParticleSystem startParticlePrefab;
     public LayerMask wallLayers;
     [Header("Gameplay")]
+    public ExplosionHitDetection explosionPrefab;
     public float range;
     public float damage;
     public float warmupDuration;
@@ -45,15 +46,11 @@ public class ExplosionAbility : AbilityUpgrade
     private IEnumerator DelayedCalculateDamage()
     {
         yield return new WaitForSeconds(warmupDuration);
-        var self = GetComponent<Health>();
-        var targetsInRange = Physics2D.OverlapCircleAll(transform.position, range);
-        foreach (var target in targetsInRange)
-        {
-            var targetHealth = target.GetComponent<Health>();
-            if (targetHealth && targetHealth != self && !Physics2D.Linecast(transform.position, target.transform.position, wallLayers))
-            {
-                targetHealth.Damage(damage, gameObject);
-            }
-        }
+        var explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        explosion.MaxRange = range;
+        explosion.Caster = GetComponent<Health>();
+        explosion.ExpansionRate = expParticlePrefab.main.startSpeed.constantMax;
+        explosion.Damage = damage;
+        explosion.Layers = wallLayers;
     }
 }
