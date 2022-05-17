@@ -27,6 +27,7 @@ public class ProjectileWeapon : WeaponController
         {
             ShootWeaponBullet(target);
         }
+        base.SimulateFire(target);
     }
     private Bullet ShootWeaponBullet(Vector3 target)
     {

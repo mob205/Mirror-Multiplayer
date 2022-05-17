@@ -11,7 +11,7 @@ public class HealthItem : Item
     [Client]
     protected override void RpcLocalActivate(GameObject collider)
     {
-        Debug.Log("Health collected.");
+        base.RpcLocalActivate(collider);
     }
     [Server]
     protected override void ServerActivate(Collider2D collision)

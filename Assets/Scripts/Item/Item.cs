@@ -6,6 +6,7 @@ using UnityEngine;
 public abstract class Item : NetworkBehaviour
 {
     [SerializeField] private LayerMask interactableLayers;
+    [SerializeField] private OneshotAudio sound;
 
     [Header("Oscillation")]
     [SerializeField] private float speed;
@@ -41,7 +42,10 @@ public abstract class Item : NetworkBehaviour
         {
             ServerActivate(collision);
             RpcLocalActivate(collision.gameObject);
-            NetworkServer.Destroy(gameObject);
+            if (isServerOnly)
+            {
+                Destroy(gameObject);
+            }
         }
     }
     protected virtual bool IsTriggerable(Collider2D collision)
@@ -51,7 +55,11 @@ public abstract class Item : NetworkBehaviour
     [ClientRpc]
     protected virtual void RpcLocalActivate(GameObject colliderGO)
     {
-        // FX here
+        if (sound)
+        {
+            Instantiate(sound, transform.position, Quaternion.identity);
+        }
+        Destroy(gameObject);
     }
     protected abstract void ServerActivate(Collider2D collision);
 }

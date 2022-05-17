@@ -9,6 +9,7 @@ public abstract class WeaponController : MonoBehaviour
     [Tooltip("Fire rate in attacks per second")]
     [SerializeField] protected float fireRate = 1;
     [SerializeField] protected float damage = 10;
+    [SerializeField] protected AudioSource sound;
 
     public bool CanFire { get { return canFire; } }
 
@@ -30,7 +31,13 @@ public abstract class WeaponController : MonoBehaviour
     }
     public abstract bool ServerFire(Vector3 target);
 
-    public abstract void SimulateFire(Vector3 target);
+    public virtual void SimulateFire(Vector3 target)
+    {
+        if (sound)
+        {
+            sound.Play();
+        }
+    }
 
     protected IEnumerator ToggleFire()
     {

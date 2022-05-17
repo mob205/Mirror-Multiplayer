@@ -24,8 +24,6 @@ public class TrapItem : Item
         StartCoroutine(StartInvisibility());
         StartCoroutine(StartLifetime());
     }
-   
-
     private IEnumerator StartInvisibility()
     {
         yield return new WaitForSeconds(invisDelay);
@@ -46,9 +44,10 @@ public class TrapItem : Item
     [ClientRpc]
     protected override void RpcLocalActivate(GameObject collisionGO)
     {
+        Debug.Log("Trap RPC");
         Instantiate(particles, transform.position, Quaternion.identity);
+        base.RpcLocalActivate(collisionGO);
     }
-
     protected override void ServerActivate(Collider2D collision)
     {
         var health = collision.GetComponent<Health>();

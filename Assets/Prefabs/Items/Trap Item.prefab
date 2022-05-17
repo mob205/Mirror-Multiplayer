@@ -69,6 +69,7 @@ MonoBehaviour:
   interactableLayers:
     serializedVersion: 2
     m_Bits: 8
+  sound: {fileID: 7384103163259693643, guid: 04d386911c232a94986b0236bc6fc033, type: 3}
   speed: 0
   distance: {x: 0, y: 0}
   shadowTransform: {fileID: 0}

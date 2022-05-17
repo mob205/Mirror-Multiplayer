@@ -33,6 +33,7 @@ public class MeleeWeapon : WeaponController
     {
         StartCoroutine(SwingWeapon());
         StartCoroutine(ToggleFire());
+        base.SimulateFire(target);
     }
     public override void RotateWeapon(Vector3 target)
     {

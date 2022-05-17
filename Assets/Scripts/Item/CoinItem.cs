@@ -11,7 +11,7 @@ public class CoinItem : Item
     [Client]
     protected override void RpcLocalActivate(GameObject collider)
     {
-        // SFX here
+        base.RpcLocalActivate(collider);
     }
     [Server]
     protected override void ServerActivate(Collider2D collision)
