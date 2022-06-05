@@ -1,6 +1,5 @@
 using Mirror;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TrapItem : Item
@@ -44,7 +43,6 @@ public class TrapItem : Item
     [ClientRpc]
     protected override void RpcLocalActivate(GameObject collisionGO)
     {
-        Debug.Log("Trap RPC");
         Instantiate(particles, transform.position, Quaternion.identity);
         base.RpcLocalActivate(collisionGO);
     }

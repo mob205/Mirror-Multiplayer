@@ -1,16 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class OneshotAudio : MonoBehaviour
 {
+    public float minPitch = 1;
+    public float maxPitch = 1;
     private AudioSource sound;
     void Start()
     {
         sound = GetComponent<AudioSource>();
+        sound.pitch = Random.Range(minPitch, maxPitch);
+        sound.Play();
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (!sound.isPlaying)

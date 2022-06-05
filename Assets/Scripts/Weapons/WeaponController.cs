@@ -35,6 +35,7 @@ public abstract class WeaponController : MonoBehaviour
     {
         if (sound)
         {
+            sound.pitch = UnityEngine.Random.Range(.9f, 1.1f);
             sound.Play();
         }
     }
