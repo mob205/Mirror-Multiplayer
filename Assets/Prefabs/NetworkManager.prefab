@@ -53,7 +53,7 @@ MonoBehaviour:
   serverTickRate: 30
   offlineScene: Assets/Scenes/Main Menu.unity
   onlineScene: Assets/Scenes/Lobby Scene.unity
-  transport: {fileID: 742719228}
+  transport: {fileID: 6174048691559581987}
   networkAddress: localhost
   maxConnections: 4
   authenticator: {fileID: 0}

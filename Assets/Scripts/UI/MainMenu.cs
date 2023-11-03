@@ -37,9 +37,13 @@ public class MainMenu : MonoBehaviour
     }
     public void JoinServer()
     {
-        if (SteamManager.Initialized) { return; }
+        //if (SteamManager.Initialized) {
+        //    Debug.Log("Steam manager is initialized.");
+        //    return; 
+        //}
         if (string.IsNullOrWhiteSpace(nameField.text))
         {
+            Debug.Log("Name field empty.");
             return;
         }
         if (hasAttemptedJoin)
@@ -60,7 +64,7 @@ public class MainMenu : MonoBehaviour
     }
     public void StartHost()
     {
-        if (SteamManager.Initialized)
+        if (GetComponent<SteamManager>())
         {
             SteamMatchmaking.CreateLobby(ELobbyType.k_ELobbyTypePublic, manager.maxConnections);
             string name;
@@ -77,6 +81,7 @@ public class MainMenu : MonoBehaviour
         }
         else if(!string.IsNullOrWhiteSpace(nameField.text))
         {
+            Debug.Log("Starting host");
             manager.StartHost();
             PlayerPrefs.SetString("PlayerName", nameField.text);
             hostButton.interactable = false;
