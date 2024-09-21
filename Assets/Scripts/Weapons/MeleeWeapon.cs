@@ -22,10 +22,8 @@ public class MeleeWeapon : WeaponController
 
         hitbox.CanDamage = true;
 
-        if (!netIdentity.isHost)
-        {
-            StartCoroutine(SwingWeapon());
-        }
+        StartCoroutine(SwingWeapon());
+
         StartCoroutine(ToggleFire());
         return true;
     }

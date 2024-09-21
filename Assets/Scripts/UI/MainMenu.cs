@@ -5,6 +5,7 @@ using Mirror;
 using TMPro;
 using UnityEngine.UI;
 using Steamworks;
+using Telepathy;
 
 public class MainMenu : MonoBehaviour
 {
@@ -27,13 +28,18 @@ public class MainMenu : MonoBehaviour
     {
         manager = NetworkManager.singleton;
         joinText = joinButton.GetComponentInChildren<TextMeshProUGUI>();
-
-        if (SteamManager.Initialized)
-        {
-            lobbyCreated = Callback<LobbyCreated_t>.Create(OnSteamLobbyCreated);
-            joinRequested = Callback<GameLobbyJoinRequested_t>.Create(OnSteamJoinRequested);
-            lobbyEntered = Callback<LobbyEnter_t>.Create(OnSteamLobbyEntered);
-        }
+        
+        //if (SteamManager.Initialized)
+        //{
+        //    lobbyCreated = Callback<LobbyCreated_t>.Create(OnSteamLobbyCreated);
+        //    joinRequested = Callback<GameLobbyJoinRequested_t>.Create(OnSteamJoinRequested);
+        //    lobbyEntered = Callback<LobbyEnter_t>.Create(OnSteamLobbyEntered);
+        //}
+    }
+    private void OnServerInitialized()
+    {
+        manager.StartServer();
+        Debug.Log("Server starting");
     }
     public void JoinServer()
     {
@@ -64,22 +70,22 @@ public class MainMenu : MonoBehaviour
     }
     public void StartHost()
     {
-        if (GetComponent<SteamManager>())
-        {
-            SteamMatchmaking.CreateLobby(ELobbyType.k_ELobbyTypePublic, manager.maxConnections);
-            string name;
-            if (string.IsNullOrWhiteSpace(nameField.text))
-            {
-                name = SteamFriends.GetPersonaName();
-            }
-            else
-            {
-                name = nameField.text;
-            }
-            PlayerPrefs.SetString("PlayerName", name);
-            hostButton.interactable = false;
-        }
-        else if(!string.IsNullOrWhiteSpace(nameField.text))
+        //if (GetComponent<SteamManager>().isActiveAndEnabled)
+        //{
+        //    SteamMatchmaking.CreateLobby(ELobbyType.k_ELobbyTypePublic, manager.maxConnections);
+        //    string name;
+        //    if (string.IsNullOrWhiteSpace(nameField.text))
+        //    {
+        //        name = SteamFriends.GetPersonaName();
+        //    }
+        //    else
+        //    {
+        //        name = nameField.text;
+        //    }
+        //    PlayerPrefs.SetString("PlayerName", name);
+        //    hostButton.interactable = false;
+        //}
+        if(!string.IsNullOrWhiteSpace(nameField.text))
         {
             Debug.Log("Starting host");
             manager.StartHost();
@@ -87,37 +93,37 @@ public class MainMenu : MonoBehaviour
             hostButton.interactable = false;
         }
     }
-    public void OnSteamLobbyCreated(LobbyCreated_t callback)
-    {
-        if(callback.m_eResult != EResult.k_EResultOK)
-        {
-            hostButton.interactable = true;
-            return;
-        }
-        manager.StartHost();
+    //public void OnSteamLobbyCreated(LobbyCreated_t callback)
+    //{
+    //    if(callback.m_eResult != EResult.k_EResultOK)
+    //    {
+    //        hostButton.interactable = true;
+    //        return;
+    //    }
+    //    manager.StartHost();
 
-        SteamMatchmaking.SetLobbyData(new CSteamID(callback.m_ulSteamIDLobby), HostAddressKey, SteamUser.GetSteamID().ToString());
-    }
-    public void OnSteamJoinRequested(GameLobbyJoinRequested_t callback)
-    {
-        SteamMatchmaking.JoinLobby(callback.m_steamIDLobby);
-    }
-    public void OnSteamLobbyEntered(LobbyEnter_t callback)
-    {
-        if (NetworkServer.active) { return; }
+    //    SteamMatchmaking.SetLobbyData(new CSteamID(callback.m_ulSteamIDLobby), HostAddressKey, SteamUser.GetSteamID().ToString());
+    //}
+    //public void OnSteamJoinRequested(GameLobbyJoinRequested_t callback)
+    //{
+    //    SteamMatchmaking.JoinLobby(callback.m_steamIDLobby);
+    //}
+    //public void OnSteamLobbyEntered(LobbyEnter_t callback)
+    //{
+    //    if (NetworkServer.active) { return; }
 
-        string hostAddress = SteamMatchmaking.GetLobbyData(new CSteamID(callback.m_ulSteamIDLobby), HostAddressKey);
-        manager.networkAddress = hostAddress;
-        manager.StartClient();
-        string name;
-        if (string.IsNullOrWhiteSpace(nameField.text))
-        {
-            name = SteamFriends.GetPersonaName();
-        }
-        else
-        {
-            name = nameField.text;
-        }
-        PlayerPrefs.SetString("PlayerName", name);
-    }
+    //    string hostAddress = SteamMatchmaking.GetLobbyData(new CSteamID(callback.m_ulSteamIDLobby), HostAddressKey);
+    //    manager.networkAddress = hostAddress;
+    //    manager.StartClient();
+    //    string name;
+    //    if (string.IsNullOrWhiteSpace(nameField.text))
+    //    {
+    //        name = SteamFriends.GetPersonaName();
+    //    }
+    //    else
+    //    {
+    //        name = nameField.text;
+    //    }
+    //    PlayerPrefs.SetString("PlayerName", name);
+    //}
 }

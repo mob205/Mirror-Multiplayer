@@ -8,7 +8,7 @@ public class CoinItem : Item
     [SerializeField] private int minAmount;
     [SerializeField] private int maxAmount;
 
-    [Client]
+    [ClientRpc]
     protected override void RpcLocalActivate(GameObject collider)
     {
         base.RpcLocalActivate(collider);

@@ -16,6 +16,12 @@ public class UpgradeManager : NetworkBehaviour
 
     private UpgradeUI ui;
     private CoinManager cm;
+
+    public override void OnStartServer()
+    {
+        cm = CoinManager.instance;
+        InitializeDictionaries();
+    }
     public void Initialize()
     {
         ui = FindObjectOfType<UpgradeUI>();

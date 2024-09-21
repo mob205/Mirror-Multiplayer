@@ -15,10 +15,6 @@ public class LobbyUI : NetworkBehaviour
     private void Start()
     {
         nm = CustomNetworkManager.singleton;
-        if (isServer)
-        {
-            startButton.SetActive(true);
-        }
     }
     private void Update()
     {

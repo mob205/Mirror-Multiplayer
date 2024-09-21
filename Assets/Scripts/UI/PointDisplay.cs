@@ -10,8 +10,10 @@ public class PointDisplay : MonoBehaviour
 
     private TextMeshProUGUI text;
     private PointTracker tracker;
+
     private void Start()
     {
+        if (NetworkServer.active) { Destroy(this); }
         text = GetComponent<TextMeshProUGUI>();
         tracker = FindObjectOfType<PointTracker>();
     }

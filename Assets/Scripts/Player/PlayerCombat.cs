@@ -56,10 +56,16 @@ public class PlayerCombat : NetworkBehaviour
     [Command]
     private void CmdRotateWeapon(Vector3 target)
     {
+        RotateWeapon(target);   
         RpcRotateWeapon(target);
     }
     [ClientRpc]
     private void RpcRotateWeapon(Vector3 target)
+    {
+        RotateWeapon(target);
+    }
+
+    private void RotateWeapon(Vector3 target)
     {
         if (weapon)
         {

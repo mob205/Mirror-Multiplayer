@@ -12,7 +12,7 @@ public class WinUI : NetworkBehaviour
     {
         if (isServer)
         {
-            GameSceneManager.OnWinRound += CmdGetPlayerName;
+            GameSceneManager.OnWinRound += GetPlayerName;
         }
     }
     [ClientRpc]
@@ -21,8 +21,8 @@ public class WinUI : NetworkBehaviour
         text.gameObject.SetActive(true);
         text.text = $"{playerName} WINS!";
     }
-    [Command(requiresAuthority = false)]
-    private void CmdGetPlayerName(uint playerID)
+    [Server]
+    private void GetPlayerName(uint playerID)
     {
         var player = NetworkServer.spawned[playerID].GetComponent<PlayerDisplayer>();
         DisplayWinMessage(player.playerName);
@@ -31,7 +31,7 @@ public class WinUI : NetworkBehaviour
     {
         if (isServer)
         {
-            GameSceneManager.OnWinRound -= CmdGetPlayerName;
+            GameSceneManager.OnWinRound -= GetPlayerName;
         }
     }
 }

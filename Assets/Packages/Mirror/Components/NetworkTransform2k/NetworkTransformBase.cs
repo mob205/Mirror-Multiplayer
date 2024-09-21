@@ -328,6 +328,7 @@ namespace Mirror
 
         void UpdateClient()
         {
+            if (!NetworkClient.ready) { return; }
             // client authority, and local player (= allowed to move myself)?
             if (IsClientWithAuthority)
             {

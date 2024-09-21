@@ -14,6 +14,7 @@ public class MeleeHitbox : MonoBehaviour
     protected List<Health> damaged = new List<Health>();
     public void ClearHitPlayers()
     {
+        Debug.Log("Clearing hit players");
         damaged.Clear();
     }
     protected virtual void OnTriggerEnter2D(Collider2D collision)

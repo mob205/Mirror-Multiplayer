@@ -17,6 +17,7 @@ public class CustomNetworkManager : NetworkManager
     new public static CustomNetworkManager singleton;
 
     public static event Action<NetworkIdentity> OnPlayerDisconnect;
+    public static event Action<NetworkIdentity> OnPlayerConnect;
 
     public override void Awake()
     {
@@ -62,6 +63,7 @@ public class CustomNetworkManager : NetworkManager
         {
             base.OnServerAddPlayer(conn);
         }
+        OnPlayerConnect?.Invoke(conn.identity);
     }
     public override void OnClientConnect(NetworkConnection conn)
     {
@@ -76,6 +78,10 @@ public class CustomNetworkManager : NetworkManager
     {
         OnPlayerDisconnect?.Invoke(conn.identity);
         base.OnServerDisconnect(conn);
+        if (numPlayers == 0)
+        {
+            ServerChangeScene("Lobby Scene");
+        }
     }
     [Server]
     public void StartLevel()

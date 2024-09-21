@@ -11,8 +11,16 @@ public class PlayerUpgrades : NetworkBehaviour
     private int abilityCount;
     private void Start()
     {
-        // The local copy of every player object requests and applies its upgrades on start.
-        CmdGetUpgrades(netId);
+        if(NetworkServer.active)
+        {
+            AddUpgrades(UpgradeManager.GetUpgradesForConn(NetworkServer.spawned[netId].connectionToClient));
+        }
+        else
+        {
+            // The local copy of every player object requests and applies its upgrades on start.
+            CmdGetUpgrades(netId);
+        }
+        
     }
     [Command(requiresAuthority = false)]
     public void CmdGetUpgrades(uint targetID, NetworkConnectionToClient sender = null)
@@ -23,7 +31,11 @@ public class PlayerUpgrades : NetworkBehaviour
     [TargetRpc]
     private void TargetAddUpgrades(NetworkConnection target, string[] upgradeIDs)
     {
-        foreach(var upgradeID in upgradeIDs)
+        AddUpgrades(upgradeIDs);
+    }
+    private void AddUpgrades(string[] upgradeIDs)
+    {
+        foreach (var upgradeID in upgradeIDs)
         {
             var upgrade = UpgradeManager.GetUpgradeFromID(upgradeID);
             //CopyUpgrade(upgrade, gameObject).Initialize();

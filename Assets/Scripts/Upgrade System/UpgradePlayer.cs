@@ -7,6 +7,7 @@ public class UpgradePlayer : NetworkBehaviour
 {
     private UpgradeManager upgradeManager;
     private UpgradeUI upgradeUI;
+
     public override void OnStartAuthority()
     {
         upgradeManager = FindObjectOfType<UpgradeManager>();
