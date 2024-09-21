@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class PointTracker : NetworkBehaviour
 {
-    public int RoundsToWin { get; set; } = 10;
+    public int RoundsToWin { get; set; } = 7;
 
     private static Dictionary<NetworkConnection, int> serverPoints = new Dictionary<NetworkConnection, int>();
     private Dictionary<uint, int> localPoints = new Dictionary<uint, int>();

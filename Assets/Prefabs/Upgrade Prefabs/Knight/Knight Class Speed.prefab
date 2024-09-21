@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9024938994656764883}
   - component: {fileID: 9024938994656764880}
   m_Layer: 0
-  m_Name: Knight Speed
+  m_Name: Knight Class Speed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,4 +43,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b480d73ed9095b44a1ce8661b1b0e39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedModifier: 1.15
+  speedModifier: 1.2

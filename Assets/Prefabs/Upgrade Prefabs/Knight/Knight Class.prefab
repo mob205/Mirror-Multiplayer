@@ -47,3 +47,4 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: ae5e4361b3abf7a4d80cafc93c6a57f3, type: 3}
   classUpgrades:
   - {fileID: 6912388186918645296, guid: 00541ced15ca88944a5d1f5b67750cd7, type: 3}
+  - {fileID: 9024938994656764880, guid: 9aab46fe9076ec747809a45554ede148, type: 3}

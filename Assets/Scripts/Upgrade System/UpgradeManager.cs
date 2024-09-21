@@ -19,8 +19,14 @@ public class UpgradeManager : NetworkBehaviour
 
     public override void OnStartServer()
     {
-        cm = CoinManager.instance;
-        InitializeDictionaries();
+        // Hosts should not double initialize dictionary
+        if(!isClient)
+        {
+
+            cm = CoinManager.instance;
+            InitializeDictionaries();
+
+        }
     }
     public void Initialize()
     {

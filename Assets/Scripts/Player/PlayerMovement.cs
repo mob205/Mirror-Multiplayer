@@ -43,6 +43,7 @@ public class PlayerMovement : NetworkBehaviour
     }
     private void ProcessInput()
     {
+        Debug.Log($"Speed modifier: {speedModifier} | Total speed: {speed * speedModifier}");
         Vector2 movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
         rb.MovePosition(transform.position + speed * speedModifier * Time.fixedDeltaTime * (Vector3)movement);
     }
